@@ -13,20 +13,30 @@ end datapath;
 
 architecture behavioral of datapath is
     signal res_addsub, res_and, res_alu : std_logic_vector (7 downto 0);
-    signal res_addsub_sg, r1_sg, accum_sg : signed (7 downto 0);
-    signal accum : std_logic_vector (7 downto 0) := (others => '0'); -- this signal initialization is only considered for simulation
-    signal register1 : std_logic_vector (7 downto 0) := (others => '0'); -- this signal initialization is only considered for simulation
+    signal res_addsub_sg, r1_sg, r2_sg : signed (7 downto 0);
+    signal res_mul: signed (28 downto 0);
+    signal res_mul: signed (15 downto 0);
+    signal register2 : std_logic_vector (15 downto 0) := (others => '0'); -- this signal initialization is only considered for simulation
+    signal register1 : std_logic_vector (15 downto 0) := (others => '0'); -- this signal initialization is only considered for simulation
 begin
-    -- adder/subtracter
+    --signer
     r1_sg <= signed(register1);
     r2_sg <= signed(register2);
-    res_addsub <= std_logic_vector(res_addsub_sg);
-    res_addsub_sg <= accum_sg + r1_sg when sel_add_sub='0' else
-                     accum_sg - r1_sg;
 
-    -- logic unit
-    res_and <= register1 and accum;
+    -- adder/subtracter
+        res_addsub <= std_logic_vector(res_addsub_sg);
+    res_addsub_sg <= r2_sg + r1_sg when sel_add_sub='0' else
+                     r2_sg - r1_sg;
+    --multiplier
+    res_multiplier<=r1_sg*r2_sg
 
+    -- logic unit AND
+    res_and <= register1 and register2;
+    
+    --logic unit NAND
+    res_nand <= NOT(register1 and register2);
+    --logic unit NOR
+    res_nor <= NOT (register and register2);
     -- multiplexer
     res_alu <= res_addsub when sel_mux='0' 
                else res_and ;
