@@ -47,7 +47,8 @@ end fpga_basicIO;
 
 architecture Behavioral of fpga_basicIO is
   -- signal dd3, dd2, dd1, dd0 : std_logic_vector(6 downto 0);
-  signal res, reg1 : std_logic_vector(7 downto 0);
+  signal reg_out : std_logic_vector(15 downto 0);
+  signal sign_out : std_logic;
   signal dact : std_logic_vector(3 downto 0);
   -- signal btnRinstr : std_logic_vector(3 downto 0);
   -- signal clk10hz, clk_disp : std_logic;
@@ -83,9 +84,10 @@ architecture Behavioral of fpga_basicIO is
       exec : in std_logic;
       instr : in std_logic_vector(1 downto 0);
       data_in : in std_logic_vector(7 downto 0);
-      reg1 : out std_logic_vector(7 downto 0);          
-      res : out std_logic_vector(7 downto 0)
-      );
+      mux_reg : in std_logic 
+      reg_out : out std_logic_vector(15 downto 0);
+      sign_out : out std_logic;
+    );
   end component;
 
 begin
@@ -94,8 +96,8 @@ begin
   dact <= "1111";
 
   inst_disp7: disp7 port map(
-      digit3 => reg1(7 downto 4), digit2 => reg1(3 downto 0), digit1 => res(7 downto 4), digit0 => res(3 downto 0),
-      dp3 => btnLreg, dp2 => btnDreg, dp1 => btnRreg, dp0 => btnUreg,  
+      digit3 => reg_out(15 downto 12), digit2 => reg_out(11 downto 8), digit1 => reg_out(7 downto 4), digit0 => reg_out(3 downto 0),
+      dp3 => sign_out, dp2 => sign_out, dp1 => sign_out, dp0 => sign_out,  
       clk => clk,
       dactive => dact,
       en_disp_l => an,
@@ -106,9 +108,12 @@ begin
       clk => clk,
       rst => btnUreg,
       exec => btnRreg,
-      instr => sw_reg(15 downto 14),
-      data_in => sw_reg(7 downto 0),
-      reg1 => reg1, res => res);
+      mux_reg=>sw_reg(15)
+      instr => sw_reg(14 downto 12),
+      data_in => sw_reg(11 downto 0),
+      reg_out => reg_out
+      sign_out => sign_out
+  );
      
   -- Debounces btn signals
   btn <= btnC & btnU & btnL & btnR & btnD;    
