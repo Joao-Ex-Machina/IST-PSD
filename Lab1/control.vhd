@@ -13,11 +13,11 @@ entity control is
     op_code: out std_logic_vector(2 downto 0);
     write_enable: out std_logic;
     write_to: out std_logic;
-    reset: out std_logic;
+    reset: out std_logic);
 end control;
 
 architecture Behavioral of control is
-  type fsm_states is (s_initial, s_end, s_subs, s_adds, s_nand,s_nor,s_sra,s_load1,s_load2,s_reset);
+  type fsm_states is (s_initial, s_end, s_subs, s_adds, s_nand,s_nor,s_muls,s_sra,s_load1,s_load2,s_reset);
   signal currstate, nextstate: fsm_states;
 
 begin
@@ -39,76 +39,87 @@ begin
     
     case currstate is
       when s_initial =>
-          write_enable="0"
-        if exec='1' then
-            write_enable="0"
+            
+       if exec='1' then
+            write_enable <= '0';
+            write_to <= '1';
           if instr="000" then
             nextstate <= s_load2 ;
           elsif instr="001" then
-	    nextstate <= s_load1;
+	         nextstate <= s_load1;
           elsif instr="010" then
-	    nextstate <= s_adds;
-	  elsif instr="011" then
-	    nextstate <= s_subs;
+	        nextstate <= s_adds;
+	      elsif instr="011" then
+	        nextstate <= s_subs;
           elsif instr="100" then
             nextstate <= s_muls ;
           elsif instr="101" then
             nextstate <= s_nand ;
-	  elsif instr="110" then
+	      elsif instr="110" then
             nextstate <= s_nor;
     	  elsif instr="111" then
             nextstate <= s_sra ;
-
           end if;
         end if;
-
-        op_code<="000";
-        op_modifier<="0";
-        write_to<='1';
 
     when s_load1 =>
         nextstate <= s_end;
         op_code<="000";
-        write_to<="0";
+        write_to<='0';
+        write_enable <= '1';
 
         
     when s_load2 =>
         nextstate <= s_end;
         op_code<="000";
+        write_to<='1';
+        write_enable <= '1';
         
     when s_adds =>
         nextstate <= s_end;
         op_code<="001";
+        write_to<='1';
+        write_enable <= '1';
         
     when s_subs =>
         nextstate <= s_end;
         op_code<="010";
+        write_to<='1';
+        write_enable <= '1';
        
     when s_muls =>
         nextstate <= s_end;
         op_code<="011";
-    
+        write_to<='1';
+        write_enable <= '1';
+        
     when s_nand =>
         nextstate <= s_end;
-        selectors<="100";
-        op_code<="01";
+        op_code<="100";
+        write_to<='1';
+       write_enable <= '1';
        
     when s_nor =>
         nextstate <= s_end;
         op_code<="101";
+        write_to<='1';
+       write_enable <= '1';
        
     when s_sra =>
         nextstate <= s_end;
         op_code<="110";
-
+        write_to<='1';
+        write_enable <= '1';
+        
     when s_end =>
+        write_enable<='0';
         if exec='0' then
           nextstate <= s_initial ;
-        end if;
-
-        write_enable<="0"
-        op_code<="111"
-        write_to<="1";
+        end if;       
+      when s_reset =>
+            nextstate <= s_initial;
+       when others =>
+        nextstate <= s_initial ;
 
     end case;
 

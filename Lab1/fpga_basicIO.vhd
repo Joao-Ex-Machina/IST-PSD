@@ -74,7 +74,8 @@ architecture Behavioral of fpga_basicIO is
   port (
     signal_i : in std_logic_vector(4 downto 0);
     clk_i : in std_logic;          
-    signal_o : out std_logic_vector(4 downto 0));
+    signal_o : out std_logic_vector(4 downto 0)
+    );
   end component;
   
   component circuito
@@ -82,11 +83,11 @@ architecture Behavioral of fpga_basicIO is
       clk : in std_logic;
       rst : in std_logic;
       exec : in std_logic;
-      instr : in std_logic_vector(1 downto 0);
-      data_in : in std_logic_vector(7 downto 0);
-      mux_reg : in std_logic 
+      instr : in std_logic_vector(2 downto 0);
+      data_in : in std_logic_vector(11 downto 0);
+      mux_reg : in std_logic ;
       reg_out : out std_logic_vector(15 downto 0);
-      sign_out : out std_logic;
+      out_sign : out std_logic
     );
   end component;
 
@@ -108,11 +109,11 @@ begin
       clk => clk,
       rst => btnUreg,
       exec => btnRreg,
-      mux_reg=>sw_reg(15)
+      mux_reg=>sw_reg(15),
       instr => sw_reg(14 downto 12),
       data_in => sw_reg(11 downto 0),
-      reg_out => reg_out
-      sign_out => sign_out
+      reg_out => reg_out,
+      out_sign => sign_out
   );
      
   -- Debounces btn signals
