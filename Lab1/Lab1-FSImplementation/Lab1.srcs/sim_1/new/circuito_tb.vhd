@@ -74,7 +74,7 @@ begin
                     x"006" after 280ns,
                     x"00a" after 600 ns,
                     x"002" after 920 ns,
-                    x"00a" after 1000 ns;
+                    x"FF1" after 1000 ns;
         instr <=    "110" after 40 ns, --load1 = 4
                     "111" after 120 ns, --load2 = 8
                     "000" after 200 ns, --add R1 + R2 = 12
