@@ -11,9 +11,9 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source fpga_basicIO.tcl -notrace
-create_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1330.293 ; gain = 0.023 ; free physical = 11946 ; free virtual = 14281
-Command: read_checkpoint -auto_incremental -incremental /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1333.293 ; gain = 0.023 ; free physical = 8770 ; free virtual = 13138
+Command: read_checkpoint -auto_incremental -incremental /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top fpga_basicIO -part xc7a35tcpg236-1
 Starting synth_design
@@ -24,84 +24,84 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10461
+INFO: [Synth 8-7075] Helper process launched with PID 91480
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1994.195 ; gain = 378.770 ; free physical = 10934 ; free virtual = 13306
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1994.195 ; gain = 378.770 ; free physical = 7800 ; free virtual = 12175
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fpga_basicIO' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:48]
-INFO: [Synth 8-3491] module 'disp7' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/disp7.vhd:9' bound to instance 'inst_disp7' of component 'disp7' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:99]
-INFO: [Synth 8-638] synthesizing module 'disp7' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/disp7.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'disp7' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/disp7.vhd:21]
-INFO: [Synth 8-3491] module 'circuito' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd:9' bound to instance 'inst_circuito' of component 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:108]
-INFO: [Synth 8-638] synthesizing module 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd:20]
-INFO: [Synth 8-3491] module 'control' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:9' bound to instance 'inst_control' of component 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd:50]
-INFO: [Synth 8-638] synthesizing module 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:19]
-INFO: [Synth 8-3491] module 'datapath' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/datapath.vhd:5' bound to instance 'inst_datapath' of component 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd:59]
-INFO: [Synth 8-638] synthesizing module 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/datapath.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/datapath.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'fpga_basicIO' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:48]
+INFO: [Synth 8-3491] module 'disp7' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/disp7.vhd:9' bound to instance 'inst_disp7' of component 'disp7' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'disp7' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/disp7.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'disp7' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/disp7.vhd:21]
+INFO: [Synth 8-3491] module 'circuito' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd:9' bound to instance 'inst_circuito' of component 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd:20]
+INFO: [Synth 8-3491] module 'control' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:9' bound to instance 'inst_control' of component 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:19]
+INFO: [Synth 8-3491] module 'datapath' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/datapath.vhd:5' bound to instance 'inst_datapath' of component 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/datapath.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/datapath.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd:20]
 	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'debouncer' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:121]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/debouncer.vhd:50]
 	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/debouncer.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'fpga_basicIO' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:48]
-WARNING: [Synth 8-3848] Net reset in module/entity control does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:16]
-WARNING: [Synth 8-6014] Unused sequential element btnCreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:133]
-WARNING: [Synth 8-6014] Unused sequential element btnLreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:135]
-WARNING: [Synth 8-6014] Unused sequential element btnDreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd:137]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/debouncer.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'fpga_basicIO' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:48]
+WARNING: [Synth 8-3848] Net reset in module/entity control does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:16]
+WARNING: [Synth 8-6014] Unused sequential element btnCreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:133]
+WARNING: [Synth 8-6014] Unused sequential element btnLreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:135]
+WARNING: [Synth 8-6014] Unused sequential element btnDreg_reg was removed.  [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd:137]
 WARNING: [Synth 8-7129] Port reset in module control is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2062.164 ; gain = 446.738 ; free physical = 10847 ; free virtual = 13223
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2062.164 ; gain = 446.738 ; free physical = 7725 ; free virtual = 12103
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2077.008 ; gain = 461.582 ; free physical = 10839 ; free virtual = 13215
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2077.008 ; gain = 461.582 ; free physical = 7713 ; free virtual = 12091
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2077.008 ; gain = 461.582 ; free physical = 10839 ; free virtual = 13215
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2077.008 ; gain = 461.582 ; free physical = 7713 ; free virtual = 12091
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2077.008 ; gain = 0.000 ; free physical = 10839 ; free virtual = 13215
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2077.008 ; gain = 0.000 ; free physical = 7713 ; free virtual = 12091
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc]
-Finished Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_basicIO_propImpl.xdc].
+Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc]
+Finished Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_basicIO_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_basicIO_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.758 ; gain = 0.000 ; free physical = 10752 ; free virtual = 13141
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2227.758 ; gain = 0.000 ; free physical = 7666 ; free virtual = 12059
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.758 ; gain = 0.000 ; free physical = 10751 ; free virtual = 13141
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2227.758 ; gain = 0.000 ; free physical = 7666 ; free virtual = 12059
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10743 ; free virtual = 13133
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7655 ; free virtual = 12048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10743 ; free virtual = 13133
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7655 ; free virtual = 12048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10743 ; free virtual = 13133
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7655 ; free virtual = 12048
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'currstate_reg' in module 'control'
-WARNING: [Synth 8-327] inferring latch for variable 'op_code_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:67]
+WARNING: [Synth 8-327] inferring latch for variable 'op_code_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:67]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -120,10 +120,10 @@ WARNING: [Synth 8-327] inferring latch for variable 'op_code_reg' [/home/jbcr/De
 *
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currstate_reg' using encoding 'sequential' in module 'control'
-WARNING: [Synth 8-327] inferring latch for variable 'write_enable_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:44]
-WARNING: [Synth 8-327] inferring latch for variable 'write_to_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd:45]
+WARNING: [Synth 8-327] inferring latch for variable 'write_enable_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:44]
+WARNING: [Synth 8-327] inferring latch for variable 'write_to_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd:45]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10740 ; free virtual = 13131
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7652 ; free virtual = 12046
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -175,7 +175,7 @@ DSP Report: register inst_circuito/inst_datapath/register2_reg is absorbed into 
 DSP Report: register inst_circuito/inst_datapath/register1_reg is absorbed into DSP inst_circuito/inst_datapath/res_mul_sg.
 DSP Report: operator inst_circuito/inst_datapath/res_mul_sg is absorbed into DSP inst_circuito/inst_datapath/res_mul_sg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:50 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10735 ; free virtual = 13131
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7629 ; free virtual = 12029
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -196,19 +196,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:11 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10696 ; free virtual = 13111
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:11 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7468 ; free virtual = 11895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10445 ; free virtual = 12997
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7477 ; free virtual = 11903
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:14 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 10415 ; free virtual = 12983
+Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7476 ; free virtual = 11901
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -226,37 +226,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9786 ; free virtual = 12560
+Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7477 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9786 ; free virtual = 12560
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7477 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9783 ; free virtual = 12559
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7477 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9783 ; free virtual = 12559
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7475 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9783 ; free virtual = 12559
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7475 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9783 ; free virtual = 12559
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7475 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -296,18 +296,18 @@ Report Cell Usage:
 |14    |OBUF    |    28|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9783 ; free virtual = 12559
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7475 ; free virtual = 11899
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:15 ; elapsed = 00:01:20 . Memory (MB): peak = 2224.758 ; gain = 461.582 ; free physical = 9782 ; free virtual = 12558
-Synthesis Optimization Complete : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2224.758 ; gain = 609.332 ; free physical = 9782 ; free virtual = 12558
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:20 . Memory (MB): peak = 2227.758 ; gain = 461.582 ; free physical = 7454 ; free virtual = 11891
+Synthesis Optimization Complete : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 2227.758 ; gain = 612.332 ; free physical = 7454 ; free virtual = 11891
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2224.758 ; gain = 0.000 ; free physical = 9763 ; free virtual = 12538
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2227.758 ; gain = 0.000 ; free physical = 7442 ; free virtual = 11885
 INFO: [Netlist 29-17] Analyzing 45 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.758 ; gain = 0.000 ; free physical = 10279 ; free virtual = 12967
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2227.758 ; gain = 0.000 ; free physical = 7723 ; free virtual = 12154
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 5 instances were transformed.
   LD => LDCE: 5 instances
@@ -316,9 +316,9 @@ Synth Design complete | Checksum: 2020025f
 INFO: [Common 17-83] Releasing license: Synthesis
 40 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:41 ; elapsed = 00:01:43 . Memory (MB): peak = 2224.758 ; gain = 894.465 ; free physical = 10276 ; free virtual = 12961
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1836.599; main = 1517.589; forked = 367.494
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3151.691; main = 2224.762; forked = 958.945
-INFO: [Common 17-1381] The checkpoint '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.runs/synth_1/fpga_basicIO.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 2227.758 ; gain = 894.465 ; free physical = 7723 ; free virtual = 12154
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1798.715; main = 1480.365; forked = 367.385
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3154.699; main = 2227.762; forked = 958.953
+INFO: [Common 17-1381] The checkpoint '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.runs/synth_1/fpga_basicIO.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fpga_basicIO_utilization_synth.rpt -pb fpga_basicIO_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Sep 22 18:26:28 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 27 16:16:02 2023...

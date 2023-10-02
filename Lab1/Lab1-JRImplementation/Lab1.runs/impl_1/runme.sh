@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.runs/impl_1'
+HD_PWD='/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.runs/impl_1/fpga_basicIO.tcl"
+  variable script "/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.runs/impl_1/fpga_basicIO.tcl"
   variable category "vivado_impl"
 }
 
@@ -130,15 +130,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.cache/wt [current_project]
-  set_property parent.project_path /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.xpr [current_project]
-  set_property ip_output_repo /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.cache/wt [current_project]
+  set_property parent.project_path /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.xpr [current_project]
+  set_property ip_output_repo /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.runs/synth_1/fpga_basicIO.dcp
+  add_files -quiet /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.runs/synth_1/fpga_basicIO.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc
+  read_xdc /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

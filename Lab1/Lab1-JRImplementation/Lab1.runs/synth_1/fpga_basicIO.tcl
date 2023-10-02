@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.runs/synth_1/fpga_basicIO.tcl"
+  variable script "/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.runs/synth_1/fpga_basicIO.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,28 +70,27 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.cache/wt [current_project]
-set_property parent.project_path /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.xpr [current_project]
+set_property webtalk.parent_dir /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.cache/wt [current_project]
+set_property parent.project_path /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.cache/ip [current_project]
+set_property ip_output_repo /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/circuito.vhd
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/control.vhd
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/datapath.vhd
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/debouncer.vhd
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/disp7.vhd
-  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/fpga_basicIO.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/circuito.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/control.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/datapath.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/debouncer.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/disp7.vhd
+  /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/fpga_basicIO.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -102,12 +101,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc
-set_property used_in_implementation false [get_files /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Basys3_Master.xdc]
+read_xdc /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc
+set_property used_in_implementation false [get_files /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Basys3_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp
+read_checkpoint -auto_incremental -incremental /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab1/Lab1-JRImplementation/Lab1.srcs/utils_1/imports/synth_1/fpga_basicIO.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
