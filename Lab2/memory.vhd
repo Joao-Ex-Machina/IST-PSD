@@ -6,8 +6,8 @@ entity memory is
     port (
         data_inw : in std_logic_vector (31 downto 0);
         data_inp: in std_logic_vector (31 downto 0);
-        clk, rst: in std_logic;
-        write_enable:in std_logic_vector (3 downto 0)
+        clk, rst_reg: in std_logic;
+        write_enable:in std_logic_vector (3 downto 0);
         register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : out std_logic_vector (7 downto 0);
         in_aux0, in_aux1, in_aux2: in std_logic_vector(15 downto 0);
         register_aux0, register_aux1, register_aux2: out std_logic_vector(15 downto 0)
@@ -15,7 +15,7 @@ entity memory is
 end memory;
 
 architecture behavioral of memory is
-
+begin
  -- register R0
     process (clk)
     begin
@@ -147,3 +147,4 @@ architecture behavioral of memory is
             end if;
         end if;
     end process;
+ end behavioral;

@@ -34,13 +34,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity control is
     Port (
         clk, rst, init, finish : in std_logic;
-        muxes : out std_logic_vector(1 downto 0);
-        enables : out std_logic_vector(2 downto 0));
+        mul0_sel: out std_logic;
+        mul1_sel: out std_logic;
+        add0_sel: out std_logic;
+        write_enable : out std_logic_vector(2 downto 0));
 end control;
 
 architecture Behavioral of control is
     type fsm_states is ( s_initial, s_cycle1, s_cycle2, s_cycle3, s_done );
     signal curr_state, next_state : fsm_states;
+    signal done : std_logic;
 begin
 
     state_reg: process(clk, rst)
@@ -55,7 +58,7 @@ begin
     end process;
 
     --STATE UPDATE PROCESS
-    --isto é só a base, pode se alterar tranquilo
+    --isto ï¿½ sï¿½ a base, pode se alterar tranquilo
     --faz sentido se o finish tiver a 0 ir para o cycle 1???
     state_update: process (curr_state, init, finish)
     begin
@@ -79,25 +82,28 @@ begin
     end process;
     
     --CONTROL OUTPUT STUFF PROCESS
-    --falta definir as palavras de controlo. Preciso olhar para o datapath com mais atenção
+    --falta definir as palavras de controlo. Preciso olhar para o datapath com mais atenï¿½ï¿½o
     state_comb: process(curr_state)
     begin
         case curr_state is
             when s_initial =>
-                muxes <= "XX";
-                enables <= "XXX";
+                done <='0';
+                write_enable <= "1000";
             when s_cycle1 =>
-                muxes <= "XX";
-                enables <= "XXX";
+                mul0_sel <='0';
+                mul1_sel <= '0';
+                write_enable <= "0000";
             when s_cycle2 =>
-                muxes <= "XX";
-                enables <= "XXX";
+                mul0_sel <='1';
+                mul1_sel <= '1';
+                add0_sel <= '0';
+                write_enable<= "0111";
             when s_cycle3 =>
-                muxes <= "XX";
-                enables <= "XXX";
+                add0_sel <= '1';
+                write_enable <= "0111";
             when s_done =>
-                muxes <= "XX";
-                enables <= "XXX";
+                done <= '1';
+                write_enable <= "0000";
         end case;
     end process;
 end Behavioral;
