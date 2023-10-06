@@ -14,8 +14,11 @@ ARCHITECTURE behavior OF circuito_tb IS
  
     COMPONENT circuito
     PORT(
-         clk : IN  std_logic;
-         rst : IN  std_logic;
+        clk, rst, init, finish : in std_logic;
+        mul0_sel: out std_logic_vector(1 downto 0);
+        mul1_sel: out std_logic_vector (1 downto 0);
+        add0_sel: out std_logic;
+        write_enable : out std_logic_vector(2 downto 0)
         );
     END COMPONENT;
     
@@ -32,8 +35,7 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: circuito PORT MAP (
-          clk => clk,
-          rst => rst,
+        
         );
 
    -- Clock definition
@@ -50,7 +52,7 @@ BEGIN
 
       -- insert stimulus here 
       -- note that input signals should never change at the positive edge of the clock
-        rst <= '1' after 20 ns;
+        rst <= '1' after 20 ns,
                 '0' after 40 ns;
         data_inw <= X"B000000" after 40 ns;
         data_inp <= X"A000000" after 40 ns;

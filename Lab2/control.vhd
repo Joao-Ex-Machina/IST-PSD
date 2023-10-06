@@ -33,11 +33,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity control is
     Port (
-        clk, rst, init, finish : in std_logic;
+        clk, rst, init : in std_logic;
         mul0_sel: out std_logic;
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
-        write_enable : out std_logic_vector(2 downto 0));
+        write_enable : out std_logic_vector(2 downto 0);
+        finish : out std_logic
+        );
 end control;
 
 architecture Behavioral of control is
@@ -60,7 +62,7 @@ begin
     --STATE UPDATE PROCESS
     --isto � s� a base, pode se alterar tranquilo
     --faz sentido se o finish tiver a 0 ir para o cycle 1???
-    state_update: process (curr_state, init, finish)
+    state_update: process (curr_state, init)
     begin
         next_state <= curr_state;
         case curr_state is
@@ -70,12 +72,8 @@ begin
                 next_state <= s_cycle2;
             when s_cycle2 =>
                 next_state <= s_cycle3;
-            when s_cycle3 =>
-                if (finish = '1') then 
-                    next_state <= s_done; 
-                else 
-                    next_state <= s_cycle1; 
-                end if;
+            when s_cycle3 => 
+                next_state <= s_done; 
             when s_done =>
                 next_state <= s_done;
         end case;

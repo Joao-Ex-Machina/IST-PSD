@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Oct  6 16:38:39 2023
+# Process ID: 8708
+# Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1
+# Command line: vivado.exe -log circuito_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source circuito_tb.tcl
+# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1/circuito_tb.vds
+# Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
+#-----------------------------------------------------------
+source circuito_tb.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 479.941 ; gain = 196.590
+Command: synth_design -top circuito_tb -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9980
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 917.336 ; gain = 413.508
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-9486] formal port 'init' has no actual or default value [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:40]
+INFO: [Synth 8-8898] 'init' is declared here [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:17]
+INFO: [Synth 8-8898] 'finish' is declared here [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:17]
+ERROR: [Synth 8-36] 'data_inw' is not declared [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:58]
+ERROR: [Synth 8-36] 'data_inp' is not declared [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:59]
+INFO: [Synth 8-11252] unit 'behavior' is ignored due to previous errors [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:64]
+INFO: [Synth 8-10443] VHDL file 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd' is ignored due to errors
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.219 ; gain = 497.391
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  6 16:38:56 2023...
