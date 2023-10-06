@@ -7,7 +7,7 @@ entity circuito is
         data_inw : in std_logic_vector (31 downto 0);
         data_inp: in std_logic_vector (31 downto 0);
         finish : out std_logic;
-        data_out : out std_logic_vector (18 downto 0)
+        data_out : out std_logic_vector (17 downto 0)
         );
 end circuito;
 
@@ -18,7 +18,7 @@ architecture Behavioral of circuito is
         mul0_sel: out std_logic;
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
-        write_enable : out std_logic_vector(2 downto 0);
+        write_enable : out std_logic_vector(3 downto 0);
         finish : out std_logic
         );
     end component;
@@ -31,7 +31,7 @@ architecture Behavioral of circuito is
             write_enable:in std_logic_vector (3 downto 0);
             register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : out std_logic_vector (7 downto 0);
             in_aux0, in_aux1, in_aux2: in std_logic_vector(17 downto 0);
-            register_aux0, register_aux1, register_aux2: out std_logic_vector(15 downto 0)
+            register_aux0, register_aux1, register_aux2: out std_logic_vector(17 downto 0)
             );
     end component;
 
@@ -41,7 +41,7 @@ architecture Behavioral of circuito is
             in_aux0, in_aux1, in_aux2: out std_logic_vector(17 downto 0);
             register_aux0, register_aux1, register_aux2: in std_logic_vector(17 downto 0);
             add0_sel,mul0_sel, mul1_sel: in std_logic;
-            data_out : out std_logic_vector(18 downto 0)
+            data_out : out std_logic_vector(17 downto 0)
             );
     end component;
     signal data_inw_aux : std_logic_vector (31 downto 0);
@@ -102,6 +102,7 @@ architecture Behavioral of circuito is
             register_aux0 => in_aux0,
             register_aux1 => in_aux1,
             register_aux2 => in_aux2,
-            add0_sel => add0_sel
+            add0_sel => add0_sel,
+            data_out=>data_out
         );
 end Behavioral;

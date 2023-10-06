@@ -37,7 +37,7 @@ entity control is
         mul0_sel: out std_logic;
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
-        write_enable : out std_logic_vector(2 downto 0);
+        write_enable : out std_logic_vector(3 downto 0);
         finish : out std_logic
         );
 end control;

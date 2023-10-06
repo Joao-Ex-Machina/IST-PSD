@@ -16,7 +16,7 @@ entity datapath is
         in_aux0, in_aux1, in_aux2: out std_logic_vector(17 downto 0);
         register_aux0, register_aux1, register_aux2: in std_logic_vector(17 downto 0);
         add0_sel,mul0_sel, mul1_sel: in std_logic;
-        data_out : out std_logic_vector(18 downto 0)
+        data_out : out std_logic_vector(17 downto 0)
          );
          
 end datapath;
@@ -26,7 +26,7 @@ architecture Behavioral of datapath is
     signal mul00,mul01,mul10,mul11: signed (8 downto 0);
      signal mul0, mul1: signed(17 downto 0);
     signal add00, add01, add0: signed(17 downto 0);
-    signal add1: signed(18 downto 0);
+    signal add1: signed(17 downto 0);
 begin
     -- signers, w can be negative while p is always positive
     sg_0w <= signed(register0w(7) & register0w);

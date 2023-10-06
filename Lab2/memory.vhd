@@ -9,8 +9,8 @@ entity memory is
         clk, rst_reg: in std_logic;
         write_enable: in std_logic_vector (3 downto 0);
         register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : out std_logic_vector (7 downto 0);
-        in_aux0, in_aux1, in_aux2: in std_logic_vector(15 downto 0);
-        register_aux0, register_aux1, register_aux2: out std_logic_vector(15 downto 0)
+        in_aux0, in_aux1, in_aux2: in std_logic_vector(17 downto 0);
+        register_aux0, register_aux1, register_aux2: out std_logic_vector(17 downto 0)
          );
 end memory;
 
@@ -35,7 +35,7 @@ begin
             if rst_reg='1' then
                 register1w <= (others => '0');
             elsif write_enable(0)='1' then
-                register1w <= data_inw(15 downto 7);
+                register1w <= data_inw(15 downto 8);
             end if;
         end if;
     end process;
@@ -59,7 +59,7 @@ begin
             if rst_reg='1' then
                 register3w <= (others => '0');
             elsif write_enable(0)='1' then
-                register3w <= data_inw(31 downto 31);
+                register3w <= data_inw(31 downto 24);
             end if;
         end if;
     end process;
@@ -107,7 +107,7 @@ begin
             if rst_reg='1' then
                 register3p <= (others => '0');
             elsif write_enable(0)='1' then
-                register3p <= data_inp(31 downto 28);
+                register3p <= data_inp(31 downto 24);
             end if;
         end if;
     end process;
