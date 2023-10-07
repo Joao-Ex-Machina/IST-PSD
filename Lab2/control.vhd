@@ -66,7 +66,7 @@ begin
         next_state <= curr_state;
         case curr_state is
             when s_initial =>
-                if (init = '1') then next_state <= s_cycle1; end if;
+                if (init = '1' and rst = '0') then next_state <= s_cycle1; end if;
             when s_cycle1 =>
                 next_state <= s_cycle2;
             when s_cycle2 =>

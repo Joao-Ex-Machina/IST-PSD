@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1696687925" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito_tb.dcp">
   <File Type="PA-TCL" Name="circuito_tb.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="circuito_tb_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="circuito_tb_reports.tcl"/>
   <File Type="RDS-RDS" Name="circuito_tb.vds"/>
   <File Type="RDS-UTIL" Name="circuito_tb_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="circuito_tb_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="circuito_tb.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="circuito_tb_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="circuito_tb_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/circuito.vhd">

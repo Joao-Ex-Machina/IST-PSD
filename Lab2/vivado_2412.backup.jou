@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Oct  7 15:17:51 2023
-# Process ID: 10596
+# Start of session at: Sat Oct  7 13:07:57 2023
+# Process ID: 2412
 # Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8100 C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab2\Lab2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10984 C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab2\Lab2.xpr
 # Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/vivado.log
 # Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2\vivado.jou
 # Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
@@ -14,6 +14,9 @@
 start_gui
 open_project {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.xpr}
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
 launch_simulation
 source circuito_tb.tcl
 relaunch_sim
@@ -21,7 +24,34 @@ relaunch_sim
 relaunch_sim
 relaunch_sim
 relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+close_sim
+launch_simulation
+source circuito_tb.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
 relaunch_sim
 relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
 relaunch_sim
 close_sim
