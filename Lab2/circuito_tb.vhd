@@ -57,19 +57,20 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      wait for 150 ns;	
 
-      wait for clk_period*10;
+      --wait for clk_period*10;
 
       -- insert stimulus here 
       -- note that input signals should never change at the positive edge of the clock
-        rst <= '1' after 20 ns,
-                '0' after 40 ns;
+        rst <= '1' after 30 ns,
+                '0' after 60 ns;
                 
-        init <= '1' after 40 ns;
+        init <= '1' after 60 ns,
+                '0' after 90 ns;
 
-        data_inw <= X"B0000000" after 40 ns;
-        data_inp <= X"A0000000" after 40 ns;
+        data_inw <= X"00000002" after 60 ns;
+        data_inp <= X"00000004" after 60 ns;
         
 
       wait;

@@ -18,7 +18,7 @@ architecture Behavioral of circuito is
         mul0_sel: out std_logic;
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
-        write_enable : out std_logic_vector(3 downto 0);
+        write_enable : out std_logic_vector(4 downto 0);
         finish : out std_logic
         );
     end component;
@@ -28,27 +28,28 @@ architecture Behavioral of circuito is
             data_inw : in std_logic_vector (31 downto 0);
             data_inp: in std_logic_vector (31 downto 0);
             clk, rst_reg: in std_logic;
-            write_enable:in std_logic_vector (3 downto 0);
+            write_enable: in std_logic_vector (4 downto 0);
             register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : out std_logic_vector (7 downto 0);
-            in_aux0, in_aux1, in_aux2: in std_logic_vector(17 downto 0);
-            register_aux0, register_aux1, register_aux2: out std_logic_vector(17 downto 0)
+            in_aux0, in_aux1, in_aux2, in_aux3: in std_logic_vector(17 downto 0);
+            register_aux0, register_aux1, register_aux2, register_aux3: out std_logic_vector(17 downto 0)
             );
     end component;
 
     component datapath
         port(
             register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : in std_logic_vector (7 downto 0);
-            in_aux0, in_aux1, in_aux2: out std_logic_vector(17 downto 0);
-            register_aux0, register_aux1, register_aux2: in std_logic_vector(17 downto 0);
+            in_aux0, in_aux1, in_aux2, in_aux3: out std_logic_vector(17 downto 0);
+            register_aux0, register_aux1, register_aux2, register_aux3: in std_logic_vector(17 downto 0);
             add0_sel,mul0_sel, mul1_sel: in std_logic;
-            data_out : out std_logic_vector(17 downto 0)
+            data_out : out std_logic_vector(17 downto 0):= (others => '0')
             );
     end component;
     
     signal register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : std_logic_vector (7 downto 0);
+    signal register_aux0, register_aux1, register_aux2, register_aux3 : std_logic_vector(17 downto 0);
     signal add0_sel,mul0_sel, mul1_sel: std_logic;
-    signal in_aux0, in_aux1, in_aux2: std_logic_vector(17 downto 0);
-    signal write_enable : std_logic_vector(3 downto 0);
+    signal in_aux0, in_aux1, in_aux2, in_aux3: std_logic_vector(17 downto 0);
+    signal write_enable : std_logic_vector(4 downto 0);
     
     begin
         inst_control: control port map(
@@ -57,8 +58,10 @@ architecture Behavioral of circuito is
             rst => rst,
             init => init,
             finish => finish,
+            add0_sel => add0_sel,
             mul0_sel => mul0_sel,
-            mul1_sel => mul1_sel
+            mul1_sel => mul1_sel,
+            write_enable => write_enable
         );
         
         inst_memory: memory port map(
@@ -74,10 +77,14 @@ architecture Behavioral of circuito is
             register1p => register1p,
             register2p => register2p,
             register3p => register3p,
-            
+            register_aux0 => register_aux0, 
+            register_aux1 => register_aux1, 
+            register_aux2 => register_aux2, 
+            register_aux3 => register_aux3,
             in_aux0 => in_aux0,
             in_aux1 => in_aux1,
             in_aux2 => in_aux2,
+            in_aux3 => in_aux3,
             
             write_enable => write_enable
 
@@ -97,9 +104,15 @@ architecture Behavioral of circuito is
             mul0_sel => mul0_sel,
             mul1_sel => mul1_sel,
             
-            register_aux0 => in_aux0,
-            register_aux1 => in_aux1,
-            register_aux2 => in_aux2,
+            in_aux0 => in_aux0,
+            in_aux1 => in_aux1,
+            in_aux2 => in_aux2,
+            in_aux3 => in_aux3,
+            
+            register_aux0 => register_aux0,
+            register_aux1 => register_aux1,
+            register_aux2 => register_aux2,
+            register_aux3 => register_aux3,
             add0_sel => add0_sel,
             data_out=>data_out
         );

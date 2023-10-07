@@ -7,10 +7,10 @@ entity memory is
         data_inw : in std_logic_vector (31 downto 0);
         data_inp: in std_logic_vector (31 downto 0);
         clk, rst_reg: in std_logic;
-        write_enable: in std_logic_vector (3 downto 0);
+        write_enable: in std_logic_vector (4 downto 0);
         register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : out std_logic_vector (7 downto 0);
-        in_aux0, in_aux1, in_aux2: in std_logic_vector(17 downto 0);
-        register_aux0, register_aux1, register_aux2: out std_logic_vector(17 downto 0)
+        in_aux0, in_aux1, in_aux2, in_aux3: in std_logic_vector(17 downto 0);
+        register_aux0, register_aux1, register_aux2, register_aux3: out std_logic_vector(17 downto 0)
          );
 end memory;
 
@@ -117,7 +117,7 @@ begin
     begin
         if clk'event and clk='1' then
             if rst_reg='1' then
-                register_aux0 <= (others => '0');
+                register_aux0 <= "000000000000000000";
             elsif write_enable(1)='1' then
                 register_aux0 <= in_aux0;
             end if;
@@ -129,7 +129,7 @@ begin
     begin
         if clk'event and clk='1' then
             if rst_reg='1' then
-                register_aux2 <= (others => '0');
+                register_aux1 <= "000000000000000000";
             elsif write_enable(2)='1' then
                 register_aux1 <= in_aux1;
             end if;
@@ -141,9 +141,21 @@ begin
     begin
         if clk'event and clk='1' then
             if rst_reg='1' then
-                register_aux2 <= (others => '0');
+                register_aux2 <= "000000000000000000";
             elsif write_enable(3)='1' then
                 register_aux2 <= in_aux2;
+            end if;
+        end if;
+    end process; 
+    
+    -- register R11 (Data out)
+    process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_reg='1' then
+                register_aux3 <= "000000000000000000";
+            elsif write_enable(4)='1' then
+                register_aux3 <= in_aux3;
             end if;
         end if;
     end process;

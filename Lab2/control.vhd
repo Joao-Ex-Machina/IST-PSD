@@ -37,7 +37,7 @@ entity control is
         mul0_sel: out std_logic;
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
-        write_enable : out std_logic_vector(3 downto 0);
+        write_enable : out std_logic_vector(4 downto 0);
         finish : out std_logic := '0' --for simulation
         );
 end control;
@@ -61,7 +61,7 @@ begin
     --STATE UPDATE PROCESS
     --isto � s� a base, pode se alterar tranquilo
     --faz sentido se o finish tiver a 0 ir para o cycle 1???
-    state_update: process (curr_state, init)
+    state_update: process (curr_state, init, rst)
     begin
         next_state <= curr_state;
         case curr_state is
@@ -74,7 +74,7 @@ begin
             when s_cycle3 => 
                 next_state <= s_done; 
             when s_done =>
-                next_state <= s_done;
+                if(rst = '1') then next_state <= s_initial; else next_state <= s_done; end if;
         end case;
     end process;
     
@@ -85,22 +85,25 @@ begin
         case curr_state is
             when s_initial =>
                 finish <='0';
-                write_enable <= "1000";
+                mul0_sel <= '0';
+                mul1_sel <= '0';
+                add0_sel <= '0';
+                write_enable <= "00001";
             when s_cycle1 =>
                 mul0_sel <='0';
                 mul1_sel <= '0';
-                write_enable <= "0111";
+                write_enable <= "01110";
             when s_cycle2 =>
                 mul0_sel <='1';
                 mul1_sel <= '1';
                 add0_sel <= '0';
-                write_enable<= "0111";
+                write_enable<= "01110";
             when s_cycle3 =>
                 add0_sel <= '1';
-                write_enable <= "0111";
+                write_enable <= "11110";
             when s_done =>
                 finish <= '1';
-                write_enable <= "0000";
+                write_enable <= "00000";
         end case;
     end process;
 end Behavioral;

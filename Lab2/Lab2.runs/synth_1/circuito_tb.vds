@@ -1,20 +1,20 @@
 #-----------------------------------------------------------
 # Vivado v2023.1 (64-bit)
-# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Oct  7 11:27:02 2023
-# Process ID: 109200
-# Current directory: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1
-# Command line: vivado -log circuito_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source circuito_tb.tcl
-# Log file: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1/circuito_tb.vds
-# Journal file: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1/vivado.jou
-# Running On: Azathoth, OS: Linux, CPU Frequency: 1197.306 MHz, CPU Physical cores: 4, Host memory: 16728 MB
+# Start of session at: Sat Oct  7 15:12:08 2023
+# Process ID: 8676
+# Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1
+# Command line: vivado.exe -log circuito_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source circuito_tb.tcl
+# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1/circuito_tb.vds
+# Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
 #-----------------------------------------------------------
 source circuito_tb.tcl -notrace
-create_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1326.875 ; gain = 0.023 ; free physical = 4594 ; free virtual = 9650
-Command: read_checkpoint -auto_incremental -incremental /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.srcs/utils_1/imports/synth_1/circuito_tb.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.srcs/utils_1/imports/synth_1/circuito_tb.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 480.668 ; gain = 200.641
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.srcs/utils_1/imports/synth_1/circuito_tb.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.srcs/utils_1/imports/synth_1/circuito_tb.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top circuito_tb -part xc7a35tcpg236-1
 Starting synth_design
@@ -23,86 +23,81 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 109950
+INFO: [Synth 8-7075] Helper process launched with PID 11912
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1995.746 ; gain = 380.738 ; free physical = 3641 ; free virtual = 8659
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1295.812 ; gain = 411.566
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'circuito_tb' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:11]
-INFO: [Synth 8-3491] module 'circuito' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:4' bound to instance 'uut' of component 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'circuito' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:14]
-INFO: [Synth 8-3491] module 'control' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:34' bound to instance 'inst_control' of component 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'control' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:45]
-INFO: [Synth 8-3491] module 'memory' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/memory.vhd:5' bound to instance 'inst_memory' of component 'memory' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:64]
-INFO: [Synth 8-638] synthesizing module 'memory' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/memory.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'memory' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/memory.vhd:17]
-INFO: [Synth 8-3491] module 'datapath' declared at '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/datapath.vhd:13' bound to instance 'inst_datapath' of component 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'datapath' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/datapath.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/datapath.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:14]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:60]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:62]
-WARNING: [Synth 8-312] ignoring unsynthesizable construct: all but final waveform element [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:66]
-INFO: [Synth 8-256] done synthesizing module 'circuito_tb' (0#1) [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd:11]
-WARNING: [Synth 8-3848] Net in_aux0 in module/entity circuito does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:50]
-WARNING: [Synth 8-3848] Net in_aux1 in module/entity circuito does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:50]
-WARNING: [Synth 8-3848] Net in_aux2 in module/entity circuito does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:50]
-WARNING: [Synth 8-3848] Net add0_sel in module/entity circuito does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:49]
-WARNING: [Synth 8-3848] Net write_enable in module/entity circuito does not have driver. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito.vhd:51]
+INFO: [Synth 8-638] synthesizing module 'circuito_tb' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:11]
+INFO: [Synth 8-3491] module 'circuito' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:4' bound to instance 'uut' of component 'circuito' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'circuito' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:14]
+INFO: [Synth 8-3491] module 'control' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:34' bound to instance 'inst_control' of component 'control' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:45]
+INFO: [Synth 8-3491] module 'memory' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/memory.vhd:5' bound to instance 'inst_memory' of component 'memory' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'memory' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/memory.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'memory' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/memory.vhd:17]
+INFO: [Synth 8-3491] module 'datapath' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/datapath.vhd:13' bound to instance 'inst_datapath' of component 'datapath' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'datapath' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/datapath.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/datapath.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito.vhd:14]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:60]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: all but final waveform element [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:66]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: all but final waveform element [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'circuito_tb' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/circuito_tb.vhd:11]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2061.715 ; gain = 446.707 ; free physical = 3578 ; free virtual = 8605
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1389.910 ; gain = 505.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.559 ; gain = 461.551 ; free physical = 3566 ; free virtual = 8592
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1389.910 ; gain = 505.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.559 ; gain = 461.551 ; free physical = 3566 ; free virtual = 8592
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1389.910 ; gain = 505.664
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2076.559 ; gain = 0.000 ; free physical = 3566 ; free virtual = 8592
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1389.910 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:7]
+Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:7]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:8]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:8]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:8]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:9]
-CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk]'. [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk]'. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc:9]
 Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-Finished Parsing XDC File [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Basys3_Master.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2221.309 ; gain = 0.000 ; free physical = 3506 ; free virtual = 8506
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.703 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2221.309 ; gain = 0.000 ; free physical = 3505 ; free virtual = 8505
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1417.703 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3521 ; free virtual = 8527
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3521 ; free virtual = 8527
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3521 ; free virtual = 8527
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'control'
 ---------------------------------------------------------------------------------------------------
@@ -115,11 +110,11 @@ INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module '
                   s_done |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'control'
-WARNING: [Synth 8-327] inferring latch for variable 'mul0_sel_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:90]
-WARNING: [Synth 8-327] inferring latch for variable 'add0_sel_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:96]
-WARNING: [Synth 8-327] inferring latch for variable 'finish_reg' [/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/control.vhd:87]
+WARNING: [Synth 8-327] inferring latch for variable 'mul0_sel_reg' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:88]
+WARNING: [Synth 8-327] inferring latch for variable 'add0_sel_reg' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:90]
+WARNING: [Synth 8-327] inferring latch for variable 'finish_reg' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/control.vhd:87]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3519 ; free virtual = 8530
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -128,13 +123,13 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 2     
+	               18 Bit    Registers := 4     
 	                8 Bit    Registers := 8     
 +---Muxes : 
 	   2 Input   18 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 4     
-	   5 Input    5 Bit        Muxes := 1     
-	   5 Input    4 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -161,25 +156,25 @@ WARNING: [Synth 8-3332] Sequential element (uut/inst_control/mul0_sel_reg) is un
 WARNING: [Synth 8-3332] Sequential element (uut/inst_control/add0_sel_reg) is unused and will be removed from module circuito_tb.
 WARNING: [Synth 8-3332] Sequential element (uut/inst_control/finish_reg) is unused and will be removed from module circuito_tb.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3516 ; free virtual = 8524
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3547 ; free virtual = 8539
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3547 ; free virtual = 8539
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3547 ; free virtual = 8539
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -197,37 +192,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3806 ; free virtual = 8796
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -245,27 +240,25 @@ Report Cell Usage:
 +-+-----+------+
 +-+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3805 ; free virtual = 8795
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 2221.309 ; gain = 461.551 ; free physical = 3804 ; free virtual = 8794
-Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2221.309 ; gain = 606.301 ; free physical = 3804 ; free virtual = 8794
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1417.703 ; gain = 505.664
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1417.703 ; gain = 533.457
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2221.309 ; gain = 0.000 ; free physical = 3804 ; free virtual = 8794
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.703 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2221.309 ; gain = 0.000 ; free physical = 4088 ; free virtual = 9078
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.703 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: 83a02842
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 23 Warnings, 3 Critical Warnings and 0 Errors encountered.
+34 Infos, 18 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:32 ; elapsed = 00:01:26 . Memory (MB): peak = 2221.309 ; gain = 894.434 ; free physical = 4088 ; free virtual = 9078
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1859.854; main = 1535.127; forked = 399.005
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3146.984; main = 2189.297; forked = 957.688
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1417.703 ; gain = 913.164
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint '/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1/circuito_tb.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab2/Lab2.runs/synth_1/circuito_tb.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file circuito_tb_utilization_synth.rpt -pb circuito_tb_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct  7 11:29:06 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Oct  7 15:12:57 2023...
