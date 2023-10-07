@@ -35,7 +35,7 @@ ARCHITECTURE behavior OF circuito_tb IS
    signal finish : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 30 ns;
  
 BEGIN
  
