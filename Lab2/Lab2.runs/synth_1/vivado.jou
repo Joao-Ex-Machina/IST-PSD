@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Oct  6 21:00:48 2023
-# Process ID: 226358
+# Start of session at: Sat Oct  7 10:40:06 2023
+# Process ID: 66454
 # Current directory: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1
 # Command line: vivado -log circuito_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source circuito_tb.tcl
 # Log file: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1/circuito_tb.vds
 # Journal file: /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.runs/synth_1/vivado.jou
-# Running On: Azathoth, OS: Linux, CPU Frequency: 1197.254 MHz, CPU Physical cores: 4, Host memory: 16728 MB
+# Running On: Azathoth, OS: Linux, CPU Frequency: 1197.814 MHz, CPU Physical cores: 4, Host memory: 16728 MB
 #-----------------------------------------------------------
 source circuito_tb.tcl -notrace

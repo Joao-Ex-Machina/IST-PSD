@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../circuito.vhd" \
+"../../../../control.vhd" \
+"../../../../datapath.vhd" \
+"../../../../memory.vhd" \
+"../../../../circuito_tb.vhd" \
+
+# Do not sort compile order
+nosort

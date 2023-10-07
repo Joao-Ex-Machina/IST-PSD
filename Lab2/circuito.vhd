@@ -44,13 +44,11 @@ architecture Behavioral of circuito is
             data_out : out std_logic_vector(17 downto 0)
             );
     end component;
-    signal data_inw_aux : std_logic_vector (31 downto 0);
-    signal data_inp_aux: std_logic_vector (31 downto 0);
+    
     signal register0w, register1w, register2w, register3w, register0p, register1p, register2p, register3p : std_logic_vector (7 downto 0);
     signal add0_sel,mul0_sel, mul1_sel: std_logic;
     signal in_aux0, in_aux1, in_aux2: std_logic_vector(17 downto 0);
     signal write_enable : std_logic_vector(3 downto 0);
-    signal finish_aux : std_logic;
     
     begin
         inst_control: control port map(
@@ -58,7 +56,7 @@ architecture Behavioral of circuito is
             clk => clk,
             rst => rst,
             init => init,
-            finish => finish_aux,
+            finish => finish,
             mul0_sel => mul0_sel,
             mul1_sel => mul1_sel
         );

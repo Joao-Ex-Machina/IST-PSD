@@ -1,0 +1,13 @@
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-- --------------------------------------------------------------------------------
+-- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+-- Date        : Fri Oct  6 23:26:37 2023
+-- Host        : Azathoth running 64-bit Arch Linux
+-- Command     : write_vhdl -mode funcsim -nolib -force -file
+--               /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.sim/sim_1/synth/func/xsim/circuito_tb_func_synth.vhd
+-- Design      : circuito_tb
+-- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
+--               synthesized. This netlist cannot be used for SDF annotated simulation.
+-- Device      : xc7a35tcpg236-1
+-- --------------------------------------------------------------------------------

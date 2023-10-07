@@ -31,7 +31,7 @@ ARCHITECTURE behavior OF circuito_tb IS
     signal data_inp: std_logic_vector (31 downto 0):=(others =>'0');
     
  	--Outputs
-   signal data_out : std_logic_vector (17 downto 0);
+   signal data_out : std_logic_vector (17 downto 0):=(others =>'0');
    signal finish : std_logic;
 
    -- Clock period definitions
@@ -65,9 +65,12 @@ BEGIN
       -- note that input signals should never change at the positive edge of the clock
         rst <= '1' after 20 ns,
                 '0' after 40 ns;
+                
         init <= '1' after 40 ns;
+
         data_inw <= X"B0000000" after 40 ns;
         data_inp <= X"A0000000" after 40 ns;
+        
 
       wait;
    end process;

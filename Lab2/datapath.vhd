@@ -16,7 +16,7 @@ entity datapath is
         in_aux0, in_aux1, in_aux2: out std_logic_vector(17 downto 0);
         register_aux0, register_aux1, register_aux2: in std_logic_vector(17 downto 0);
         add0_sel,mul0_sel, mul1_sel: in std_logic;
-        data_out : out std_logic_vector(17 downto 0)
+        data_out : out std_logic_vector(17 downto 0):= (others => '0') -- this signal initialization is only considered for simulation
          );
          
 end datapath;

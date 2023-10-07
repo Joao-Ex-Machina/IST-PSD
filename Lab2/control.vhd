@@ -38,14 +38,13 @@ entity control is
         mul1_sel: out std_logic;
         add0_sel: out std_logic;
         write_enable : out std_logic_vector(3 downto 0);
-        finish : out std_logic
+        finish : out std_logic := '0' --for simulation
         );
 end control;
 
 architecture Behavioral of control is
     type fsm_states is ( s_initial, s_cycle1, s_cycle2, s_cycle3, s_done );
     signal curr_state, next_state : fsm_states;
-    signal done : std_logic;
 begin
 
     state_reg: process(clk, rst)
@@ -85,12 +84,12 @@ begin
     begin
         case curr_state is
             when s_initial =>
-                done <='0';
+                finish <='0';
                 write_enable <= "1000";
             when s_cycle1 =>
                 mul0_sel <='0';
                 mul1_sel <= '0';
-                write_enable <= "0000";
+                write_enable <= "0111";
             when s_cycle2 =>
                 mul0_sel <='1';
                 mul1_sel <= '1';
@@ -100,7 +99,7 @@ begin
                 add0_sel <= '1';
                 write_enable <= "0111";
             when s_done =>
-                done <= '1';
+                finish <= '1';
                 write_enable <= "0000";
         end case;
     end process;
