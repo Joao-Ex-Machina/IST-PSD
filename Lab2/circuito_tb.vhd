@@ -35,7 +35,7 @@ ARCHITECTURE behavior OF circuito_tb IS
    signal finish : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 30 ns;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -60,7 +60,7 @@ BEGIN
       wait for 100 ns;	
 
       --wait for clk_period*10;
-      wait for 50 ns;
+      wait for 100 ns;
       -- insert stimulus here 
       -- note that input signals should never change at the positive edge of the clock
         rst <= '1' after 30 ns,

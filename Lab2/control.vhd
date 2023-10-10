@@ -90,18 +90,27 @@ begin
                 add0_sel <= '0';
                 write_enable <= "00001";
             when s_cycle1 =>
+                finish <='0';
                 mul0_sel <='0';
                 mul1_sel <= '0';
+                add0_sel <= '0';
                 write_enable <= "01110";
             when s_cycle2 =>
+                finish <= '0';
                 mul0_sel <='1';
                 mul1_sel <= '1';
                 add0_sel <= '0';
                 write_enable<= "01110";
             when s_cycle3 =>
+                finish<='0';
+                mul0_sel<='0';
+                mul1_sel<='0';
                 add0_sel <= '1';
                 write_enable <= "11110";
             when s_done =>
+                mul1_sel <='0';
+               mul0_sel <='0';
+               add0_sel <='1';
                 finish <= '1';
                 write_enable <= "00000";
         end case;
