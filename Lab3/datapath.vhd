@@ -1,11 +1,11 @@
---------------------------------------------------------------------------
---  datapath.vhd               |                                        --
---                             |                                        --
--- João Barreiros C. Rodrigues |                                        --
--- Francisco Simplício         |                                        --
---                             |                                        --
--- 04 October 2023             |                                        --
---------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--  datapath.vhd               | It paths the data and it datas the path            --
+--                             |                                                    --
+-- João Barreiros C. Rodrigues |                                                    --
+-- Francisco Simplício         |                                                    --
+--                             |                                                    --
+-- 18 October 2023             |                                                    --
+--------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -14,22 +14,30 @@ entity datapath is
     port (
             pline: in std_logic_vector (31 downto 0);
             wline0: in std_logic_vector (15 downto 0);
-            wline0: in std_logic_vector (15 downto 0)
-            
+            wline0: in std_logic_vector (15 downto 0);
+            auxreg0_in: out std_logic_vector(31 downto 0);
+            auxreg1_in: out std_logic_vector(4 downto 0);
+            auxreg2_in: out std_logic_vector(4 downto 0);
+            auxreg0_out: in std_logic_vector(31 downto 0);
+            auxreg1_out: in std_logic_vector(4 downto 0);
+            auxreg2_out: in std_logic_vector(4 downto 0)
+
+
         );
          
 end datapath;
 
 architecture Behavioral of datapath is
     muxedp: std_logic_vector(7 downto 0);
-    multiplication0: signed (3 downto 0);
-    multiplication1: signed (3 downto 0);
-    multiplication2: signed (3 downto 0);
-    multiplication3: signed (3 downto 0);
-    multiplication4: signed (3 downto 0);
-    multiplication5: signed (3 downto 0);
-    multiplication6: signed (3 downto 0);
-    multiplication7: signed (3 downto 0);
+    multiplication00: std_logic_vector (3 downto 0);
+    multiplication01: std_logic_vector (3 downto 0);
+    multiplication02: std_logic_vector (3 downto 0);
+    multiplication03: std_logic_vector (3 downto 0);
+    multiplication04: std_logic_vector (3 downto 0);
+    multiplication05: std_logic_vector (3 downto 0);
+    multiplication06: std_logic_vector (3 downto 0);
+    multiplication07: std_logic_vector (3 downto 0);
+    multiplication0 : std_logic_vector (31 downto 0);
     add01: signed (4 downto 0);
     add23: signed (4 downto 0);
     add45: signed (4 downto 0);
@@ -46,32 +54,41 @@ begin
                     pline(15 downto 8) when "01"
                     pline(23 downto 16) when "10"
                     pline(32 downto 24) when others;
--- multiply
-    multiplication0 <= signed(wline0(3 downto 0)) when muxedp(0)=1 else "0000";
-    multiplication1 <= signed(wline0(7 downto 4)) when muxedp(0)=1 else "0000";
-    multiplication2 <= signed(wline0(11 downto 8)) when muxedp(0)=1 else "0000";
-    multiplication3 <= signed(wline0(15 downto 12)) when muxedp(0)=1 else "0000";
-    multiplication4 <= signed(wline1(3 downto 0)) when muxedp(0)=1 else "0000";
-    multiplication5 <= signed(wline1(7 downto 4)) when muxedp(0)=1 else "0000";
-    multiplication6 <= signed(wline1(11 downto 8)) when muxedp(0)=1 else "0000";
-    multiplication7 <= signed(wline1(15 downto 12)) when muxedp(0)=1 else "0000";
+-- "multiply"
+-- It really does not matter how we do it, Vivado knows best
+-- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
+    multiplication00 <= wline0(3 downto 0) when muxedp(0)=1 else "0000";
+    multiplication01 <= wline0(7 downto 4) when muxedp(0)=1 else "0000";
+    multiplication02 <= wline0(11 downto 8) when muxedp(0)=1 else "0000";
+    multiplication03 <= wline0(15 downto 12) when muxedp(0)=1 else "0000";
+    multiplication04 <= wline1(3 downto 0) when muxedp(0)=1 else "0000";
+    multiplication05 <= wline1(7 downto 4) when muxedp(0)=1 else "0000";
+    multiplication06 <= wline1(11 downto 8) when muxedp(0)=1 else "0000";
+    multiplication07 <= wline1(15 downto 12) when muxedp(0)=1 else "0000";
+    multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
+-- one clock cycle has passed, store!
+    auxreg0_in <= multiplication0;
 -- add 1st round
-    add01 <= multiplication0 + multiplication1;
-    add23 <= multiplication2 + multiplication3;
-    add45 <= multiplication4 + multiplication5;
-    add67 <= multiplication6 + multiplication7;
+    add01 <= signed(auxreg0_out(3 downto 0)) + signed(auxreg0_out(7 downto 4));
+    add23 <= signed(auxreg0_out(11 downto 8)) + signed(auxreg0_out(15 downto 12));
+    add45 <= signed(auxreg0_out(19 downto 16)) + signed(auxreg0_out(23 downto 20));
+    add67 <= signed(auxreg0_out(27 downto 24)) + signed(auxreg0_out(31 downto 28));
 -- add 2nd round
-    add03 <= multiplication0 + multiplication1;
-    add47 <= multiplication0 + multiplication1;
+    add03 <= add01 + add23;
+    add47 <= add45 + add67;
+-- one clock cycle has passed, store!
+    auxreg1_in <= std_logic_vector(add03);
+    auxreg2_in <= std_logic_vector(add47);
+
 -- add 3rd round
-    add07 <= add03 + add47;
+    add07 <= signed(auxreg1_out) + signed(auxreg2_out);
 
 -- add this round with the accumulated
-     neuron_part <= add07+accum_out;
-     accum_in <= neuron_part; --and feedback it into the accumulator
+     neuron_part <= add07 + signed(accum_out);
+     accum_in <= std_logic_vector(neuron_part); --and feedback it into the accumulator
 
--- connect round adder to memory input (FSM will determine if stored and where)
-    neuron1_in <= neuron_part;
+-- ReLu the total rounds adder output and connect it to memory input (FSM will determine if stored and where)
+     neuron1_in <= std_logic_vector(neuron_part) when neuron_part > 0 else (others => '0');
 
 end Behavioral;
