@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Mon Oct  9 18:29:27 2023
+| Date         : Wed Oct 11 17:50:36 2023
 | Host         : Azathoth running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file circuito_control_sets_placed.rpt
 | Design       : circuito
@@ -63,7 +63,7 @@ Table of Contents
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             141 |           48 |
+| Yes          | Yes                   | No                     |             141 |           49 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,10 +73,10 @@ Table of Contents
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
 |  Clock Signal  |                 Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | inst_control/FSM_onehot_curr_state[4]_i_1_n_0 | rst_IBUF         |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | inst_control/FSM_onehot_curr_state[4]_i_1_n_0 | rst_IBUF         |                4 |              5 |         1.25 |
 |  clk_IBUF_BUFG | inst_control/Q[2]                             | rst_IBUF         |                5 |             18 |         3.60 |
-|  clk_IBUF_BUFG | inst_control/write_enable[0]                  | rst_IBUF         |               18 |             54 |         3.00 |
-|  clk_IBUF_BUFG | inst_control/Q[0]                             | rst_IBUF         |               22 |             64 |         2.91 |
+|  clk_IBUF_BUFG | inst_control/write_enable[0]                  | rst_IBUF         |               17 |             54 |         3.18 |
+|  clk_IBUF_BUFG | inst_control/Q[0]                             | rst_IBUF         |               23 |             64 |         2.78 |
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
 
 

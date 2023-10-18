@@ -35,7 +35,7 @@ ARCHITECTURE behavior OF circuito_tb IS
    signal finish : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 8.1 ns;
  
 BEGIN
  
@@ -66,11 +66,11 @@ BEGIN
         rst <= '1' after 30 ns,
                 '0' after 60 ns,
                 '1' after 180 ns,
-                '0' after 210 ns,
+                '0' after 230 ns,
                 '1' after 330 ns,
                 '0' after 360 ns,
                 '1' after 480 ns,
-                '0' after 510 ns;
+                '0' after 520 ns;
                 
         init <= '1' after 60 ns;
 

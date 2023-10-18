@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Mon Oct  9 18:42:51 2023
+// Date        : Wed Oct 11 17:57:43 2023
 // Host        : Azathoth running 64-bit Arch Linux
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               /home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/Lab2.sim/sim_1/impl/timing/xsim/circuito_tb_time_impl.v
@@ -2206,6 +2206,7 @@ module memory
         .I3(Q[3]),
         .I4(register_aux2_reg[5]),
         .O(\register_aux0_reg[7]_1 [1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "159" *) 
   LUT5 #(
     .INIT(32'h5556AAA6)) 
     add0__0_carry__0_i_4
@@ -2242,6 +2243,7 @@ module memory
         .I3(Q[3]),
         .I4(register_aux2_reg[9]),
         .O(\register_aux0_reg[11]_1 [1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "158" *) 
   LUT5 #(
     .INIT(32'h5556AAA6)) 
     add0__0_carry__1_i_4
@@ -2278,6 +2280,7 @@ module memory
         .I3(Q[3]),
         .I4(register_aux2_reg[13]),
         .O(\register_aux0_reg[15]_1 [1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "159" *) 
   LUT5 #(
     .INIT(32'h5556AAA6)) 
     add0__0_carry__2_i_4

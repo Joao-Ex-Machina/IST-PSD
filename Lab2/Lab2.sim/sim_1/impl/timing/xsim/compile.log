@@ -4,3 +4,5 @@ INFO: [VRFC 10-311] analyzing module control
 INFO: [VRFC 10-311] analyzing module datapath
 INFO: [VRFC 10-311] analyzing module memory
 INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jbcr/Desktop/IST/MEng/PSD/Projects/Lab2/circuito_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'circuito_tb'
