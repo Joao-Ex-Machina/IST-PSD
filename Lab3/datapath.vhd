@@ -12,59 +12,62 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity datapath is
     port (
+            muxpsel: in std_logic_vector(1 downto 0);
             pline: in std_logic_vector (31 downto 0);
             wline0: in std_logic_vector (15 downto 0);
-            wline0: in std_logic_vector (15 downto 0);
+            wline1: in std_logic_vector (15 downto 0);
             auxreg0_in: out std_logic_vector(31 downto 0);
             auxreg1_in: out std_logic_vector(4 downto 0);
             auxreg2_in: out std_logic_vector(4 downto 0);
             auxreg0_out: in std_logic_vector(31 downto 0);
             auxreg1_out: in std_logic_vector(4 downto 0);
-            auxreg2_out: in std_logic_vector(4 downto 0)
-
-
+            auxreg2_out: in std_logic_vector(4 downto 0);
+            accum_out: in std_logic_vector(6 downto 0);
+            accum_in :out std_logic_vector(6 downto 0);
+            neuron1_in: out std_logic_vector(6 downto 0)
         );
          
 end datapath;
 
 architecture Behavioral of datapath is
-    muxedp: std_logic_vector(7 downto 0);
-    multiplication00: std_logic_vector (3 downto 0);
-    multiplication01: std_logic_vector (3 downto 0);
-    multiplication02: std_logic_vector (3 downto 0);
-    multiplication03: std_logic_vector (3 downto 0);
-    multiplication04: std_logic_vector (3 downto 0);
-    multiplication05: std_logic_vector (3 downto 0);
-    multiplication06: std_logic_vector (3 downto 0);
-    multiplication07: std_logic_vector (3 downto 0);
-    multiplication0 : std_logic_vector (31 downto 0);
-    add01: signed (4 downto 0);
-    add23: signed (4 downto 0);
-    add45: signed (4 downto 0);
-    add67: signed (4 downto 0);
-    add03: signed (4 downto 0);
-    add47: signed (4 downto 0);
-    add07: signed (5 downto 0);
 
+    signal muxedp: std_logic_vector(7 downto 0);
+    signal multiplication00: std_logic_vector (3 downto 0);
+    signal  multiplication01: std_logic_vector (3 downto 0);
+    signal multiplication02: std_logic_vector (3 downto 0);
+    signal multiplication03: std_logic_vector (3 downto 0);
+    signal multiplication04: std_logic_vector (3 downto 0);
+    signal multiplication05: std_logic_vector (3 downto 0);
+    signal multiplication06: std_logic_vector (3 downto 0);
+    signal multiplication07: std_logic_vector (3 downto 0);
+    signal multiplication0 : std_logic_vector (31 downto 0);
+    signal add01: signed (4 downto 0);
+    signal add23: signed (4 downto 0);
+    signal add45: signed (4 downto 0);
+    signal add67: signed (4 downto 0);
+    signal add03: signed (4 downto 0);
+    signal add47: signed (4 downto 0);
+    signal add07: signed (5 downto 0);
+    signal neuron_part: signed (6 downto 0);
 begin
 
 -- mux
     with muxpsel select 
-        muxedp <=   pline(7 downto 0) when "00"
-                    pline(15 downto 8) when "01"
-                    pline(23 downto 16) when "10"
+        muxedp <=   pline(7 downto 0) when "00",
+                    pline(15 downto 8) when "01",
+                    pline(23 downto 16) when "10",
                     pline(32 downto 24) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
-    multiplication00 <= wline0(3 downto 0) when muxedp(0)=1 else "0000";
-    multiplication01 <= wline0(7 downto 4) when muxedp(0)=1 else "0000";
-    multiplication02 <= wline0(11 downto 8) when muxedp(0)=1 else "0000";
-    multiplication03 <= wline0(15 downto 12) when muxedp(0)=1 else "0000";
-    multiplication04 <= wline1(3 downto 0) when muxedp(0)=1 else "0000";
-    multiplication05 <= wline1(7 downto 4) when muxedp(0)=1 else "0000";
-    multiplication06 <= wline1(11 downto 8) when muxedp(0)=1 else "0000";
-    multiplication07 <= wline1(15 downto 12) when muxedp(0)=1 else "0000";
+    multiplication00 <= wline0(3 downto 0) when muxedp(0)='1' else "0000";
+    multiplication01 <= wline0(7 downto 4) when muxedp(0)='1' else "0000";
+    multiplication02 <= wline0(11 downto 8) when muxedp(0)='1' else "0000";
+    multiplication03 <= wline0(15 downto 12) when muxedp(0)='1' else "0000";
+    multiplication04 <= wline1(3 downto 0) when muxedp(0)='1' else "0000";
+    multiplication05 <= wline1(7 downto 4) when muxedp(0)='1' else "0000";
+    multiplication06 <= wline1(11 downto 8) when muxedp(0)='1' else "0000";
+    multiplication07 <= wline1(15 downto 12) when muxedp(0)='1' else "0000";
     multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
 -- one clock cycle has passed, store!
