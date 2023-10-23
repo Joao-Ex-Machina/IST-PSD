@@ -26,7 +26,7 @@ entity datapath is
             auxreg3_in: out std_logic_vector(4 downto 0);
             auxreg4_in: out std_logic_vector(4 downto 0);
             --REGISTER OUTPUT PORTS
-            auxreg0_out: in std_logic_vector(31 downto 0);
+            multiplication0: in std_logic_vector(31 downto 0);
             auxreg1_out: in std_logic_vector(4 downto 0);
             auxreg2_out: in std_logic_vector(4 downto 0);
             auxreg3_out: in std_logic_vector(4 downto 0);
@@ -98,14 +98,11 @@ begin
     multiplication07 <= wline1(15 downto 12) when muxedp(7)='1' else "0000";
     multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
--- one clock cycle has passed, store!
-    auxreg0_in <= multiplication0;
-
 -- add 1st round
-    add01 <= signed(auxreg0_out(3 downto 0)) + signed(auxreg0_out(7 downto 4));
-    add23 <= signed(auxreg0_out(11 downto 8)) + signed(auxreg0_out(15 downto 12));
-    add45 <= signed(auxreg0_out(19 downto 16)) + signed(auxreg0_out(23 downto 20));
-    add67 <= signed(auxreg0_out(27 downto 24)) + signed(auxreg0_out(31 downto 28));
+    add01 <= signed(multiplication0(3 downto 0)) + signed(multiplication0(7 downto 4));
+    add23 <= signed(multiplication0(11 downto 8)) + signed(multiplication0(15 downto 12));
+    add45 <= signed(multiplication0(19 downto 16)) + signed(multiplication0(23 downto 20));
+    add67 <= signed(multiplication0(27 downto 24)) + signed(multiplication0(31 downto 28));
 
 -- add 2nd round
     add03 <= add01 + add23;
@@ -116,7 +113,7 @@ begin
     auxreg2_in <= std_logic_vector(add47);
 
 -- add 3rd round
-    add07 <= signed(auxreg1_out) + signed(auxreg2_out);
+    add07 <= add03 + add47;
 
 -- add this round with the accumulated
      neuron_part <= add07 + signed(accum_out);
@@ -148,12 +145,12 @@ begin
     multiplication11 <= signed(neuron1_out2) * signed(muxedw21);
 
 -- one clock cycle has passed, store!
-    auxreg3_in <= std_logic_vector(multiplication10);
-    auxreg4_in <= std_logic_vector(multiplication11);
+--    auxreg3_in <= std_logic_vector(multiplication10);
+--    auxreg4_in <= std_logic_vector(multiplication11);
 
 -- sum the neuron-weight products together
-    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
-
+--    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
+     add_2layer <= mulplication10 +multiplication11   
 -- add with the accumulated
     neuron_part2 <= add_2layer + signed (accum2_out);
     accum2_in <= std_logic_vector(neuron_part2);
