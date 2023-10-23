@@ -43,7 +43,7 @@ entity datapath is
             neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
             neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
             
-            level_counter: in std_logic_vector(3 downto 0); -- a signal that comes from the FSM, it must count which level from the layer 2 was calculated
+            level_counter: in std_logic_vector(3 downto 0) -- a signal that comes from the FSM, it must count which level from the layer 2 was calculated
         );
          
 end datapath;

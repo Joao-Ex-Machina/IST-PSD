@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Fri Sep 22 15:09:40 2023
+| Date         : Fri Oct 20 17:08:22 2023
 | Host         : DESKTOP-NOHGJAN running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file fpga_basicIO_control_sets_placed.rpt
 | Design       : fpga_basicIO
@@ -77,8 +77,8 @@ Table of Contents
 |  clk_IBUF_BUFG | inst_circuito/inst_control/FSM_sequential_curr_state_reg[1]_0[0] | btnUreg                                       |                5 |             12 |         2.40 |
 |  clk_IBUF_BUFG | inst_circuito/inst_control/E[0]                                  | btnUreg                                       |               10 |             16 |         1.60 |
 |  clk_IBUF_BUFG |                                                                  | Inst_btn_debounce/sig_cntrs_ary[0][0]_i_1_n_0 |                5 |             20 |         4.00 |
-|  clk_IBUF_BUFG |                                                                  | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                5 |             20 |         4.00 |
 |  clk_IBUF_BUFG |                                                                  | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG |                                                                  | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                5 |             20 |         4.00 |
 |  clk_IBUF_BUFG |                                                                  |                                               |               23 |             43 |         1.87 |
 +----------------+------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
 

@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/Francisco/OneDrive/rea de Trabalho/PSD/Lab1-V2/Lab1.xpr">
+<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab1/Lab1-FSImplementation/Lab1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="938f7b0626304348bbf27e5b9d85f2b1"/>
@@ -110,7 +110,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/L0_2023/debouncer.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/L0_2023/debouncer.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Downloads/L0_2023/debouncer.vhd"/>
           <Attr Name="ImportTime" Val="1694772425"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -118,7 +118,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/L0_2023/disp7.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/L0_2023/disp7.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Downloads/L0_2023/disp7.vhd"/>
           <Attr Name="ImportTime" Val="1694772425"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -126,7 +126,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/L0_2023/fpga_basicIO.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/L0_2023/fpga_basicIO.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Downloads/L0_2023/fpga_basicIO.vhd"/>
           <Attr Name="ImportTime" Val="1694772425"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -142,7 +142,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/L0_2023/Basys3_Master.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/L0_2023/Basys3_Master.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Downloads/L0_2023/Basys3_Master.xdc"/>
           <Attr Name="ImportTime" Val="1694772425"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
