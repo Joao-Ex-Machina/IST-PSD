@@ -332,12 +332,7 @@ process (clk)
         if clk'event and clk='1' then
              elsif w2Counter_enable='1' then
                 w2Counter_aux <= std_logic_vector(unsigned(w2Counter_aux)+1);
-<<<<<<< HEAD
             if rstW2_counter = '1' then 
-=======
-            end if;
-            if rstw2_counter = '1' then 
->>>>>>> 40107f691b4c49aec9e5bf387486fb4bc7f44aa2
                 w2Counter_aux <= (others =>'0');
             end if;
         end if;

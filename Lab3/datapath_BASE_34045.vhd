@@ -18,35 +18,19 @@ entity datapath is
             imgAddr: out std_logic_vector (11 downto 0);
             w1Addr: out std_logic_vector(12 downto 0);
             w2Addr: out std_logic_vector(6 downto 0);
-    
             img_enable: in std_logic;
-            imgCounter_enable: in std_logic;
-
-            MemCounter_en: in std_logic;
-            MemCounter_rst: in std_logic;
-            
-            
             w1_enable: in std_logic;
-            w1Counter_enable: in std_logic;
-
             w2_enable: in std_logic;
-            w2Counter_enable: in std_logic;
-
             rstImg_gen: in std_logic;
-            rstImg_counter:in std_logic;
-
             rstW1_gen: in std_logic;
-            rstW1_counter: in std_logic;        
-
             rstW2_gen: in std_logic;
             rstw2_counter: in std_logic;
-
         -- Counters for Control Unit
             imgCounter: out std_logic_vector (4 downto 0);
             w1Counter: out std_logic_vector(1 downto 0);
             w2Counter: out std_logic_vector(2 downto 0);
-            MemCounter: out std_logic_vector(1 downto 0);
-            -- Data lines from Memory Component
+            MCounter: out std_logic_vector(1 downto 0);
+        -- Data lines from Memory Component
             pline: in std_logic_vector (31 downto 0);
             wline0: in std_logic_vector (15 downto 0);
             wline1: in std_logic_vector (15 downto 0);
@@ -60,7 +44,6 @@ entity datapath is
             rst_lvl: in std_logic;
             rst_reg: in std_logic;
             write_enable: in std_logic_vector(2 downto 0);
-
             rst_m, m_enable : in std_logic;
             --REGISTER INPUT PORTS
     --      auxreg0_in: out std_logic_vector(31 downto 0);
@@ -135,7 +118,7 @@ architecture Behavioral of datapath is
     signal imgCounter_aux: std_logic_vector (4 downto 0);
     signal w1Counter_aux: std_logic_vector(1 downto 0);
     signal w2Counter_aux: std_logic_vector(2 downto 0);
-    signal MemCounter_aux: std_logic_vector(1 downto 0);
+    signal MCounter_aux: std_logic_vector(1 downto 0);
 
     
 begin
@@ -233,43 +216,50 @@ begin
 --|| ADDR Generator ||
 --||                ||
 --||----------------||
-
     imgAddr <= imgAddr_aux;
     w1Addr <= w1Addr_aux;
     w2Addr <= w2Addr_aux;
     imgCounter <= imgCounter_aux;
     w1Counter <= w1Counter_aux;
     w2Counter <= w2Counter_aux;
-    MemCounter <= MemCounter_aux;
-
--- img addr generator
+    MCounter <= MCounter_aux;
 process (clk)
     begin
         if clk'event and clk='1' then
             if rstImg_gen='1' then
                  imgAddr_aux<= starterAddr;
+                 imgCounter <= (others =>'0');
             elsif img_enable='1' then
                  imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
+                 imgCounter_aux <= std_logic_vector(unsigned(imgCounter_aux)+1);
             end if;
-
         end if;
     end process;
 
-
-
--- w1 addr generator
 process (clk)
     begin
         if clk'event and clk='1' then
             if rstW1_gen='1' then
                  w1Addr_aux<= (others => '0');
+            elsif img_enable='1' then
+                w1Counter <= (others =>'0');
             elsif w1_enable='1' then
                 w1Addr_aux <= std_logic_vector(unsigned(w1Addr_aux) +1);
+                w1Counter_aux <= std_logic_vector(unsigned(w1Counter_aux)+1);
+            end if;
+        end if;
+    end process;
+process(clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_m='1' then
+                 MCounter<= (others => '0');
+            elsif m_enable='1' then
+                MCounter_aux <= std_logic_vector(unsigned(MCounter_aux)+1);
             end if;
         end if;
     end process;
 
--- w2 generator
 process (clk)
     begin
         if clk'event and clk='1' then
@@ -277,67 +267,8 @@ process (clk)
                  w2Addr_aux<= (others => '0');
             elsif w2_enable='1' then
                 w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
-            end if;
-        end if;
-    end process;
-
---||----------------||
---||                ||
---||CONTROL COUNTERS||
---||                ||
---||----------------||
-
--- img counter
-process (clk)
-    begin
-        if clk'event and clk='1' then
-            if rstImg_counter='1' then
-                 imgAddr_aux<= (others => '0');
-            elsif imgCounter_enable='1' then
-                 imgCounter_aux <= std_logic_vector(unsigned(imgCounter_aux) +1);
-            end if;
-
-        end if;
-    end process;
-
--- w1 counter
-process (clk)
-    begin
-     if clk'event and clk='1' then
-           if rstW1_counter='1' then
-                w1Counter <= (others =>'0');
-            elsif w1Counter_enable ='1' then
-                w1Counter_aux <= std_logic_vector(unsigned(w1Counter_aux)+1);
-            end if;
-       end if;
-    end process;
-
-
--- counter memory
-process(clk)
-    begin
-        if clk'event and clk='1' then
-            if MemCounter_rst='1' then
-                 MemCounter_aux<= (others => '0');
-            elsif MemCounter_en='1' then
-                MemCounter_aux <= std_logic_vector(unsigned(MemCounter_aux)+1);
-            end if;
-        end if;
-    end process;
-
-
--- w2 counter             
-process (clk)
-    begin
-        if clk'event and clk='1' then
-             elsif w2Counter_enable='1' then
                 w2Counter_aux <= std_logic_vector(unsigned(w2Counter_aux)+1);
-<<<<<<< HEAD
-            if rstW2_counter = '1' then 
-=======
-            end if;
             if rstw2_counter = '1' then 
->>>>>>> 40107f691b4c49aec9e5bf387486fb4bc7f44aa2
                 w2Counter_aux <= (others =>'0');
             end if;
         end if;
@@ -395,7 +326,7 @@ process (clk)
         if clk'event and clk='1' then
             if rst_reg='1' then
                  accum_eval_out <= (others => '0');
-            elsif accum_eval_en ='1' then
+            elsif write_enable(0)='1' then
                 accum_eval_out <= accum_eval_in ;
                 accum_eval_lvl <= accum_eval_lvl_in;
             end if;

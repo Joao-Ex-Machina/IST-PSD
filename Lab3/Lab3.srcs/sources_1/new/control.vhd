@@ -38,16 +38,19 @@ entity control is
     img_number : in std_logic_vector(7 downto 0);
     
     --TO DATAPATH
-    address_enables : out std_logic_vector(2 downto 0); --[img,w1,w2]
-    address_resets : out std_logic_vector(2 downto 0); --[img,w1,w2]
     starter_address : out std_logic_vector(11 downto 0); --img memory
     
+    address_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    address_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    
+    counter_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    counter_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    
     muxpsel : out std_logic_vector(1 downto 0); --select which 8 bits are read
-    muxw2sel : out std_logic_vector(1 downto 0);
-    lvl_enable: out std_logic;
-    lvl_rst: out std_logic;
+    muxw2sel : out std_logic_vector(1 downto 0); --same
+    
     reg_rst: out std_logic; --global reset
-    write_enable: out std_logic_vector(2 downto 0); --[accum_layer1,accum_layer2,accum_level]
+    write_enable: out std_logic_vector(1 downto 0); --[accum_layer2,accum_layer1]
     --FROM DATAPATH
     cp : in std_logic_vector(4 downto 0);
     cw1 : in std_logic_vector(1 downto 0);
@@ -75,11 +78,7 @@ begin
         end if;
     end process;
     
-    --reg_enable : in std_logic_vector(7 downto 0); --[output, best_score, final_accum, w2_reg, accum_t0, accum0/1, wlines, plines]
-    --mux_sel : in std_logic_vector(1 downto 0)  --[2nd_stage_shifter, 1st_stage_shifter]
     
-    --TUDO MAL CARALHO REFAZER ESTA SHIT
-    --TODO: ACERTAR OS SINAIS REG_ENABLE E MUX_SEL
     comb_reg : process (curr_state, img_number, init)
     begin
         next_state <= curr_state; --base case
@@ -87,33 +86,15 @@ begin
         case curr_state is 
         when s_init =>
             if init='1' then 
-                next_state <= s_p;                 
+                next_state <= s_layer1;                 
             end if;
-        when s_p =>
-            if unsigned(cp)<16 then
-                next_state <= s_w1;
-            else
-                next_state <= s_w2;
-            end if;
-        when s_w1 =>
-            if unsigned(cw1) < 4 then
-                next_state <= s_w1;
-            else
-                next_state <= s_p;
-            end if;
-        when s_w2 =>
-        when s_mem =>
-            if unsigned(cmem) < 4 then
-                next_state <= s_mem;
-            else
-                next_state <= s_w2;
-            end if;            
-        when s_eval =>
-            next_state <= s_w2;
+            --RESETS EM TUDO, ENABLES A ZERO
+        when s_layer1 =>
+            
+        when s_layer2 =>
+        
         end case;
     end process;
-    --reg_enable : in std_logic_vector(7 downto 0); --[output/eval, final_accum, w2_reg, accum_t0, accum0/1, wlines, plines]
-    --mux_sel : in std_logic_vector(1 downto 0)  --[2nd_stage_shifter, 1st_stage_shifter]
     
 
 end Behavioral;
