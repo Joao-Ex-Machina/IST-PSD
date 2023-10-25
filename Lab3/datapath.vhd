@@ -35,6 +35,9 @@ entity datapath is
             muxw2sel0:in std_logic_vector(1 downto 0);
             muxw2sel1:in std_logic_vector(1 downto 0);
             lvl_enable: in std_logic;
+            rst_lvl: in std_logic;
+            rst_reg: in std_logic;
+            write_enable: in std_logic_vector(2 downto 0);
             --REGISTER INPUT PORTS
     --      auxreg0_in: out std_logic_vector(31 downto 0);
       --      auxreg1_in: out std_logic_vector(4 downto 0);
@@ -97,9 +100,15 @@ architecture Behavioral of datapath is
     signal accum2_out: std_logic_vector(26 downto 0);
     signal neuron_part2: signed(26 downto 0);
     signal accum_eval_in :std_logic_vector(26 downto 0);
+    signal accum_eval_out :std_logic_vector(26 downto 0);
     signal accum_eval_level_in: std_logic_vector(3 downto 0);
     signal accum_eval_en: std_logic;
-
+    
+    signal imgAddr_aux : std_logic_vector(11 downto 0);
+    signal w1Addr_aux : std_logic_vector(12 downto 0);
+    signal w2Addr_aux : std_logic_vector(6 downto 0);
+    signal accum_eval_lvl : std_logic_vector(3 downto 0); 
+    
 begin
 
 --||---------------||
@@ -195,14 +204,16 @@ begin
 --|| ADDR Generator ||
 --||                ||
 --||----------------||
-
+    imgAddr <= imgAddr_aux;
+    w1Addr <= w1Addr_aux;
+    w2Addr <= w2Addr_aux;
 process (clk)
     begin
         if clk'event and clk='1' then
             if rstImg_gen='1' then
-                 imgAddr<= starterAddr;
+                 imgAddr_aux<= starterAddr;
             elsif img_enable='1' then
-                 imgAddr <= std_logic_vector(unsigned(imgAddr) +1);
+                 imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
             end if;
         end if;
     end process;
@@ -211,9 +222,9 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rstW1_gen='1' then
-                 w1Addr<= (others => '0');
+                 w1Addr_aux<= (others => '0');
             elsif w1_enable='1' then
-                 w1Addr <= std_logic_vector(unsigned(w1Addr) +1);
+                 w1Addr_aux <= std_logic_vector(unsigned(w1Addr_aux) +1);
             end if;
         end if;
     end process;
@@ -222,9 +233,9 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rstW2_gen='1' then
-                 w2Addr<= (others => '0');
+                 w2Addr_aux<= (others => '0');
             elsif w2_enable='1' then
-                 w2Addr <= std_logic_vector(unsigned(w2Addr) +1);
+                 w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
             end if;
         end if;
     end process;
@@ -259,7 +270,7 @@ process (clk)
         if clk'event and clk='1' then
             if rst_reg='1' then
                 accum_out<= (others => '0');
-            elsif write_enable(0)='1' then
+            elsif write_enable(2)='1' then
                 accum_out<= accum_in;
             end if;
         end if;
@@ -270,7 +281,7 @@ process (clk)
         if clk'event and clk='1' then
             if rst_reg='1' then
                  accum2_out<= (others => '0');
-            elsif write_enable(0)='1' then
+            elsif write_enable(1)='1' then
                 accum2_out<=accum2_in ;
             end if;
         end if;
@@ -280,9 +291,10 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rst_reg='1' then
-                 accum_eval_out<= (others => '0');
+                 accum_eval_out <= (others => '0');
             elsif write_enable(0)='1' then
-                accum_eval_out<=accum_eval_in ;
+                accum_eval_out <= accum_eval_in ;
+                accum_eval_lvl <= accum_eval_lvl_in;
             end if;
         end if;
     end process;
