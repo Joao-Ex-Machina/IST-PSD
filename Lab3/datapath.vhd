@@ -226,7 +226,7 @@ process (clk)
         if clk'event and clk='1' then
             if rstImg_gen='1' then
                  imgAddr_aux<= starterAddr;
-                 imgCounter <= others(=>'0');
+                 imgCounter <= (others =>'0');
             elsif img_enable='1' then
                  imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
                  imgCounter <= std_logic_vector(unsigned(imgCounter)+1);
@@ -248,7 +248,6 @@ process (clk)
         end if;
     end process;
 
-process (clk)
     begin
         if clk'event and clk='1' then
             if rst_M='1' then
