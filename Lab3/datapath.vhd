@@ -12,25 +12,40 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity datapath is
     port (
-            muxpsel: in std_logic_vector(1 downto 0); --select which 8 pixel segment of the 32-bit line is to be selected
+        -- Addresses, reset and Enable signals for memory component
+            starterAddr: in std_logic_vector (11 downto 0);
+            imgAddr: out std_logic_vector (11 downto 0);
+            w1Addr: out std_logic_vector(12 downto 0);
+            w2Addr: out std_logic_vector(6 downto 0);
+            img_enable: in std_logic;
+            w1_enable: in std_logic;
+            w2_enable: in std_logic;
+            rstImg_gen: in std_logic;
+            rstW1_gen: in std_logic;
+            rstW2_gen: in std_logic;
+        -- Data lines from Memory Component
             pline: in std_logic_vector (31 downto 0);
             wline0: in std_logic_vector (15 downto 0);
             wline1: in std_logic_vector (15 downto 0);
             w2line0: in std_logic_vector (31 downto 0);
             w2line1: in std_logic_vector (31 downto 0);
-
+        -- Control signals
+            muxpsel: in std_logic_vector(1 downto 0); --select which 8 pixel segment of the 32-bit line is to be selected
+            muxw2sel0:in std_logic_vector(1 downto 0);
+            muxw2sel1:in std_logic_vector(1 downto 0);
+            lvl_enable: in std_logic;
             --REGISTER INPUT PORTS
-            auxreg0_in: out std_logic_vector(31 downto 0);
-            auxreg1_in: out std_logic_vector(4 downto 0);
-            auxreg2_in: out std_logic_vector(4 downto 0);
-            auxreg3_in: out std_logic_vector(4 downto 0);
-            auxreg4_in: out std_logic_vector(4 downto 0);
+    --      auxreg0_in: out std_logic_vector(31 downto 0);
+      --      auxreg1_in: out std_logic_vector(4 downto 0);
+        --    auxreg2_in: out std_logic_vector(4 downto 0);
+          --  auxreg3_in: out std_logic_vector(4 downto 0);
+         --   auxreg4_in: out std_logic_vector(4 downto 0);
             --REGISTER OUTPUT PORTS
-            multiplication0: in std_logic_vector(31 downto 0);
-            auxreg1_out: in std_logic_vector(4 downto 0);
-            auxreg2_out: in std_logic_vector(4 downto 0);
-            auxreg3_out: in std_logic_vector(4 downto 0);
-            auxreg4_out: in std_logic_vector(4 downto 0);
+                    --    auxreg1_out: in std_logic_vector(4 downto 0);
+         --   auxreg2_out: in std_logic_vector(4 downto 0);
+         --   auxreg3_out: in std_logic_vector(4 downto 0);
+         --   auxreg4_out: in std_logic_vector(4 downto 0);
+         
             -- ACCUMULATORS
             accum_out: in std_logic_vector(13 downto 0);
             accum_in :out std_logic_vector(13 downto 0);
@@ -41,15 +56,14 @@ entity datapath is
             --NEURON MEMORY PORTS
             neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
             neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
-            neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
+            neuron1_out2: in std_logic_vector(13 downto 0) -- dual channel memory output
             
-            level_counter: in std_logic_vector(3 downto 0) -- a signal that comes from the FSM, it must count which level from the layer 2 was calculated
-        );
+            );
          
 end datapath;
 
 architecture Behavioral of datapath is
-
+    -- LAYER 1
     signal muxedp: std_logic_vector(7 downto 0);
     signal multiplication00: std_logic_vector (3 downto 0);
     signal multiplication01: std_logic_vector (3 downto 0);
@@ -68,9 +82,17 @@ architecture Behavioral of datapath is
     signal add47: signed (4 downto 0);
     signal add07: signed (5 downto 0);
     signal neuron_part: signed (6 downto 0);
-
-    signal add_2layer:signed(X downto X);
+-- LAYER 2
+    signal mulplication10: signed (21 downto 0);
+    signal multiplication11: signed (21 downto 0);
+    signal add_2layer:signed( 22 downto 0 );
+    signal  level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
+    signal accum2_in : std_logic_vector (26 downto 0);
     signal neuron_part2: signed(26 downto 0);
+    signal accum_eval_in :std_logic_vector(26 downto 0);
+    signal accum_eval_level_in: std_logic_vector(3 downto 0);
+    signal accum_eval_en: std_logic;
+
 begin
 
 --||---------------||
@@ -109,8 +131,8 @@ begin
     add47 <= add45 + add67;
 
 -- one clock cycle has passed, store!
-    auxreg1_in <= std_logic_vector(add03);
-    auxreg2_in <= std_logic_vector(add47);
+--    auxreg1_in <= std_logic_vector(add03);
+  --  auxreg2_in <= std_logic_vector(add47);
 
 -- add 3rd round
     add07 <= add03 + add47;
@@ -150,7 +172,8 @@ begin
 
 -- sum the neuron-weight products together
 --    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
-     add_2layer <= mulplication10 +multiplication11   
+
+     add_2layer <= mulplication10 +multiplication11 
 -- add with the accumulated
     neuron_part2 <= add_2layer + signed (accum2_out);
     accum2_in <= std_logic_vector(neuron_part2);
@@ -160,5 +183,90 @@ begin
     accum_eval_level_in <= level_counter;
     accum_eval_en <= '1' when neuron_part2 > signed(accum_eval_out) else '0';
 
+--||----------------||
+--||                ||
+--|| ADDR Generator ||
+--||                ||
+--||----------------||
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstImg_gen='1' then
+                 imgAddr<= starterAddr;
+            elsif img_enable='1' then
+                 imgAddr <= imgAddr +1;
+            end if;
+        end if;
+    end process;
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstW1_gen='1' then
+                 w1Addr<= (others => '0');
+            elsif w1_enable='1' then
+                 w1Addr <= w1Addr + 1;
+            end if;
+        end if;
+    end process;
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstW2_gen='1' then
+                 w2Addr<= (others => '0');
+            elsif w2_enable='1' then
+                 w2Addr <= w2Addr + 1;
+            end if;
+        end if;
+    end process;
+
+--||----------------||
+--||                ||
+--|| LEVEL COUNTER  ||
+--||                ||
+--||----------------||
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_lvl='1' then
+                 level_counter<= (others => '0');
+            elsif lvl_enable='1' then
+                 level_counter <= level_counter + 1;
+            end if;
+        end if;
+    end process;
+
+
+
+--||---------------||
+--||               ||
+--||   REGISTERS   ||
+--||               ||
+--||---------------||
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_reg='1' then
+                accum_out<= (others => '0');
+            elsif write_enable(0)='1' then
+                accum_out<= accum_in;
+            end if;
+        end if;
+    end process;
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_reg='1' then
+                 accum2_out<= (others => '0');
+            elsif write_enable(0)='1' then
+                accum2_out<=accum2_in ;
+            end if;
+        end if;
+    end process;
 
 end Behavioral;
