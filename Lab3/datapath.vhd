@@ -43,6 +43,7 @@ entity datapath is
             rst_lvl: in std_logic;
             rst_reg: in std_logic;
             write_enable: in std_logic_vector(2 downto 0);
+            rst_m, m_enable : in std_logic;
             --REGISTER INPUT PORTS
     --      auxreg0_in: out std_logic_vector(31 downto 0);
       --      auxreg1_in: out std_logic_vector(4 downto 0);
@@ -229,7 +230,7 @@ process (clk)
                  imgCounter <= (others =>'0');
             elsif img_enable='1' then
                  imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
-                 imgCounter <= std_logic_vector(unsigned(imgCounter)+1);
+                 imgCounter_aux <= std_logic_vector(unsigned(imgCounter_aux)+1);
             end if;
         end if;
     end process;
@@ -240,20 +241,20 @@ process (clk)
             if rstW1_gen='1' then
                  w1Addr_aux<= (others => '0');
             elsif img_enable='1' then
-                w1Counter <= others (=>'0');
+                w1Counter <= (others =>'0');
             elsif w1_enable='1' then
                 w1Addr_aux <= std_logic_vector(unsigned(w1Addr_aux) +1);
-                w1Counter <= std_logic_vector(unsigned(w1Counter)+1);
+                w1Counter_aux <= std_logic_vector(unsigned(w1Counter_aux)+1);
             end if;
         end if;
     end process;
-
+process(clk)
     begin
         if clk'event and clk='1' then
-            if rst_M='1' then
+            if rst_m='1' then
                  MCounter<= (others => '0');
-            elsif M_enable='1' then
-                MCounter <= std_logic_vector(unsigned(MCounter)+1);
+            elsif m_enable='1' then
+                MCounter_aux <= std_logic_vector(unsigned(MCounter_aux)+1);
             end if;
         end if;
     end process;
@@ -265,7 +266,7 @@ process (clk)
                  w2Addr_aux<= (others => '0');
             elsif w2_enable='1' then
                 w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
-                w2Counter <= std_logic_vector(unsigned(w2Counter)+1);
+                w2Counter_aux <= std_logic_vector(unsigned(w2Counter_aux)+1);
 
             end if;
         end if;

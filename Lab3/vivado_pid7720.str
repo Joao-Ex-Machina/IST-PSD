@@ -5,11 +5,11 @@ SW Build: 3865809 on Sun May  7 15:05:29 MDT 2023
 IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
 IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
 
-Process ID (PID): 8080
+Process ID (PID): 7720
 License: Customer
 Mode: GUI Mode
 
-Current time: 	Wed Oct 25 15:01:53 WEST 2023
+Current time: 	Wed Oct 25 16:46:53 WEST 2023
 Time zone: 	Western European Standard Time (Europe/Lisbon)
 
 OS: Windows 10
@@ -50,13 +50,13 @@ Vivado layouts directory: C:/Users/Francisco/AppData/Roaming/Xilinx/Vivado/2023.
 PlanAhead jar file: 	C:/Xilinx/Vivado/2023.1/lib/classes/planAhead.jar
 Vivado log file: 	C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/vivado.log
 Vivado journal file: 	C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/vivado.jou
-Engine tmp dir: 	C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/.Xil/Vivado-8080-DESKTOP-NOHGJAN
+Engine tmp dir: 	C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/.Xil/Vivado-7720-DESKTOP-NOHGJAN
 Non-Default Parameters:	[]
 
 Xilinx & AMD Environment Variables
 --------------------------------------------------------------------------------------------
 RDI_APPROOT: C:/Xilinx/Vivado/2023.1
-RDI_ARGS:  -gui_launcher_event rodinguilauncherevent13036 "C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3\Lab3.xpr"
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent14060 "C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3\Lab3.xpr"
 RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
 RDI_BASEROOT: C:/Xilinx/Vivado
 RDI_BINDIR: C:/Xilinx/Vivado/2023.1/bin
@@ -84,7 +84,7 @@ RDI_PYTHON3_VERSION: 3.8.3
 RDI_PYTHONHOME: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3
 RDI_PYTHONPATH: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\bin;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib\site-packages
 RDI_PYTHON_LD_LIBPATH: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib
-RDI_SESSION_INFO: C:\Users\Francisco\OneDrive\readeTrabalho\IST-PSD\Lab3:DESKTOP-NOHGJAN-25-10-2023_15-01-41,47
+RDI_SESSION_INFO: C:\Users\Francisco\OneDrive\readeTrabalho\IST-PSD\Lab3:DESKTOP-NOHGJAN-25-10-2023_16-46-31,68
 RDI_SHARED_DATA: C:/Xilinx/SharedData/2023.1/data
 RDI_TPS_ROOT: C:/Xilinx/Vivado/2023.1/tps/win64
 RDI_USE_JDK17: True
@@ -99,9 +99,9 @@ _RDI_BINROOT: C:\Xilinx\Vivado\2023.1\bin
 _RDI_CWD: C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3
 
 
-GUI allocated memory:	512 MB
+GUI allocated memory:	808 MB
 GUI max memory:		4,072 MB
-Engine allocated memory: 852 MB
+Engine allocated memory: 826 MB
 
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
@@ -116,10 +116,16 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // TclEventType: DEBUG_PROBE_SET_CHANGE
 // TclEventType: FLOW_ADDED
 // Tcl Message: open_project {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.xpr} 
-// HMemoryUtils.trashcanNow. Engine heap size: 892 MB. GUI used memory: 68 MB. Current time: 10/25/23, 3:01:54 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 889 MB. GUI used memory: 69 MB. Current time: 10/25/23, 4:46:54 PM WEST
 // TclEventType: MSGMGR_MOVEMSG
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
 // TclEventType: RUN_CURRENT
 // TclEventType: PROJECT_DASHBOARD_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
@@ -136,107 +142,78 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: PROJECT_NEW
-// [GUI Memory]: 106 MB (+108637kb) [00:00:14]
-// [Engine Memory]: 1,097 MB (+998910kb) [00:00:14]
-// [GUI Memory]: 144 MB (+34264kb) [00:00:15]
-// WARNING: HEventQueue.dispatchEvent() is taking  1893 ms.
+// [GUI Memory]: 107 MB (+110203kb) [00:00:20]
+// [Engine Memory]: 1,104 MB (+1006021kb) [00:00:20]
+// [GUI Memory]: 133 MB (+20757kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  2154 ms.
 // Tcl Message: open_project {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.xpr} 
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'. 
+// [Engine Memory]: 1,162 MB (+3055kb) [00:00:22]
 // Project name: Lab3; location: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3; part: xc7a35tcpg236-1
-// Tcl Message: open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 1486.473 ; gain = 376.863 
+// Tcl Message: open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 1527.914 ; gain = 191.945 
 dismissDialog("Open Project"); // bq
 // Tcl Message: update_compile_order -fileset sources_1 
-// Elapsed time: 11 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 1,187 MB. GUI used memory: 74 MB. Current time: 10/25/23, 4:47:09 PM WEST
+// Elapsed time: 16 seconds
 selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
 dismissDialog("Critical Messages"); // a
-// [GUI Memory]: 152 MB (+569kb) [00:00:31]
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, datapath(Behavioral) (datapath.vhd)]", 4, false); // E
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, datapath(Behavioral) (datapath.vhd)]", 4, false); // E
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, datapath(Behavioral) (datapath.vhd)]", 4, false, false, false, false, false, true); // E - Double Click
-// [Engine Memory]: 1,156 MB (+4553kb) [00:00:32]
-// Elapsed time: 24 seconds
-selectCodeEditor("datapath.vhd", 149, 323); // ad
-selectCodeEditor("datapath.vhd", 149, 323, false, false, false, false, true); // ad - Double Click
-// Elapsed time: 19 seconds
-setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "accum2_in"); // d.c
-// Elapsed time: 19 seconds
-selectCodeEditor("datapath.vhd", 106, 157); // ad
-selectCodeEditor("datapath.vhd", 106, 157, false, false, false, true, false); // ad - Popup Trigger
-selectMenuItem(RDIResource.HInputHandler_TOGGLE_LINE_COMMENTS, "Toggle Line Comments"); // ao
-selectCodeEditor("datapath.vhd", 628, 183); // ad
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// Elapsed Time for: 'L.f': 01m:32s
-// Elapsed Time for: 'L.f': 01m:34s
-// Elapsed time: 21 seconds
-unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
 expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mem_acesses(Behavioral) (mem_acesses.vhd)]", 2); // E
-// Elapsed time: 43 seconds
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mem_acesses(Behavioral) (mem_acesses.vhd), instance_images : images_mem (images_mem.xci)]", 3, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, control(Behavioral) (control.vhd)]", 7, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, control(Behavioral) (control.vhd)]", 7, false, false, false, false, false, true); // E - Double Click
+// [GUI Memory]: 146 MB (+6661kb) [00:00:44]
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mem_acesses(Behavioral) (mem_acesses.vhd), instance_images : images_mem (images_mem.xci)]", 3, false, false, false, false, true, false); // E - Popup Trigger
 selectMenuItem(PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE, "Re-customize IP..."); // ao
 // Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
 // TclEventType: LOAD_FEATURE
 dismissDialog("Re-customize IP"); // C
-// HMemoryUtils.trashcanNow. Engine heap size: 1,204 MB. GUI used memory: 79 MB. Current time: 10/25/23, 3:04:39 PM WEST
 selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 3); // bb
-selectButton(PAResourceEtoH.HACGCCoeFileWidget_BROWSE, "Browse"); // a
-// Elapsed time: 13 seconds
-setFileChooser("C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/images.coe");
-selectButton(PAResourceEtoH.HACGCCoeFileWidget_EDIT, "Edit"); // a
-selectButton(PAResourceEtoH.HACGCCoeFileWidget_BROWSE, "Browse"); // a
-dismissFileChooser();
-selectButton(PAResourceEtoH.HACGCCoeFileWidget_BROWSE, "Browse"); // a
+// HMemoryUtils.trashcanNow. Engine heap size: 1,218 MB. GUI used memory: 80 MB. Current time: 10/25/23, 4:47:39 PM WEST
 // Elapsed time: 10 seconds
-dismissFileChooser();
-// [Engine Memory]: 1,220 MB (+6085kb) [00:04:01]
-// Elapsed time: 16 seconds
 selectButton(RDIResource.BaseDialog_OK, "OK"); // a
 dismissDialog("Re-customize IP"); // m
-// HMemoryUtils.trashcanNow. Engine heap size: 1,225 MB. GUI used memory: 81 MB. Current time: 10/25/23, 3:05:49 PM WEST
-// Tcl Message: set_property CONFIG.Coe_File {./../../../../images.coe} [get_ips images_mem] 
+selectButton(PAResourceEtoH.FileSetPanel_MESSAGES, "10"); // g
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-1206] Syntax error near 'others' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/datapath.vhd:243]. ]", 3, true); // u.d - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3\datapath.vhd;-;;-;16;-;line;-;243;-;;-;16;-;"); // u.d
+// [Engine Memory]: 1,221 MB (+622kb) [00:01:16]
+// [GUI Memory]: 156 MB (+3030kb) [00:01:30]
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control.vhd", 1); // o
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem
+selectCodeEditor("datapath.vhd", 331, 94); // ad
+// Elapsed time: 40 seconds
+selectCodeEditor("datapath.vhd", 222, 97); // ad
+// Elapsed time: 21 seconds
+selectCodeEditor("datapath.vhd", 240, 117); // ad
+// Elapsed time: 34 seconds
+selectCodeEditor("datapath.vhd", 72, 240); // ad
+// Elapsed time: 13 seconds
+selectCodeEditor("datapath.vhd", 180, 303); // ad
+// Elapsed time: 13 seconds
+selectCodeEditor("datapath.vhd", 215, 305); // ad
+selectCodeEditor("datapath.vhd", 210, 303); // ad
+selectCodeEditor("datapath.vhd", 210, 303, false, false, false, false, true); // ad - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("datapath.vhd", 216, 110); // ad
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
-// TclEventType: FILESET_UPDATE_IP
-// TclEventType: FILE_SET_CHANGE
-// Elapsed Time for: 'L.f': 03m:52s
-// Elapsed Time for: 'L.f': 03m:54s
-selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// Elapsed Time for: 'L.f': 03m:56s
+// Elapsed Time for: 'L.f': 03m:58s
+// Elapsed time: 19 seconds
+selectCodeEditor("datapath.vhd", 168, 176); // ad
+selectCodeEditor("datapath.vhd", 168, 176, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("datapath.vhd", 237, 220); // ad
+// Elapsed time: 10 seconds
+selectCodeEditor("datapath.vhd", 537, 236); // ad
+// Elapsed time: 20 seconds
+selectCodeEditor("datapath.vhd", 169, 115); // ad
+selectCodeEditor("datapath.vhd", 153, 114); // ad
+selectCodeEditor("datapath.vhd", 190, 116); // ad
+selectCodeEditor("datapath.vhd", 190, 116, false, false, false, false, true); // ad - Double Click
+typeControlKey((HResource) null, "datapath.vhd", 'c'); // ad
+selectCodeEditor("datapath.vhd", 349, 266); // ad
+selectCodeEditor("datapath.vhd", 151, 267); // ad
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
-// Tcl Message: generate_target all [get_files  {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.srcs/sources_1/ip/images_mem/images_mem.xci}}] 
-// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'images_mem'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'images_mem'... 
-// TclEventType: FILE_SET_CHANGE
-// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'images_mem'... INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'images_mem'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'images_mem'... 
-// Tcl Message: catch { config_ip_cache -export [get_ips -all images_mem] } 
-// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: images_mem 
-// Tcl Message: export_ip_user_files -of_objects [get_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.srcs/sources_1/ip/images_mem/images_mem.xci}}] -no_script -sync -force -quiet 
-// TclEventType: FILE_SET_NEW
-// TclEventType: FILE_SET_CHANGE
-// TclEventType: RUN_ADD
-// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.srcs/sources_1/ip/images_mem/images_mem.xci}}] 
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// TclEventType: RUN_LAUNCH
-// TclEventType: RUN_MODIFY
-// Tcl Message: launch_runs images_mem_synth_1 -jobs 3 
-// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: images_mem 
-// Tcl Message: [Wed Oct 25 15:05:57 2023] Launched images_mem_synth_1... Run output will be captured here: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1/runme.log 
-// TclEventType: RUN_STATUS_CHANGE
-// TclEventType: FILE_SET_CHANGE
-// TclEventType: PROJECT_CHANGE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// TclEventType: RUN_STATUS_CHANGE
-// TclEventType: FILE_SET_CHANGE
-selectButton("OptionPane.button", "OK"); // JButton
-// Elapsed Time for: 'L.f': 04m:04s
+// Elapsed Time for: 'L.f': 05m:02s
+// Elapsed Time for: 'L.f': 05m:04s
