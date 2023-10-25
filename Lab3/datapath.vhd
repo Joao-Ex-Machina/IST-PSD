@@ -95,13 +95,13 @@ architecture Behavioral of datapath is
     signal mulplication10: signed (21 downto 0);
     signal multiplication11: signed (21 downto 0);
     signal add_2layer:signed( 22 downto 0 );
-    signal  level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
+    signal level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
     signal accum2_in : std_logic_vector (26 downto 0);
     signal accum2_out: std_logic_vector(26 downto 0);
     signal neuron_part2: signed(26 downto 0);
     signal accum_eval_in :std_logic_vector(26 downto 0);
     signal accum_eval_out :std_logic_vector(26 downto 0);
-    signal accum_eval_level_in: std_logic_vector(3 downto 0);
+    signal accum_eval_lvl_in: std_logic_vector(3 downto 0);
     signal accum_eval_en: std_logic;
     
     signal imgAddr_aux : std_logic_vector(11 downto 0);
@@ -122,7 +122,7 @@ begin
         muxedp <=   pline(7 downto 0) when "00",
                     pline(15 downto 8) when "01",
                     pline(23 downto 16) when "10",
-                    pline(32 downto 24) when others;
+            COUNT : inout  STD_LOGIC_VECTOR (3 downto 0));         pline(32 downto 24) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
