@@ -24,6 +24,7 @@ entity datapath is
             rstImg_gen: in std_logic;
             rstW1_gen: in std_logic;
             rstW2_gen: in std_logic;
+            rstw2_counter: in std_logic;
         -- Counters for Control Unit
             imgCounter: out std_logic_vector (4 downto 0);
             w1Counter: out std_logic_vector(1 downto 0);
@@ -267,7 +268,8 @@ process (clk)
             elsif w2_enable='1' then
                 w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
                 w2Counter_aux <= std_logic_vector(unsigned(w2Counter_aux)+1);
-
+            if rstw2_counter = '1' then 
+                w2Counter_aux <= (others =>'0');
             end if;
         end if;
     end process;
