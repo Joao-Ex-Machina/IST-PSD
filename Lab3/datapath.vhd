@@ -12,6 +12,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity datapath is
     port (
+            clk: in std_logic;
         -- Addresses, reset and Enable signals for memory component
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
@@ -82,12 +83,18 @@ architecture Behavioral of datapath is
     signal add47: signed (4 downto 0);
     signal add07: signed (5 downto 0);
     signal neuron_part: signed (6 downto 0);
+    signal accum_in :std_logic_vector(13 downto 0);
+    signal accum_out: std_logic_vector(13 downto 0);
+
 -- LAYER 2
+    signal muxedw20 : std_logic_vector (7 downto 0);
+    signal muxedw21 : std_logic_vector (7 downto 0);
     signal mulplication10: signed (21 downto 0);
     signal multiplication11: signed (21 downto 0);
     signal add_2layer:signed( 22 downto 0 );
     signal  level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
     signal accum2_in : std_logic_vector (26 downto 0);
+    signal accum2_out: std_logic_vector(26 downto 0);
     signal neuron_part2: signed(26 downto 0);
     signal accum_eval_in :std_logic_vector(26 downto 0);
     signal accum_eval_level_in: std_logic_vector(3 downto 0);
@@ -173,7 +180,7 @@ begin
 -- sum the neuron-weight products together
 --    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
 
-     add_2layer <= mulplication10 +multiplication11 
+     add_2layer <= mulplication10 +multiplication11; 
 -- add with the accumulated
     neuron_part2 <= add_2layer + signed (accum2_out);
     accum2_in <= std_logic_vector(neuron_part2);
@@ -195,7 +202,7 @@ process (clk)
             if rstImg_gen='1' then
                  imgAddr<= starterAddr;
             elsif img_enable='1' then
-                 imgAddr <= imgAddr +1;
+                 imgAddr <= std_logic_vector(unsigned(imgAddr) +1);
             end if;
         end if;
     end process;
@@ -206,7 +213,7 @@ process (clk)
             if rstW1_gen='1' then
                  w1Addr<= (others => '0');
             elsif w1_enable='1' then
-                 w1Addr <= w1Addr + 1;
+                 w1Addr <= std_logic_vector(unsigned(w1Addr) +1);
             end if;
         end if;
     end process;
@@ -217,7 +224,7 @@ process (clk)
             if rstW2_gen='1' then
                  w2Addr<= (others => '0');
             elsif w2_enable='1' then
-                 w2Addr <= w2Addr + 1;
+                 w2Addr <= std_logic_vector(unsigned(w2Addr) +1);
             end if;
         end if;
     end process;
@@ -234,7 +241,7 @@ process (clk)
             if rst_lvl='1' then
                  level_counter<= (others => '0');
             elsif lvl_enable='1' then
-                 level_counter <= level_counter + 1;
+                 level_counter <= std_logic_vector(unsigned(level_counter) +1);
             end if;
         end if;
     end process;
@@ -265,6 +272,17 @@ process (clk)
                  accum2_out<= (others => '0');
             elsif write_enable(0)='1' then
                 accum2_out<=accum2_in ;
+            end if;
+        end if;
+    end process;
+
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rst_reg='1' then
+                 accum_eval_out<= (others => '0');
+            elsif write_enable(0)='1' then
+                accum_eval_out<=accum_eval_in ;
             end if;
         end if;
     end process;
