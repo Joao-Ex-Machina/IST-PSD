@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Wed Oct 25 15:06:00 2023
+# Process ID: 13240
+# Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1
+# Command line: vivado.exe -log images_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source images_mem.tcl
+# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1/images_mem.vds
+# Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1\vivado.jou
+# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
+#-----------------------------------------------------------
+source images_mem.tcl -notrace
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: images_mem
+Command: synth_design -top images_mem -part xc7a35tcpg236-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1

@@ -38,22 +38,16 @@ entity control is
     init : in std_logic;
     reg_enable : out std_logic_vector(6 downto 0);
     mux_sel : out std_logic_vector(1 downto 0);
-    p0, p1 : out std_logic_vector(11 downto 0);
-    w10, w11 : out std_logic_vector(12 downto 0);
-    w20, w21 : out std_logic_vector(6 downto 0);
-    m0, m1 : out std_logic_vector(4 downto 0);
+    p_counter_enable, w1_counter_enable, w2_counter_enable, m_counter_enable : out std_logic;
     guess : out std_logic_vector(3 downto 0);
     write_enable : out std_logic
     );
 end control;
 
+
 architecture Behavioral of control is
     type fsm_states is (s_init, s_p, s_w1, s_w2, s_mem, s_eval);
     signal curr_state, next_state : fsm_states;
-    signal p_line0, p_line1 : std_logic_vector(11 downto 0);
-    signal w1_line0, w1_line1 : std_logic_vector(12 downto 0);
-    signal w2_line0, w2_line1 : std_logic_vector(6 downto 0);
-    signal m_line0, m_line1 : std_logic_vector (4 downto 0);
     signal cp : unsigned(7 downto 0);
     signal cw1 : unsigned(3 downto 0);
     signal cw2 : unsigned(10 downto 0);
@@ -61,10 +55,6 @@ architecture Behavioral of control is
     signal counter : unsigned(3 downto 0);
     
 begin
-    p0 <= p_line0; p1 <= p_line1;
-    w10 <= w1_line0; w11 <= w1_line1;
-    w20 <= w2_line0; w21 <= w2_line1;
-    m0 <= m_line0; m1 <= m_line1;
     guess <= std_logic_vector(counter);
     
     
@@ -82,6 +72,8 @@ begin
     --reg_enable : in std_logic_vector(7 downto 0); --[output, best_score, final_accum, w2_reg, accum_t0, accum0/1, wlines, plines]
     --mux_sel : in std_logic_vector(1 downto 0)  --[2nd_stage_shifter, 1st_stage_shifter]
     
+    --TUDO MAL CARALHO REFAZER ESTA SHIT
+    --TODO: ACERTAR OS SINAIS REG_ENABLE E MUX_SEL
     comb_reg : process (curr_state, img_number, init)
     begin
         next_state <= curr_state; --base case
@@ -92,18 +84,10 @@ begin
                 next_state <= s_p;                 
             end if;
             cw1 <= (others => '0');
-            w1_line0 <= (others => '1');
-            w1_line1 <= '0' & x"FFF";
             cw2 <= (others => '0');
-            w2_line0 <= (others => '1');
-            w2_line1 <= "0100111";
             cm <= (others => '0');
-            m_line0 <= (others => '1');
-            m_line1 <= '0' &  x"F";
             cp <= (others => '0');
                                                 
-            p_line0 <= std_logic_vector(signed(img_number(6 downto 0) & "00000") - 1);
-            p_line1 <= std_logic_vector(signed(img_number(6 downto 0) & "00000") + 15);
             reg_enable <= "0000000";
             mux_sel <= "00";
             counter <= (others => '0');
@@ -115,8 +99,6 @@ begin
                 next_state <= s_w2;
             end if;
             cp <= cp + 1;
-            p_line0 <= std_logic_vector(unsigned(p_line0) + 1);
-            p_line1 <= std_logic_vector(unsigned(p_line1) + 1);
             cw1 <= (others => '0');
             reg_enable <= "0001111";
             mux_sel <= "01";
@@ -128,26 +110,13 @@ begin
                 next_state <= s_p;
             end if;
             cw1 <= cw1 + 1;
-            w1_line0 <= std_logic_vector(unsigned(w1_line0) + 1);
-            w1_line1 <= std_logic_vector(unsigned(w1_line1) + 1);
             reg_enable <= "0001111";
             mux_sel <= "00";
             write_enable <= '0';
         when s_w2 =>
-            if cw2 < 4 then
-                next_state <= s_mem;
-            else 
-                if cw2 = 4 then
-                    next_state <= s_eval;
-                end if;
-                if unsigned(w2_line1) = 79 then
-                    next_state <= s_init;
-                end if;
-            end if;
+            --REFAZER SIMPLÍCIO SEU MACACO SEM PILA
             cw2 <= cw2 + 1;
             cm <= (others => '0');
-            w2_line0 <= std_logic_vector(unsigned(w2_line0) + 1);
-            w2_line1 <= std_logic_vector(unsigned(w2_line1) + 1);
             reg_enable <= "0010000";
             mux_sel <= "10";
             write_enable <= '0';
@@ -158,8 +127,6 @@ begin
                 next_state <= s_w2;
             end if;            
             cm <= cm + 1;
-            m_line0 <= std_logic_vector(unsigned(m_line0) + 1);
-            m_line1 <= std_logic_vector(unsigned(m_line1) + 1);
             reg_enable <= "0110000";
             mux_sel <= "00";
             write_enable <= '0';
@@ -175,5 +142,33 @@ begin
     --reg_enable : in std_logic_vector(7 downto 0); --[output/eval, final_accum, w2_reg, accum_t0, accum0/1, wlines, plines]
     --mux_sel : in std_logic_vector(1 downto 0)  --[2nd_stage_shifter, 1st_stage_shifter]
     
+    p_counter: process(clk, curr_state)
+    begin
+        if clk'event and clk='1' then
+            if rst='0' then
+                if curr_state = s_p then
+                    cp <= cp + 1;
+                end if;
+            else
+                cp <= (others => '0');
+            end if;
+        end if;
+    end process;
+    
+    w1_counter: process(clk, curr_state)
+    begin
+        if clk'event and clk='1' then
+            if rst='0' then
+                if curr_state = s_w1 then
+                    cp <= cp + 1;
+                end if;
+                if curr_state = s_p then 
+                    cp <= (others => '0');
+                end if;
+            else
+                cp <= (others => '0');
+            end if;
+        end if;
+    end process;
 
 end Behavioral;
