@@ -34,13 +34,21 @@ use IEEE.NUMERIC_STD.ALL;
 entity control is
     Port (
     clk, rst : in std_logic;
-    img_number : in std_logic_vector(7 downto 0);
     init : in std_logic;
-    reg_enable : out std_logic_vector(6 downto 0);
-    mux_sel : out std_logic_vector(1 downto 0);
-    p_counter_enable, w1_counter_enable, w2_counter_enable, m_counter_enable : out std_logic;
-    guess : out std_logic_vector(3 downto 0);
-    write_enable : out std_logic
+    img_number : in std_logic_vector(7 downto 0);
+    
+    --TO DATAPATH
+    counter_enables : out std_logic_vector(2 downto 0); --[img,w1,w2]
+    counter_resets : out std_logic_vector(2 downto 0); --[img,w1,w2]
+    starter_address : out std_logic_vector(11 downto 0); --img memory
+    
+    muxpsel : out std_logic_vector(1 downto 0); --select which 8 bits are read
+    muxw2sel : out std_logic_vector(1 downto 0);
+    lvl_enable: out std_logic;
+    lvl_rst: out std_logic;
+    reg_rst: out std_logic;
+    write_enable: out std_logic_vector(2 downto 0) --[accum_layer1,accum_layer2,accum_level]
+    --FROM DATAPATH
     );
 end control;
 

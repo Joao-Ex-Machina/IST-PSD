@@ -122,7 +122,7 @@ begin
         muxedp <=   pline(7 downto 0) when "00",
                     pline(15 downto 8) when "01",
                     pline(23 downto 16) when "10",
-            COUNT : inout  STD_LOGIC_VECTOR (3 downto 0));         pline(32 downto 24) when others;
+                    pline(32 downto 24) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
@@ -196,7 +196,7 @@ begin
 
 -- evaluator
     accum_eval_in <= std_logic_vector(neuron_part2);
-    accum_eval_level_in <= level_counter;
+    accum_eval_lvl_in <= level_counter;
     accum_eval_en <= '1' when neuron_part2 > signed(accum_eval_out) else '0';
 
 --||----------------||
