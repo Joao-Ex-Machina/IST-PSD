@@ -38,16 +38,19 @@ entity control is
     img_number : in std_logic_vector(7 downto 0);
     
     --TO DATAPATH
-    address_enables : out std_logic_vector(2 downto 0); --[img,w1,w2]
-    address_resets : out std_logic_vector(2 downto 0); --[img,w1,w2]
     starter_address : out std_logic_vector(11 downto 0); --img memory
     
+    address_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    address_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    
+    counter_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    counter_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+    
     muxpsel : out std_logic_vector(1 downto 0); --select which 8 bits are read
-    muxw2sel : out std_logic_vector(1 downto 0);
-    lvl_enable: out std_logic;
-    lvl_rst: out std_logic;
+    muxw2sel : out std_logic_vector(1 downto 0); --same
+    
     reg_rst: out std_logic; --global reset
-    write_enable: out std_logic_vector(2 downto 0); --[accum_layer1,accum_layer2,accum_level]
+    write_enable: out std_logic_vector(1 downto 0); --[accum_layer2,accum_layer1]
     --FROM DATAPATH
     cp : in std_logic_vector(4 downto 0);
     cw1 : in std_logic_vector(1 downto 0);
@@ -87,7 +90,7 @@ begin
             end if;
             --RESETS EM TUDO, ENABLES A ZERO
         when s_layer1 =>
-            if 
+            
         when s_layer2 =>
         
         end case;
