@@ -103,10 +103,10 @@ begin
             write_enable <= (others => '0');
             mem_we <= '0';
         when s_layer1 =>
-            if unsigned(caux1) <= 30 then
+            if unsigned(caux1) <= 31 then
                 next_state <= s_layer1;
-                if unsigned(cp) <= 30 then
-                    if unsigned(cw1) <= 2 then
+                if unsigned(cp) <= 31 then
+                    if unsigned(cw1) <= 3 then
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
                         address_enables <= "0010";
                         address_resets <= (others => '0');
@@ -117,36 +117,37 @@ begin
                         reg_rst <= '0';
                         write_enable <= "01"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
-                    else --cw1==3
+                    else --cw1==4
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
-                        address_enables <= "0001";
-                        address_resets <= "0000";
-                        counter_enables <= "00001";
-                        counter_resets <= "00010";
+                        address_enables <= "0000";
+                        address_resets <=  "0000";
+                        counter_enables <= "000001";
+                        counter_resets <=  "000010";
                         muxpsel <= cw1;
                         muxw2sel <= (others => '0');
                         reg_rst <= '0';
                         write_enable <= "01"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
                     end if;
-                else --cp==31
+                else --cp==32
                     starter_address <= std_logic_vector(unsigned(img_number)*32);
                     address_enables <= "1000";
-                    address_resets <= "0010";
-                    counter_enables <= "10000";
-                    counter_resets <= "00011";
+                    address_resets <=  "0010";
+                    counter_enables <= "010000";
+                    counter_resets <=  "000011";
                     muxpsel <= cw1;
                     muxw2sel <= (others => '0');
                     reg_rst <= '0';
                     write_enable <= "01"; --JOAO ISTO TA CERTO?
                     mem_we <= '1';
                 end if;
-            else --caux1==31
-                next_state <= s_layer2;starter_address <= std_logic_vector(unsigned(img_number)*32);
+            else --caux1==32
+                next_state <= s_layer2;
+                starter_address <= std_logic_vector(unsigned(img_number)*32);
                 address_enables <= "0000";
-                address_resets <= "1111";
-                counter_enables <= "00000";
-                counter_resets <= "11111";
+                address_resets <=  "1111";
+                counter_enables <= "000000";
+                counter_resets <=  "111111";
                 muxpsel <= cw1;
                 muxw2sel <= (others => '0');
                 reg_rst <= '0';
