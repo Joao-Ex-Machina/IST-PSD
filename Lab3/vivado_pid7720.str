@@ -217,3 +217,150 @@ selectCodeEditor("datapath.vhd", 151, 267); // ad
 // TclEventType: FILE_SET_CHANGE
 // Elapsed Time for: 'L.f': 05m:02s
 // Elapsed Time for: 'L.f': 05m:04s
+// Elapsed time: 60 seconds
+selectCodeEditor("datapath.vhd", 109, 159); // ad
+// Elapsed time: 46 seconds
+selectCodeEditor("datapath.vhd", 551, 128); // ad
+// Elapsed time: 92 seconds
+selectCodeEditor("control.vhd", 288, 177); // ad
+selectCodeEditor("control.vhd", 218, 331); // ad
+selectCodeEditor("control.vhd", 73, 323); // ad
+// Elapsed time: 53 seconds
+selectCodeEditor("control.vhd", 129, 258); // ad
+// Elapsed time: 20 seconds
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control.vhd", 0, true, false); // o - Popup Trigger
+selectMenuItem((HResource) null, "Split Vertically"); // JMenuItem
+// Elapsed time: 11 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// PAResourceOtoP.PAViews_CODE: Code: close view
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// Elapsed time: 23 seconds
+selectCodeEditor("control.vhd", 211, 165); // ad
+// Elapsed time: 15 seconds
+selectCodeEditor("control.vhd", 34, 71); // ad
+selectCodeEditor("control.vhd", 35, 239); // ad
+selectCodeEditor("control.vhd", 153, 200); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 11m:00s
+// Elapsed Time for: 'L.f': 11m:02s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 11m:08s
+// Elapsed Time for: 'L.f': 11m:10s
+// Elapsed time: 34 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, datapath(Behavioral) (datapath.vhd)]", 8, false); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, datapath(Behavioral) (datapath.vhd)]", 8, false, false, false, false, false, true); // E - Double Click
+// PAResourceOtoP.PAViews_SOURCES: Sources: close view
+// Elapsed time: 31 seconds
+selectCodeEditor("datapath.vhd", 469, 262); // ad
+// Elapsed time: 20 seconds
+typeControlKey((HResource) null, "datapath.vhd", 'v'); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 12m:14s
+// Elapsed Time for: 'L.f': 12m:16s
+// Elapsed time: 25 seconds
+selectCodeEditor("datapath.vhd", 147, 72); // ad
+selectCodeEditor("datapath.vhd", 147, 72, false, false, false, false, true); // ad - Double Click
+// Elapsed time: 72 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control.vhd", 0); // o
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "datapath.vhd", 1); // o
+selectCodeEditor("datapath.vhd", 356, 236); // ad
+selectCodeEditor("control.vhd", 102, 286); // ad
+selectCodeEditor("control.vhd", 35, 265); // ad
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "control.vhd", 'v'); // ad
+// Elapsed time: 44 seconds
+selectCodeEditor("control.vhd", 723, 205); // ad
+typeControlKey((HResource) null, "control.vhd", 'c'); // ad
+typeControlKey((HResource) null, "control.vhd", 'v'); // ad
+typeControlKey((HResource) null, "control.vhd", 'v'); // ad
+selectCodeEditor("control.vhd", 668, 160); // ad
+selectCodeEditor("control.vhd", 449, 218); // ad
+// Elapsed time: 75 seconds
+selectCodeEditor("control.vhd", 358, 224); // ad
+// Elapsed time: 75 seconds
+selectCodeEditor("control.vhd", 610, 138); // ad
+// Elapsed time: 29 seconds
+typeControlKey((HResource) null, "control.vhd", 'c'); // ad
+typeControlKey((HResource) null, "control.vhd", 'v'); // ad
+typeControlKey((HResource) null, "control.vhd", 'v'); // ad
+// Elapsed time: 141 seconds
+selectCodeEditor("control.vhd", 34, 96); // ad
+// Elapsed time: 15 seconds
+selectCodeEditor("control.vhd", 17, 283); // ad
+// Elapsed time: 164 seconds
+selectCodeEditor("control.vhd", 37, 394); // ad
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 24m:30s
+// Elapsed Time for: 'L.f': 24m:32s
+// Elapsed time: 51 seconds
+selectCodeEditor("control.vhd", 94, 205); // ad
+selectCodeEditor("control.vhd", 94, 205, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 88, 221); // ad
+selectCodeEditor("control.vhd", 88, 221, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 533, 201); // ad
+selectCodeEditor("control.vhd", 533, 201, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 553, 203); // ad
+selectCodeEditor("control.vhd", 553, 203, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 59, 200); // ad
+selectCodeEditor("control.vhd", 59, 200, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 58, 220); // ad
+selectCodeEditor("control.vhd", 58, 220, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 552, 198); // ad
+selectCodeEditor("control.vhd", 552, 198, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 532, 224); // ad
+selectCodeEditor("control.vhd", 532, 224, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 658, 200); // ad
+// Elapsed time: 34 seconds
+selectCodeEditor("control.vhd", 102, 331); // ad
+selectCodeEditor("control.vhd", 111, 311); // ad
+selectCodeEditor("control.vhd", 35, 162); // ad
+selectCodeEditor("control.vhd", 49, 173); // ad
+selectCodeEditor("control.vhd", 33, 162); // ad
+selectCodeEditor("control.vhd", 83, 181); // ad
+selectCodeEditor("control.vhd", 36, 202); // ad
+selectCodeEditor("control.vhd", 33, 223); // ad
+// Elapsed time: 75 seconds
+selectCodeEditor("control.vhd", 34, 195); // ad
+// Elapsed time: 58 seconds
+selectCodeEditor("control.vhd", 88, 153); // ad
+selectCodeEditor("control.vhd", 88, 153, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 65, 203); // ad
+selectCodeEditor("control.vhd", 65, 203, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 73, 218); // ad
+selectCodeEditor("control.vhd", 73, 218, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 58, 268); // ad
+selectCodeEditor("control.vhd", 58, 268, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 68, 291); // ad
+selectCodeEditor("control.vhd", 68, 291, false, false, false, false, true); // ad - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,238 MB. GUI used memory: 82 MB. Current time: 10/25/23, 5:17:39 PM WEST
+// Elapsed time: 222 seconds
+closeMainWindow("Lab3 - [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.xpr] - Vivado 2023.1"); // aK
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+dismissDialog("Exit Vivado"); // u
+// Elapsed time: 20 seconds
+selectCodeEditor("control.vhd", 91, 302); // ad
+selectCodeEditor("control.vhd", 32, 90); // ad
+selectCodeEditor("control.vhd", 74, 304); // ad
+// Elapsed time: 32 seconds
+selectCodeEditor("control.vhd", 38, 97); // ad
+selectCodeEditor("control.vhd", 450, 334); // ad
+selectCodeEditor("control.vhd", 675, 344); // ad
+selectCodeEditor("control.vhd", 675, 344, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 550, 347); // ad
+selectCodeEditor("control.vhd", 550, 347, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 637, 347); // ad
+selectCodeEditor("control.vhd", 637, 347, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 559, 342); // ad
+selectCodeEditor("control.vhd", 559, 342, false, false, false, false, true); // ad - Double Click
+selectCodeEditor("control.vhd", 502, 282); // ad
+selectCodeEditor("control.vhd", 559, 138); // ad
+// Elapsed time: 14 seconds
+selectCodeEditor("control.vhd", 224, 299); // ad
+selectCodeEditor("control.vhd", 403, 391); // ad
+typeControlKey((HResource) null, "control.vhd", 'c'); // ad
