@@ -14,30 +14,39 @@ entity datapath is
     port (
             clk: in std_logic;
         -- Addresses, reset and Enable signals for memory component
+            
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
             w1Addr: out std_logic_vector(12 downto 0);
             w2Addr: out std_logic_vector(6 downto 0);
-    
+            NeuronCounter: out std_logic_vector(4 downto 0);
+            Neuron2Counter: out std_logic_vector(4 downto 0);
+            
+            
+            
+            NeuronCounter_enable : in std_logic;
+            rstNeuron_counter: in std_logic;
+
+            Neuron2Counter_enable: in std_logic;
+            rstNeuron2_counter: in std_logic;
+            
+
             img_enable: in std_logic;
             imgCounter_enable: in std_logic;
+            rstImg_gen: in std_logic;
+            rstImg_counter:in std_logic;
 
             MemCounter_en: in std_logic;
             MemCounter_rst: in std_logic;
             
-            
             w1_enable: in std_logic;
             w1Counter_enable: in std_logic;
-
-            w2_enable: in std_logic;
-            w2Counter_enable: in std_logic;
-
-            rstImg_gen: in std_logic;
-            rstImg_counter:in std_logic;
-
             rstW1_gen: in std_logic;
             rstW1_counter: in std_logic;        
 
+
+            w2_enable: in std_logic;
+            w2Counter_enable: in std_logic;
             rstW2_gen: in std_logic;
             rstw2_counter: in std_logic;
 
@@ -46,6 +55,7 @@ entity datapath is
             w1Counter: out std_logic_vector(1 downto 0);
             w2Counter: out std_logic_vector(2 downto 0);
             MemCounter: out std_logic_vector(1 downto 0);
+
             -- Data lines from Memory Component
             pline: in std_logic_vector (31 downto 0);
             wline0: in std_logic_vector (15 downto 0);
@@ -61,7 +71,6 @@ entity datapath is
             rst_reg: in std_logic;
             write_enable: in std_logic_vector(2 downto 0);
 
-            rst_m, m_enable : in std_logic;
             --REGISTER INPUT PORTS
     --      auxreg0_in: out std_logic_vector(31 downto 0);
       --      auxreg1_in: out std_logic_vector(4 downto 0);
@@ -127,16 +136,17 @@ architecture Behavioral of datapath is
     signal accum_eval_out :std_logic_vector(26 downto 0);
     signal accum_eval_lvl_in: std_logic_vector(3 downto 0);
     signal accum_eval_en: std_logic;
--- COUNTERS AND GENERATORS 
+-- COUNTERS AND GENERATORS
     signal imgAddr_aux : std_logic_vector(11 downto 0);
     signal w1Addr_aux : std_logic_vector(12 downto 0);
     signal w2Addr_aux : std_logic_vector(6 downto 0);
-    signal accum_eval_lvl : std_logic_vector(3 downto 0); 
+    signal accum_eval_lvl : std_logic_vector(3 downto 0);
     signal imgCounter_aux: std_logic_vector (4 downto 0);
     signal w1Counter_aux: std_logic_vector(1 downto 0);
     signal w2Counter_aux: std_logic_vector(2 downto 0);
     signal MemCounter_aux: std_logic_vector(1 downto 0);
-
+    signal NeuronCounter_aux: std_logic_vector(4 downto 0);
+    signal Neuron2Counter_aux : std_logic_vector(4 downto 0);
     
 begin
 
@@ -241,6 +251,9 @@ begin
     w1Counter <= w1Counter_aux;
     w2Counter <= w2Counter_aux;
     MemCounter <= MemCounter_aux;
+    NeuronCounter <= NeuronCounter_aux;
+    Neuron2Counter <= Neuron2Counter_aux;
+    
 
 -- img addr generator
 process (clk)
@@ -251,11 +264,8 @@ process (clk)
             elsif img_enable='1' then
                  imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
             end if;
-
         end if;
     end process;
-
-
 
 -- w1 addr generator
 process (clk)
@@ -286,6 +296,32 @@ process (clk)
 --||CONTROL COUNTERS||
 --||                ||
 --||----------------||
+
+-- Neuron counter / doubles as Addr generator for writing in Neuron Memory
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstNeuron_counter='1' then
+                 NeuronCounter_aux<= (others => '0');
+            elsif NeuronCounter_enable='1' then
+                 NeuronCounter_aux <= std_logic_vector(unsigned(NeuronCounter_aux) +1);
+            end if;
+        end if;
+    end process;
+
+-- Neuron 2nd layer counter / Doubles as Addr generator for reading from Neuron Memory
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstNeuron2_counter='1' then
+                 Neuron2Counter_aux<= (others => '0');
+            elsif Neuron2Counter_enable='1' then
+                 Neuron2Counter_aux <= std_logic_vector(unsigned(Neuron2Counter_aux) +1);
+            end if;
+        end if;
+    end process;
+
+
 
 -- img counter
 process (clk)
@@ -330,14 +366,9 @@ process(clk)
 process (clk)
     begin
         if clk'event and clk='1' then
-             elsif w2Counter_enable='1' then
+             if w2Counter_enable='1' then
                 w2Counter_aux <= std_logic_vector(unsigned(w2Counter_aux)+1);
-<<<<<<< HEAD
-            if rstW2_counter = '1' then 
-=======
-            end if;
-            if rstw2_counter = '1' then 
->>>>>>> 40107f691b4c49aec9e5bf387486fb4bc7f44aa2
+            elsif rstW2_counter = '1' then 
                 w2Counter_aux <= (others =>'0');
             end if;
         end if;
