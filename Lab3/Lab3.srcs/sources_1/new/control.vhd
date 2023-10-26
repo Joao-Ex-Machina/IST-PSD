@@ -43,8 +43,8 @@ entity control is
     address_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
     address_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
     
-    counter_enables : out std_logic_vector(4 downto 0); --[aux, mem, w2, w1, p]
-    counter_resets : out std_logic_vector(4 downto 0); --[aux, mem, w2, w1, p]
+    counter_enables : out std_logic_vector(5 downto 0); --[aux2, aux1, mem, w2, w1, p]
+    counter_resets : out std_logic_vector(5 downto 0); --[aux2, aux1, mem, w2, w1, p]
     
     muxpsel : out std_logic_vector(1 downto 0); --select which 8 bits are read
     muxw2sel : out std_logic_vector(1 downto 0); --same
@@ -53,9 +53,10 @@ entity control is
     reg_rst: out std_logic; --global reset
     write_enable: out std_logic_vector(1 downto 0); --[accum_layer2,accum_layer1]
     --FROM DATAPATH
+    caux1 : in std_logic_vector(4 downto 0);
     cp : in std_logic_vector(4 downto 0);
-    caux : in std_logic_vector(4 downto 0);
     cw1 : in std_logic_vector(1 downto 0);
+    caux2 : in std_logic_vector(3 downto 0);
     cw2 : in std_logic_vector(2 downto 0);
     cmem : in std_logic_vector(1 downto 0)
     );
@@ -101,8 +102,8 @@ begin
             reg_rst <= '1';
             write_enable <= (others => '0');
             mem_we <= '0';
-    when s_layer1 =>
-            if unsigned(caux) <= 30 then
+        when s_layer1 =>
+            if unsigned(caux1) <= 30 then
                 next_state <= s_layer1;
                 if unsigned(cp) <= 30 then
                     if unsigned(cw1) <= 2 then
@@ -140,7 +141,7 @@ begin
                     write_enable <= "01"; --JOAO ISTO TA CERTO?
                     mem_we <= '1';
                 end if;
-            else --caux==31
+            else --caux1==31
                 next_state <= s_layer2;starter_address <= std_logic_vector(unsigned(img_number)*32);
                 address_enables <= "0000";
                 address_resets <= "1111";
@@ -152,9 +153,49 @@ begin
                 write_enable <= "01"; --JOAO ISTO TA CERTO?
                 mem_we <= '1';
             end if;
-            
         when s_layer2 =>
-        
+            if unsigned(caux2) <= 9 then
+                next_state <= s_layer2;
+                if unsigned(cw2) <= 7 then
+                    if unsigned(cmem) <= 3 then
+                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        address_enables <= "1000";
+                        address_resets <=  "0000";
+                        counter_enables <= "001000";
+                        counter_resets <=  "000000";
+                        muxpsel <= "00";
+                        muxw2sel <= cmem;
+                        reg_rst <= '0';
+                        write_enable <= "10"; --JOAO ISTO TA CERTO?
+                        mem_we <= '0';
+                    else --cmem==4
+                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        address_enables <= "0100";
+                        address_resets <=  "0000";
+                        counter_enables <= "000100";
+                        counter_resets <=  "001000";
+                        muxpsel <= "00";
+                        muxw2sel <= cmem;
+                        reg_rst <= '0';
+                        write_enable <= "10"; --JOAO ISTO TA CERTO?
+                        mem_we <= '0';
+                    end if;
+                else --cw2==8
+                    starter_address <= std_logic_vector(unsigned(img_number)*32);
+                    address_enables <= "0000";
+                    address_resets <=  "0000";
+                    counter_enables <= "000000";
+                    counter_resets <=  "000000";
+                    muxpsel <= "00";
+                    muxw2sel <= cmem;
+                    reg_rst <= '0';
+                    write_enable <= "10"; --JOAO ISTO TA CERTO?
+                    mem_we <= '0';
+                
+                end if;
+            else --caux2==10
+                next_state <= s_init;
+            end if;
         end case;
     end process;
     
