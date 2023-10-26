@@ -71,25 +71,6 @@ entity datapath is
             rst_reg: in std_logic;
             write_enable: in std_logic_vector(2 downto 0);
 
-            --REGISTER INPUT PORTS
-    --      auxreg0_in: out std_logic_vector(31 downto 0);
-      --      auxreg1_in: out std_logic_vector(4 downto 0);
-        --    auxreg2_in: out std_logic_vector(4 downto 0);
-          --  auxreg3_in: out std_logic_vector(4 downto 0);
-         --   auxreg4_in: out std_logic_vector(4 downto 0);
-            --REGISTER OUTPUT PORTS
-                    --    auxreg1_out: in std_logic_vector(4 downto 0);
-         --   auxreg2_out: in std_logic_vector(4 downto 0);
-         --   auxreg3_out: in std_logic_vector(4 downto 0);
-         --   auxreg4_out: in std_logic_vector(4 downto 0);
-         
-            -- ACCUMULATORS
---            accum_out: in std_logic_vector(13 downto 0);
---            accum_in :out std_logic_vector(13 downto 0);
---            accum2_out: in std_logic_vector(13 downto 0);
---            accum2_in :out std_logic_vector(13 downto 0);
---            accum_eval_out: in std_logic_vector(26 downto 0);
---            accum_eval_in: out std_logic_vector(26 downto 0);
             --NEURON MEMORY PORTS
             neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
             neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
