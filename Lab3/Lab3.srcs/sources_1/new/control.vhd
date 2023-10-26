@@ -182,10 +182,10 @@ begin
                     end if;
                 else --cw2==8
                     starter_address <= std_logic_vector(unsigned(img_number)*32);
-                    address_enables <= "0000";
+                    address_enables <= "0100";
                     address_resets <=  "0000";
-                    counter_enables <= "000000";
-                    counter_resets <=  "000000";
+                    counter_enables <= "100000";
+                    counter_resets <=  "000100";
                     muxpsel <= "00";
                     muxw2sel <= cmem;
                     reg_rst <= '0';
@@ -195,6 +195,16 @@ begin
                 end if;
             else --caux2==10
                 next_state <= s_init;
+                starter_address <= std_logic_vector(unsigned(img_number)*32);
+                address_enables <= "0000";
+                address_resets <=  "1111";
+                counter_enables <= "000000";
+                counter_resets <=  "111111";
+                muxpsel <= "00";
+                muxw2sel <= "00";
+                reg_rst <= '0';
+                write_enable <= "00"; --JOAO ISTO TA CERTO?
+                mem_we <= '0';
             end if;
         end case;
     end process;
