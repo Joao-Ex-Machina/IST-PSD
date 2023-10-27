@@ -53,7 +53,9 @@ architecture Behavioral of circuito is
         im_row0, im_row1 : out std_logic_vector(31 downto 0);
         weight1_40, weight1_41 : out std_logic_vector(15 downto 0);
         weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
-        middle0, middle1 : out std_logic_vector(13 downto 0)
+        in_middle0: in std_logic_vector(13 downto 0);
+        out_middle0, out_middle1 : out std_logic_vector(13 downto 0);
+        write_enable : in std_logic;
         );
     end component;
     
@@ -178,7 +180,8 @@ architecture Behavioral of circuito is
     signal im_row0 : std_logic_vector(31 downto 0);
     signal weight1_40, weight1_41 : std_logic_vector(15 downto 0);
     signal weight2_40, weight2_41 : std_logic_vector(31 downto 0);
-    signal middle0, middle1 : std_logic_vector(13 downto 0);
+    signal in_middle0: std_logic_vector(13 downto 0);
+    signal out_middle0, out_middle1 : std_logic_vector(13 downto 0);
     
 begin
 
@@ -192,7 +195,9 @@ begin
         im_row0 => im_row0, im_row1 => im_row1,
         weight1_40 => weight1_40, weight1_41 => weight1_41,
         weight2_40 => weight2_40, weight2_41 => weight2_41,
-        middle0 => middle0, middle1 => middle1
+        in_middle0 => in_middle0,
+        out_middle0 => out_middle0, out_middle1 => out_middle1
+
     );
     
     instance_datapath: datapath
@@ -236,13 +241,13 @@ begin
         muxpsel => muxpsel,
         muxw2sel0 => muxw2sel,
         muxw2sel1 => muxw2sel,
-        lvl_enable => open, -- deve estar sincronizado com outro sinal teu. Indica qual neurónio da segunda está a ser computado
-        rst_lvl => open,    -- same as above
+        lvl_enable => counter_enables(5), -- deve estar sincronizado com outro sinal teu. Indica qual neurónio da segunda está a ser computado
+        rst_lvl => counter_resets(5),    -- same as above
         rst_reg => reg_rst,
         write_enable => write_enable, --Fixed
-        neuron1_in => open, -- Não é suposto ser aqui é para a memória do neurónio da layer 1. falta isso O_o
-        neuron1_out1 => open, -- Same as above
-        neuron1_out2 => open 
+        neuron1_in => in_middle0, -- Não é suposto ser aqui é para a memória do neurónio da layer 1. falta isso O_o
+        neuron1_out1 => out_middle0, -- Same as above
+        neuron1_out2 => out_middle1 
     );
     
     instance_control : control

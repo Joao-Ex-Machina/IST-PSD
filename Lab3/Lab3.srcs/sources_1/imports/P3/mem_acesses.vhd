@@ -20,8 +20,9 @@ entity mem_acesses is
     im_row0, im_row1 : out std_logic_vector(31 downto 0);
     weight1_40, weight1_41 : out std_logic_vector(15 downto 0);
     weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
-    middle0, middle1 : out std_logic_vector(13 downto 0);
-    write_enable : in std_logic
+    in_middle0, in_middle1 : in std_logic_vector(13 downto 0);
+    out_middle0, out_middle1 : out std_logic_vector(13 downto 0);
+    write_enable : in std_logic;
     );
 end mem_acesses;
 
@@ -130,15 +131,15 @@ instance_weights1 : weights1
   instance_middle : middle_memory
   PORT MAP (
     clka => clk,
-    wea => "0",
-    addra => addr_w20,
-    dina => (others => '0'),
-    douta => weight2_40,
+    wea => write_enable,
+    addra => addr_m0,
+    dina => in_middle0,
+    douta => out_middle0,
     clkb => clk,
     web => "0",
-    addrb => addr_w21,
-    dinb => (others => '0'),
-    doutb => weight2_41
+    addrb => addr_m1,
+    dinb => in_middle1,
+    doutb => out_middle1
   );   
   
    
