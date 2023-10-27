@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Oct 26 16:17:17 2023
-# Process ID: 15252
+# Start of session at: Fri Oct 27 15:34:48 2023
+# Process ID: 12144
 # Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3748 C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3\Lab3.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14524 C:\Users\Francisco\OneDrive\rea de Trabalho\IST-PSD\Lab3\Lab3.xpr
 # Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/vivado.log
 # Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3\vivado.jou
 # Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
@@ -14,3 +14,7 @@
 start_gui
 open_project {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.xpr}
 update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse {{C:/Users/Francisco/OneDrive/rea de Trabalho/PSD/Lab3/project_1/project_1.srcs/sim_1/new/circuito_tb.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
