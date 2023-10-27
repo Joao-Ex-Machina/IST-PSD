@@ -35,7 +35,7 @@ entity control is
     Port (
     clk, rst : in std_logic;
     init : in std_logic;
-    img_number : in std_logic_vector(7 downto 0);
+    img_number : in std_logic_vector(5 downto 0);
     
     --TO DATAPATH
     starter_address : out std_logic_vector(11 downto 0); --img memory
@@ -110,7 +110,7 @@ begin
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
                         address_enables <= "0010";
                         address_resets <= (others => '0');
-                        counter_enables <= "00010";
+                        counter_enables <= "000010"; --added 0 on MSB
                         counter_resets <= (others => '0');
                         muxpsel <= cw1;
                         muxw2sel <= (others => '0');

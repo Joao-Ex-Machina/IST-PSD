@@ -22,7 +22,7 @@ entity mem_acesses is
     weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
     in_middle0, in_middle1 : in std_logic_vector(13 downto 0);
     out_middle0, out_middle1 : out std_logic_vector(13 downto 0);
-    write_enable : in std_logic;
+    write_enable : in std_logic_vector (0 downto 0)
     );
 end mem_acesses;
 

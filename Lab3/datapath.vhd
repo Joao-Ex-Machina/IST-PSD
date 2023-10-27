@@ -23,7 +23,7 @@ entity datapath is
             w2Addr: out std_logic_vector(6 downto 0);
             w2Addr2: out std_logic_vector(6 downto 0);
             NeuronCounter: out std_logic_vector(4 downto 0);
-            Neuron2Counter: out std_logic_vector(4 downto 0);
+            Neuron2Counter: out std_logic_vector(3 downto 0);
             
             
             
@@ -77,7 +77,8 @@ entity datapath is
             --NEURON MEMORY PORTS
             neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
             neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
-            neuron1_out2: in std_logic_vector(13 downto 0) -- dual channel memory output
+            neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
+            accum_eval_lvl : out std_logic_vector(3 downto 0)
             
             );
          
@@ -95,14 +96,14 @@ architecture Behavioral of datapath is
     signal multiplication06: std_logic_vector (3 downto 0);
     signal multiplication07: std_logic_vector (3 downto 0);
     signal multiplication0 : std_logic_vector (31 downto 0);
-    signal add01: signed (4 downto 0);
-    signal add23: signed (4 downto 0);
-    signal add45: signed (4 downto 0);
-    signal add67: signed (4 downto 0);´
-    signal add03: signed (4 downto 0);
-    signal add47: signed (4 downto 0);
-    signal add07: signed (5 downto 0);
-    signal neuron_part: signed (6 downto 0);
+    signal add01: signed (3 downto 0);
+    signal add23: signed (3 downto 0);
+    signal add45: signed (3 downto 0);
+    signal add67: signed (3 downto 0);
+    signal add03: signed (3 downto 0);
+    signal add47: signed (3 downto 0);
+    signal add07: signed (3 downto 0);
+    signal neuron_part: signed (13 downto 0);
     signal accum_in :std_logic_vector(13 downto 0);
     signal accum_out: std_logic_vector(13 downto 0);
 
@@ -111,7 +112,7 @@ architecture Behavioral of datapath is
     signal muxedw21 : std_logic_vector (7 downto 0);
     signal mulplication10: signed (21 downto 0);
     signal multiplication11: signed (21 downto 0);
-    signal add_2layer:signed( 22 downto 0 );
+    signal add_2layer:signed(21 downto 0 );
     signal level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
     signal accum2_in : std_logic_vector (26 downto 0);
     signal accum2_out: std_logic_vector(26 downto 0);
@@ -126,13 +127,12 @@ architecture Behavioral of datapath is
     signal w1Addr2_aux: std_logic_vector(12 downto 0);
     signal w2Addr_aux : std_logic_vector(6 downto 0);
     signal w2Addr2_aux : std_logic_vector(6 downto 0);
-    signal accum_eval_lvl : std_logic_vector(3 downto 0);
     signal imgCounter_aux: std_logic_vector (4 downto 0);
     signal w1Counter_aux: std_logic_vector(1 downto 0);
     signal w2Counter_aux: std_logic_vector(2 downto 0);
     signal MemCounter_aux: std_logic_vector(1 downto 0);
     signal NeuronCounter_aux: std_logic_vector(4 downto 0);
-    signal Neuron2Counter_aux : std_logic_vector(4 downto 0);
+    signal Neuron2Counter_aux : std_logic_vector(3 downto 0);
     
 begin
 
@@ -147,7 +147,7 @@ begin
         muxedp <=   pline(7 downto 0) when "00",
                     pline(15 downto 8) when "01",
                     pline(23 downto 16) when "10",
-                    pline(32 downto 24) when others;
+                    pline(31 downto 24) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
@@ -159,7 +159,7 @@ begin
     multiplication05 <= wline1(7 downto 4) when muxedp(5)='1' else "0000";
     multiplication06 <= wline1(11 downto 8) when muxedp(6)='1' else "0000";
     multiplication07 <= wline1(15 downto 12) when muxedp(7)='1' else "0000";
-    multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
+    multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
 -- add 1st round
     add01 <= signed(multiplication0(3 downto 0)) + signed(multiplication0(7 downto 4));
@@ -192,12 +192,12 @@ begin
         muxedw20 <= w2line0(7 downto 0) when "00",
                     w2line0(15 downto 8) when "01",
                     w2line0(23 downto 16) when "10",
-                    w2line0(32 downto 24) when others;
+                    w2line0(31 downto 24) when others;
     with muxw2sel1 select
         muxedw21 <= w2line1(7 downto 0) when "00",
                     w2line1(15 downto 8) when "01",
                     w2line1(23 downto 16) when "10",
-                    w2line1(32 downto 24) when others;
+                    w2line1(31 downto 24) when others;
 
 -- ...multiply by the neuron values
     mulplication10 <= signed(neuron1_out1) * signed(muxedw20);
@@ -292,7 +292,7 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rstNeuron_counter='1' then
-                ´ NeuronCounter_aux<= (others => '0');
+                NeuronCounter_aux<= (others => '0');
             elsif NeuronCounter_enable='1' then
                  NeuronCounter_aux <= std_logic_vector(unsigned(NeuronCounter_aux) +1);
             end if;

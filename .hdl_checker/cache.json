@@ -44,6 +44,196 @@
    },
    {
     "owner": {
+     "name": "/tmp/nvimaQmqad/tmpavnwat7n.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimYVgVUk/tmpobzo4qlx.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "mem_acesses",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.srcs/sources_1/new/control.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "control",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimwnEu0M/tmphp09jdd4.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvim9OPTKD/tmp6_g3nd8y.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimmitgIM/tmpeyrvkfmx.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimqLThSf/tmph_s54xin.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimXSzrEu/tmpe1pwbufp.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimWYH9Kk/tmpqhscc5_1.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "mem_acesses",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
      "name": "/home/jcr/IST/MEng/PSD/Projects/Lab3/datapath.vhd",
      "__class__": "Path"
     },
@@ -56,6 +246,234 @@
     "locations": [
      [
       12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimVRn2ta/tmpm2vm5_7j.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvim7OIcEd/tmpukfwdv8i.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/home/jcr/IST/MEng/PSD/Projects/Lab3/fpga_basicIO.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "fpga_basicIO",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      35,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimH2kQNf/tmptvd1vwyw.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimX60QSh/tmprnjsq7uh.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "mem_acesses",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimw2MVEm/tmpsb1j1z54.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvim0B3Nbv/tmp9c448me1.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvim2xXR8G/tmp0zusqccz.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimHfr2Rw/tmps551s45x.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimXhJHjA/tmp7a_6vn0e.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimz2zxjN/tmpq8od0_sl.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "fpga_basicIO",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      35,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimXgocxs/tmp6jc5_2kx.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
       7
      ]
     ],
@@ -82,7 +500,140 @@
    },
    {
     "owner": {
+     "name": "/home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimsqusWZ/tmp4nps2x3b.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "control",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
      "name": "/tmp/nvimJhliMj/tmpf9paqj43.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimlPiDmG/tmpgkpdqlpq.vhdl",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "circuito",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      33,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimCPBiBU/tmpk8sjv4a4.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimZYs0vW/tmp7rlxj8cu.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimRiAzJj/tmpxrzj0isy.vhd",
+     "__class__": "Path"
+    },
+    "type_": "entity",
+    "name": {
+     "name": "datapath",
+     "case_sensitive": false,
+     "__class__": "VhdlIdentifier"
+    },
+    "locations": [
+     [
+      12,
+      7
+     ]
+    ],
+    "__class__": "VhdlDesignUnit"
+   },
+   {
+    "owner": {
+     "name": "/tmp/nvimMeRfvE/tmp3tbkfo3_.vhd",
      "__class__": "Path"
     },
     "type_": "entity",

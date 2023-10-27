@@ -35,7 +35,7 @@ entity circuito is
     Port(
     clk, rst : in std_logic;
     init : in std_logic;
-    img_number : in std_logic_vector(7 downto 0);
+    img_number : in std_logic_vector(5 downto 0);
     
     data_out : out std_logic_vector(3 downto 0)
     );
@@ -55,7 +55,7 @@ architecture Behavioral of circuito is
         weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
         in_middle0: in std_logic_vector(13 downto 0);
         out_middle0, out_middle1 : out std_logic_vector(13 downto 0);
-        write_enable : in std_logic;
+        write_enable : in std_logic_vector (0 downto 0)
         );
     end component;
     
@@ -73,7 +73,7 @@ architecture Behavioral of circuito is
         w2Addr: out std_logic_vector(6 downto 0);
         w2Addr2: out std_logic_vector(6 downto 0);
         NeuronCounter: out std_logic_vector(4 downto 0);
-        Neuron2Counter: out std_logic_vector(4 downto 0);
+        Neuron2Counter: out std_logic_vector(3 downto 0);
         
         
         
@@ -122,12 +122,13 @@ architecture Behavioral of circuito is
         lvl_enable: in std_logic;
         rst_lvl: in std_logic;
         rst_reg: in std_logic;
-        write_enable: in std_logic_vector(2 downto 0);
+        write_enable: in std_logic_vector(1 downto 0);
 
         --NEURON MEMORY PORTS
         neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
         neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
-        neuron1_out2: in std_logic_vector(13 downto 0) -- dual channel memory output
+        neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
+        accum_eval_lvl : out std_logic_vector(3 downto 0)
         );
     end component;
 
@@ -135,7 +136,7 @@ architecture Behavioral of circuito is
         Port (
         clk, rst : in std_logic;
         init : in std_logic;
-        img_number : in std_logic_vector(7 downto 0);
+        img_number : in std_logic_vector(5 downto 0);
         
         --TO DATAPATH
         starter_address : out std_logic_vector(11 downto 0); --img memory
@@ -163,9 +164,10 @@ architecture Behavioral of circuito is
     end component;
     
     signal starter_address : std_logic_vector(11 downto 0);
+    signal write_enable: std_logic_vector (1 downto 0);
     signal address_enables, address_resets : std_logic_vector(3 downto 0);
     signal counter_enables, counter_resets : std_logic_vector (5 downto 0);
-    signal muxpsel, muxw2sel, write_enable : std_logic_vector(1 downto 0);
+    signal muxpsel, muxw2sel : std_logic_vector(1 downto 0);
     signal mem_we, reg_rst : std_logic;
     signal caux1, cp : std_logic_vector(4 downto 0);
     signal caux2 : std_logic_vector(3 downto 0);
@@ -188,16 +190,16 @@ begin
     instance_mems: mem_acesses
     Port map(
         clk => clk,
-        addr_p0 => addr_p0, addr_p1 => open,
+        addr_p0 => addr_p0, addr_p1 => (others=>'0'),
         addr_w10 => addr_w10, addr_w11 => addr_w11,
         addr_w20 => addr_w20, addr_w21 => addr_w21,
         addr_m0 => addr_m0, addr_m1 => addr_m1,
-        im_row0 => im_row0, im_row1 => im_row1,
+        --im_row0 => im_row0, im_row1 => im_row1,
         weight1_40 => weight1_40, weight1_41 => weight1_41,
         weight2_40 => weight2_40, weight2_41 => weight2_41,
         in_middle0 => in_middle0,
-        out_middle0 => out_middle0, out_middle1 => out_middle1
-
+        out_middle0 => out_middle0, out_middle1 => out_middle1,
+       write_enable(0) => mem_we
     );
     
     instance_datapath: datapath
@@ -208,13 +210,13 @@ begin
         w1Addr => addr_w10,
         w1Addr2=>addr_w11,
         w2Addr => addr_w20,
-        W2Addr => addr_w21,
-        NeuronCounter => open,
-        Neuron2Counter => open,
-        NeuronCounter_enable => open,
-        rstNeuron_counter => open,
-        Neuron2Counter_enable => open,
-        rstNeuron2_counter => open,
+        W2Addr2 => addr_w21,
+        NeuronCounter => caux1,
+        Neuron2Counter =>caux2 ,
+        NeuronCounter_enable => counter_enables(4),
+        rstNeuron_counter =>counter_resets(4) ,
+        Neuron2Counter_enable => counter_enables(5),
+        rstNeuron2_counter => counter_resets(5) ,
         img_enable => address_enables(0),
         imgCounter_enable => counter_enables(0),
         rstImg_gen => address_resets(0),
@@ -247,7 +249,8 @@ begin
         write_enable => write_enable, --Fixed
         neuron1_in => in_middle0, -- Não é suposto ser aqui é para a memória do neurónio da layer 1. falta isso O_o
         neuron1_out1 => out_middle0, -- Same as above
-        neuron1_out2 => out_middle1 
+        neuron1_out2 => out_middle1,
+        accum_eval_lvl => data_out
     );
     
     instance_control : control

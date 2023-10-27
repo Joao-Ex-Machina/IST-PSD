@@ -1,14 +1,14 @@
 #-----------------------------------------------------------
 # Vivado v2023.1 (64-bit)
-# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Oct 25 15:06:00 2023
-# Process ID: 13240
-# Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1
-# Command line: vivado.exe -log images_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source images_mem.tcl
-# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1/images_mem.vds
-# Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/Lab3.runs/images_mem_synth_1\vivado.jou
-# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
+# Start of session at: Fri Oct 27 15:33:23 2023
+# Process ID: 20569
+# Current directory: /home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.runs/images_mem_synth_1
+# Command line: vivado -log images_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source images_mem.tcl
+# Log file: /home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.runs/images_mem_synth_1/images_mem.vds
+# Journal file: /home/jcr/IST/MEng/PSD/Projects/Lab3/Lab3.runs/images_mem_synth_1/vivado.jou
+# Running On: Shub-Niggurath, OS: Linux, CPU Frequency: 3088.508 MHz, CPU Physical cores: 4, Host memory: 16720 MB
 #-----------------------------------------------------------
 source images_mem.tcl -notrace

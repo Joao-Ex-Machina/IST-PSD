@@ -53,11 +53,11 @@ architecture Behavioral of fpga_basicIO is
   signal btn, btnDeBnc : std_logic_vector(4 downto 0);
   signal btnCreg, btnUreg, btnLreg, btnRreg, btnDreg: std_logic;   -- registered input buttons
   signal sw_reg : std_logic_vector(15 downto 0);  -- registered input switches
+  signal data_out : std_logic_vector(3 downto 0);
   
   component disp7
   port (
-    digit3, digit2, digit1, digit0 : in std_logic_vector(3 downto 0);
-    dp3, dp2, dp1, dp0 : in std_logic;
+    digit0 : in std_logic_vector(3 downto 0);
     clk : in std_logic;
     dactive : in std_logic_vector(3 downto 0);
     en_disp_l : out std_logic_vector(3 downto 0);
@@ -79,8 +79,11 @@ architecture Behavioral of fpga_basicIO is
   component circuito
     port(
       clk : in std_logic;
-      exec : in std_logic;
-      level: in std_logic_vector(3 downto 0);
+      rst: in std_logic;
+      init : in std_logic;
+      img_number : in std_logic_vector(5 downto 0);
+      data_out : out std_logic_vector(3 downto 0)
+      
     );
   end component;
 
@@ -90,7 +93,7 @@ begin
   dact <= "1111";
 
   inst_disp7: disp7 port map(
-      digit0 => level;  
+      digit0 => data_out, 
       clk => clk,
       dactive => dact,
       en_disp_l => an,
@@ -99,8 +102,10 @@ begin
 
   inst_circuito: circuito port map(
       clk => clk,
-      exec => btnRreg,
-      imageID => sw_reg(6 downto 0),
+      rst => btnUreg,
+      init => btnRreg,
+      data_out => data_out,
+      img_number => sw_reg(5 downto 0)
   );
      
   -- Debounces btn signals
