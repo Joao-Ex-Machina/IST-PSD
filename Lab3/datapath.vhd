@@ -18,7 +18,10 @@ entity datapath is
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
             w1Addr: out std_logic_vector(12 downto 0);
+            w1Addr2: out std_logic_vector(12 downto 0);
+
             w2Addr: out std_logic_vector(6 downto 0);
+            w2Addr2: out std_logic_vector(6 downto 0);
             NeuronCounter: out std_logic_vector(4 downto 0);
             Neuron2Counter: out std_logic_vector(4 downto 0);
             
@@ -66,10 +69,10 @@ entity datapath is
             muxpsel: in std_logic_vector(1 downto 0); --select which 8 pixel segment of the 32-bit line is to be selected
             muxw2sel0:in std_logic_vector(1 downto 0);
             muxw2sel1:in std_logic_vector(1 downto 0);
-            lvl_enable: in std_logic;
+            lvl_enable: in std_logic; 
             rst_lvl: in std_logic;
             rst_reg: in std_logic;
-            write_enable: in std_logic_vector(2 downto 0);
+            write_enable: in std_logic_vector(1 downto 0);
 
             --NEURON MEMORY PORTS
             neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
@@ -95,7 +98,7 @@ architecture Behavioral of datapath is
     signal add01: signed (4 downto 0);
     signal add23: signed (4 downto 0);
     signal add45: signed (4 downto 0);
-    signal add67: signed (4 downto 0);
+    signal add67: signed (4 downto 0);´
     signal add03: signed (4 downto 0);
     signal add47: signed (4 downto 0);
     signal add07: signed (5 downto 0);
@@ -120,7 +123,9 @@ architecture Behavioral of datapath is
 -- COUNTERS AND GENERATORS
     signal imgAddr_aux : std_logic_vector(11 downto 0);
     signal w1Addr_aux : std_logic_vector(12 downto 0);
+    signal w1Addr2_aux: std_logic_vector(12 downto 0);
     signal w2Addr_aux : std_logic_vector(6 downto 0);
+    signal w2Addr2_aux : std_logic_vector(6 downto 0);
     signal accum_eval_lvl : std_logic_vector(3 downto 0);
     signal imgCounter_aux: std_logic_vector (4 downto 0);
     signal w1Counter_aux: std_logic_vector(1 downto 0);
@@ -165,10 +170,6 @@ begin
 -- add 2nd round
     add03 <= add01 + add23;
     add47 <= add45 + add67;
-
--- one clock cycle has passed, store!
---    auxreg1_in <= std_logic_vector(add03);
-  --  auxreg2_in <= std_logic_vector(add47);
 
 -- add 3rd round
     add07 <= add03 + add47;
@@ -225,9 +226,13 @@ begin
 --||                ||
 --||----------------||
 
+-- Fuse internal wires with external ports
     imgAddr <= imgAddr_aux;
     w1Addr <= w1Addr_aux;
     w2Addr <= w2Addr_aux;
+    w1Addr2 <= w1Addr2_aux;
+    w2Addr2 <= w2Addr2_aux;
+    
     imgCounter <= imgCounter_aux;
     w1Counter <= w1Counter_aux;
     w2Counter <= w2Counter_aux;
@@ -253,9 +258,11 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rstW1_gen='1' then
-                 w1Addr_aux<= (others => '0');
+                w1Addr_aux<= (others => '0');
+                w1Addr2_aux <= std_logic_vector(unsigned(w1Addr_aux)+1);
             elsif w1_enable='1' then
                 w1Addr_aux <= std_logic_vector(unsigned(w1Addr_aux) +1);
+                w1Addr2_aux <= std_logic_vector(unsigned(w1Addr_aux)+1); -- Address for second output
             end if;
         end if;
     end process;
@@ -266,8 +273,10 @@ process (clk)
         if clk'event and clk='1' then
             if rstW2_gen='1' then
                  w2Addr_aux<= (others => '0');
+                w2Addr2_aux <= std_logic_vector(unsigned(w2Addr_aux)+1);
             elsif w2_enable='1' then
                 w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
+                w2Addr2_aux <= std_logic_vector(unsigned(w2Addr_aux)+1); -- Address for second output
             end if;
         end if;
     end process;
@@ -283,7 +292,7 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rstNeuron_counter='1' then
-                 NeuronCounter_aux<= (others => '0');
+                ´ NeuronCounter_aux<= (others => '0');
             elsif NeuronCounter_enable='1' then
                  NeuronCounter_aux <= std_logic_vector(unsigned(NeuronCounter_aux) +1);
             end if;
@@ -385,7 +394,7 @@ process (clk)
         if clk'event and clk='1' then
             if rst_reg='1' then
                 accum_out<= (others => '0');
-            elsif write_enable(2)='1' then
+            elsif write_enable(0)='1' then
                 accum_out<= accum_in;
             end if;
         end if;

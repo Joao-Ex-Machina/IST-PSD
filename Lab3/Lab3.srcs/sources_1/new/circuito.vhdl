@@ -64,8 +64,12 @@ architecture Behavioral of circuito is
         
         starterAddr: in std_logic_vector (11 downto 0);
         imgAddr: out std_logic_vector (11 downto 0);
+        
         w1Addr: out std_logic_vector(12 downto 0);
+        w1Addr2: out std_logic_vector(12 downto 0);
+
         w2Addr: out std_logic_vector(6 downto 0);
+        w2Addr2: out std_logic_vector(6 downto 0);
         NeuronCounter: out std_logic_vector(4 downto 0);
         Neuron2Counter: out std_logic_vector(4 downto 0);
         
@@ -196,8 +200,10 @@ begin
         clk => clk,
         starterAddr => starter_address,
         imgAddr => addr_p0,
-        w1Addr => addr_w10, --FALTAM OS OUTROS ADDRESSES NA DATAPATH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        w2Addr => addr_w20, --FALTAM OS OUTROS ADDRESSES NA DATAPATH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        w1Addr => addr_w10,
+        w1Addr2=>addr_w11,
+        w2Addr => addr_w20,
+        W2Addr => addr_w21,
         NeuronCounter => open,
         Neuron2Counter => open,
         NeuronCounter_enable => open,
@@ -230,13 +236,13 @@ begin
         muxpsel => muxpsel,
         muxw2sel0 => muxw2sel,
         muxw2sel1 => muxw2sel,
-        lvl_enable => open, --QUE SER ISTO??????????????
-        rst_lvl => open,    --QUE SER ISTO??????????????
+        lvl_enable => open, -- deve estar sincronizado com outro sinal teu. Indica qual neurónio da segunda está a ser computado
+        rst_lvl => open,    -- same as above
         rst_reg => reg_rst,
-        write_enable => write_enable, --DE ONDE VEM O TERCEIRO ENABLE???????????????????????
-        neuron1_in => open, --QUE SER ISTO??????????????
-        neuron1_out1 => open,--QUE SER ISTO??????????????
-        neuron1_out2 => open--QUE SER ISTO??????????????
+        write_enable => write_enable, --Fixed
+        neuron1_in => open, -- Não é suposto ser aqui é para a memória do neurónio da layer 1. falta isso O_o
+        neuron1_out1 => open, -- Same as above
+        neuron1_out2 => open 
     );
     
     instance_control : control

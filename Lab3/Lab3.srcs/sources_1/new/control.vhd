@@ -115,7 +115,7 @@ begin
                         muxpsel <= cw1;
                         muxw2sel <= (others => '0');
                         reg_rst <= '0';
-                        write_enable <= "01"; --JOAO ISTO TA CERTO?
+                        write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
                         mem_we <= '0';
                     else --cw1==4
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
