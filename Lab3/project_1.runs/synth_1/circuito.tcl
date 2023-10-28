@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.runs/synth_1/circuito.tcl"
+  variable script "C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/synth_1/circuito.tcl"
   variable category "vivado_synth"
 }
 
@@ -77,35 +77,35 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.xpr} [current_project]
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/images.coe}}
-add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/layer1.coe}}
-add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/layer2.coe}}
+add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/images.coe}}
+add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/layer1.coe}}
+add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/layer2.coe}}
 read_vhdl -library xil_defaultlib {
-  {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd}
-  {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/datapath.vhd}
-  {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd}
-  {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl}
+  {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd}
+  {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/datapath.vhd}
+  {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd}
+  {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl}
 }
-read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/ip/middle_memory/middle_memory.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.gen/sources_1/ip/middle_memory/middle_memory_ooc.xdc}}]
+read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/ip/middle_memory/middle_memory.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.gen/sources_1/ip/middle_memory/middle_memory_ooc.xdc}}]
 
-read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/ip/images_mem/images_mem.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.gen/sources_1/ip/images_mem/images_mem_ooc.xdc}}]
+read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/ip/images_mem/images_mem.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.gen/sources_1/ip/images_mem/images_mem_ooc.xdc}}]
 
-read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/ip/weights2/weights2.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.gen/sources_1/ip/weights2/weights2_ooc.xdc}}]
+read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/ip/weights2/weights2.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.gen/sources_1/ip/weights2/weights2_ooc.xdc}}]
 
-read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/sources_1/ip/weights1/weights1.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.gen/sources_1/ip/weights1/weights1_ooc.xdc}}]
+read_ip -quiet {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/ip/weights1/weights1.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.gen/sources_1/ip/weights1/weights1_ooc.xdc}}]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -120,7 +120,7 @@ read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/Francisco/OneDrive/rea de Trabalho/L3_caca/project_1.srcs/utils_1/imports/synth_1/circuito.dcp}
+read_checkpoint -auto_incremental -incremental {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/utils_1/imports/synth_1/circuito.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

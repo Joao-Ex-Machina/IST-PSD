@@ -24,7 +24,7 @@ entity datapath is
             w2Addr2: out std_logic_vector(6 downto 0);
             
             memAddr, memAddr2: out std_logic_vector(4 downto 0);
-            rstmem_gen, mem_enable: in std_logic;
+            rstmem_gen, mem_enable, rstmemread_gen, memread_enable: in std_logic;
             NeuronCounter: out std_logic_vector(5 downto 0);
             Neuron2Counter: out std_logic_vector(5 downto 0);
             
@@ -101,13 +101,13 @@ architecture Behavioral of datapath is
     signal multiplication06: std_logic_vector (3 downto 0);
     signal multiplication07: std_logic_vector (3 downto 0);
     signal multiplication0 : std_logic_vector (31 downto 0);
-    signal add01: signed (3 downto 0);
-    signal add23: signed (3 downto 0);
-    signal add45: signed (3 downto 0);
-    signal add67: signed (3 downto 0);
-    signal add03: signed (3 downto 0);
-    signal add47: signed (3 downto 0);
-    signal add07: signed (3 downto 0);
+    signal add01: signed (4 downto 0);
+    signal add23: signed (4 downto 0);
+    signal add45: signed (4 downto 0);
+    signal add67: signed (4 downto 0);
+    signal add03: signed (5 downto 0);
+    signal add47: signed (5 downto 0);
+    signal add07: signed (6 downto 0);
     signal neuron_part: signed (13 downto 0);
     signal accum_in :std_logic_vector(13 downto 0);
     signal accum_out: std_logic_vector(13 downto 0);
@@ -117,7 +117,7 @@ architecture Behavioral of datapath is
     signal muxedw21 : std_logic_vector (7 downto 0);
     signal mulplication10: signed (21 downto 0);
     signal multiplication11: signed (21 downto 0);
-    signal add_2layer:signed(21 downto 0 );
+    signal add_2layer:signed(22 downto 0 );
     signal level_counter: std_logic_vector(3 downto 0); -- a signal that controlled by the FSM, it must count which level from the layer 2 was calculated
     signal accum2_in : std_logic_vector (26 downto 0);
     signal accum2_out: std_logic_vector(26 downto 0);
@@ -138,11 +138,13 @@ architecture Behavioral of datapath is
     signal MemCounter_aux: std_logic_vector(5 downto 0);
     signal NeuronCounter_aux: std_logic_vector(5 downto 0);
     signal Neuron2Counter_aux : std_logic_vector(5 downto 0);
-    signal memAddr_aux, memAddr2_aux: std_logic_vector(4 downto 0);
+    signal memAddr_aux, memAddrRead_aux, memAddrRead2_aux: std_logic_vector(4 downto 0);
     
     
     signal enable_and : std_logic;
     signal accum_eval_lvl_aux : std_logic_vector(3 downto 0);
+    
+  
     
 begin
 
@@ -154,35 +156,35 @@ begin
 
 -- mux
     with muxpsel select 
-        muxedp <=   pline(7 downto 0) when "00",
-                    pline(15 downto 8) when "01",
-                    pline(23 downto 16) when "10",
-                    pline(31 downto 24) when others;
+        muxedp <=   pline(31 downto 24) when "00",
+                    pline(23 downto 16) when "01",
+                    pline(15 downto 8) when "10",
+                    pline(7 downto 0) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
-    multiplication00 <= wline0(3 downto 0) when muxedp(0)='1' else "0000";
-    multiplication01 <= wline0(7 downto 4) when muxedp(1)='1' else "0000";
-    multiplication02 <= wline0(11 downto 8) when muxedp(2)='1' else "0000";
-    multiplication03 <= wline0(15 downto 12) when muxedp(3)='1' else "0000";
-    multiplication04 <= wline1(3 downto 0) when muxedp(4)='1' else "0000";
-    multiplication05 <= wline1(7 downto 4) when muxedp(5)='1' else "0000";
-    multiplication06 <= wline1(11 downto 8) when muxedp(6)='1' else "0000";
-    multiplication07 <= wline1(15 downto 12) when muxedp(7)='1' else "0000";
+    multiplication00 <= wline0(3 downto 0) when muxedp(3)='1' else "0000";
+    multiplication01 <= wline0(7 downto 4) when muxedp(2)='1' else "0000";
+    multiplication02 <= wline0(11 downto 8) when muxedp(1)='1' else "0000";
+    multiplication03 <= wline0(15 downto 12) when muxedp(0)='1' else "0000";
+    multiplication04 <= wline1(3 downto 0) when muxedp(7)='1' else "0000";
+    multiplication05 <= wline1(7 downto 4) when muxedp(6)='1' else "0000";
+    multiplication06 <= wline1(11 downto 8) when muxedp(5)='1' else "0000";
+    multiplication07 <= wline1(15 downto 12) when muxedp(4)='1' else "0000";
     multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
 -- add 1st round
-    add01 <= signed(multiplication0(3 downto 0)) + signed(multiplication0(7 downto 4));
-    add23 <= signed(multiplication0(11 downto 8)) + signed(multiplication0(15 downto 12));
-    add45 <= signed(multiplication0(19 downto 16)) + signed(multiplication0(23 downto 20));
-    add67 <= signed(multiplication0(27 downto 24)) + signed(multiplication0(31 downto 28));
+    add01 <= signed(multiplication0(3)  & multiplication0(3  downto 0))  + signed(multiplication0(7)  & multiplication0(7   downto 4));
+    add23 <= signed(multiplication0(11) & multiplication0(11 downto 8))  + signed(multiplication0(15) & multiplication0(15  downto 12));
+    add45 <= signed(multiplication0(19) & multiplication0(19 downto 16)) + signed(multiplication0(23) & multiplication0(23 downto 20));
+    add67 <= signed(multiplication0(27) & multiplication0(27 downto 24)) + signed(multiplication0(31) & multiplication0(31 downto 28));
 
 -- add 2nd round
-    add03 <= add01 + add23;
-    add47 <= add45 + add67;
+    add03 <= (add01(4) & add01) + (add23(4) & add23);
+    add47 <= (add45(4) & add45) + (add67(4) & add67);
 
 -- add 3rd round
-    add07 <= add03 + add47;
+    add07 <= (add03(5) & add03) + (add47(5) & add47);
 
 -- add this round with the accumulated
      neuron_part <= add07 + signed(accum_out);
@@ -199,15 +201,15 @@ begin
 
 --Fetch second weights for memories, partition them and...
      with muxw2sel0 select
-        muxedw20 <= w2line0(7 downto 0) when "00",
-                    w2line0(15 downto 8) when "01",
-                    w2line0(23 downto 16) when "10",
-                    w2line0(31 downto 24) when others;
+        muxedw20 <= w2line0(31 downto 24) when "00",
+                    w2line0(23 downto 16) when "01",
+                    w2line0(15 downto 8)  when "10",
+                    w2line0(7 downto 0)   when others;
     with muxw2sel1 select
-        muxedw21 <= w2line1(7 downto 0) when "00",
-                    w2line1(15 downto 8) when "01",
-                    w2line1(23 downto 16) when "10",
-                    w2line1(31 downto 24) when others;
+        muxedw21 <= w2line1(31 downto 24) when "00",
+                    w2line1(23 downto 16) when "01",
+                    w2line1(15 downto 8)  when "10",
+                    w2line1(7 downto 0)   when others;
 
 -- ...multiply by the neuron values
     mulplication10 <= signed(neuron1_out1) * signed(muxedw20);
@@ -220,7 +222,7 @@ begin
 -- sum the neuron-weight products together
 --    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
 
-     add_2layer <= mulplication10 +multiplication11; 
+     add_2layer <= (mulplication10(21) & mulplication10) + (multiplication11(21) & multiplication11); 
 -- add with the accumulated
     neuron_part2 <= add_2layer + signed (accum2_out);
     accum2_in <= std_logic_vector(neuron_part2);
@@ -242,8 +244,8 @@ begin
     w2Addr <= w2Addr_aux;
     w1Addr2 <= w1Addr2_aux;
     w2Addr2 <= w2Addr2_aux;
-    memAddr <= memAddr_aux;
-    memAddr2 <= memAddr2_aux;
+    memAddr <= memAddr_aux or memAddrRead_aux;
+    memAddr2 <= memAddrRead2_aux;
     
     imgCounter <= imgCounter_aux;
     w1Counter <= w1Counter_aux;
@@ -293,16 +295,28 @@ process (clk)
         end if;
     end process;
     
--- mem generator
+-- mem_write generator
 process (clk)
     begin
         if clk'event and clk='1' then
             if rstmem_gen='1' then
                  memAddr_aux<= (others => '0');
-                memAddr2_aux <= std_logic_vector(unsigned(memAddr_aux)+1);
             elsif mem_enable='1' then
-                memAddr_aux <= std_logic_vector(unsigned(memAddr_aux) +2);
-                memAddr2_aux <= std_logic_vector(unsigned(memAddr2_aux)+2); -- Address for second output
+                memAddr_aux <= std_logic_vector(unsigned(memAddr_aux) + 1);
+            end if;
+        end if;
+    end process;
+    
+-- mem_read generator
+process (clk)
+    begin
+        if clk'event and clk='1' then
+            if rstmemread_gen='1' then
+                 memAddrRead_aux<= (others => '0');
+                memAddrRead2_aux <= std_logic_vector(unsigned(memAddrRead_aux)+1);
+            elsif memread_enable='1' then
+                memAddrRead_aux <= std_logic_vector(unsigned(memAddrRead_aux) +2);
+                memAddrRead2_aux <= std_logic_vector(unsigned(memAddrRead2_aux)+2); -- Address for second output
             end if;
         end if;
     end process;

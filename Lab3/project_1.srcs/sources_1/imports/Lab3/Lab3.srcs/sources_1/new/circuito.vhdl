@@ -61,81 +61,81 @@ architecture Behavioral of circuito is
     end component;
     
     component datapath
-        Port (
-        clk: in std_logic;
+        port (
+            clk: in std_logic;
         -- Addresses, reset and Enable signals for memory component
-        
-        starterAddr: in std_logic_vector (11 downto 0);
-        imgAddr: out std_logic_vector (11 downto 0);
-        
-        w1Addr: out std_logic_vector(12 downto 0);
-        w1Addr2: out std_logic_vector(12 downto 0);
+            
+            starterAddr: in std_logic_vector (11 downto 0);
+            imgAddr: out std_logic_vector (11 downto 0);
+            w1Addr: out std_logic_vector(12 downto 0);
+            w1Addr2: out std_logic_vector(12 downto 0);
 
-        w2Addr: out std_logic_vector(6 downto 0);
-        w2Addr2: out std_logic_vector(6 downto 0);
-        NeuronCounter: out std_logic_vector(5 downto 0);
-        Neuron2Counter: out std_logic_vector(5 downto 0);
-        
-        rst_eval : in std_logic;
-        
-        memAddr, memAddr2: out std_logic_vector(4 downto 0);
-        rstmem_gen, mem_enable: in std_logic;
-        
-        NeuronCounter_enable : in std_logic;
-        rstNeuron_counter: in std_logic;
+            w2Addr: out std_logic_vector(6 downto 0);
+            w2Addr2: out std_logic_vector(6 downto 0);
+            
+            memAddr, memAddr2: out std_logic_vector(4 downto 0);
+            rstmem_gen, mem_enable, rstmemread_gen, memread_enable: in std_logic;
+            NeuronCounter: out std_logic_vector(5 downto 0);
+            Neuron2Counter: out std_logic_vector(5 downto 0);
+            
+            rst_eval : in std_logic;
+            
+            NeuronCounter_enable : in std_logic;
+            rstNeuron_counter: in std_logic;
 
-        Neuron2Counter_enable: in std_logic;
-        rstNeuron2_counter: in std_logic;
-        
+            Neuron2Counter_enable: in std_logic;
+            rstNeuron2_counter: in std_logic;
+            
 
-        img_enable: in std_logic;
-        imgCounter_enable: in std_logic;
-        rstImg_gen: in std_logic;
-        rstImg_counter:in std_logic;
+            img_enable: in std_logic;
+            imgCounter_enable: in std_logic;
+            rstImg_gen: in std_logic;
+            rstImg_counter:in std_logic;
 
-        MemCounter_en: in std_logic;
-        MemCounter_rst: in std_logic;
-        
-        w1_enable: in std_logic;
-        w1Counter_enable: in std_logic;
-        rstW1_gen: in std_logic;
-        rstW1_counter: in std_logic;        
+            MemCounter_en: in std_logic;
+            MemCounter_rst: in std_logic;
+            
+            w1_enable: in std_logic;
+            w1Counter_enable: in std_logic;
+            rstW1_gen: in std_logic;
+            rstW1_counter: in std_logic;        
 
 
-        w2_enable: in std_logic;
-        w2Counter_enable: in std_logic;
-        rstW2_gen: in std_logic;
-        rstw2_counter: in std_logic;
+            w2_enable: in std_logic;
+            w2Counter_enable: in std_logic;
+            rstW2_gen: in std_logic;
+            rstw2_counter: in std_logic;
 
         -- Counters for Control Unit
-        imgCounter: out std_logic_vector (5 downto 0);
-        w1Counter: out std_logic_vector(5 downto 0);
-        w2Counter: out std_logic_vector(5 downto 0);
-        MemCounter: out std_logic_vector(5 downto 0);
+            imgCounter: out std_logic_vector (5 downto 0);
+            w1Counter: out std_logic_vector(5 downto 0);
+            w2Counter: out std_logic_vector(5 downto 0);
+            MemCounter: out std_logic_vector(5 downto 0);
 
-        -- Data lines from Memory Component
-        pline: in std_logic_vector (31 downto 0);
-        wline0: in std_logic_vector (15 downto 0);
-        wline1: in std_logic_vector (15 downto 0);
-        w2line0: in std_logic_vector (31 downto 0);
-        w2line1: in std_logic_vector (31 downto 0);
+            -- Data lines from Memory Component
+            pline: in std_logic_vector (31 downto 0);
+            wline0: in std_logic_vector (15 downto 0);
+            wline1: in std_logic_vector (15 downto 0);
+            w2line0: in std_logic_vector (31 downto 0);
+            w2line1: in std_logic_vector (31 downto 0);
         -- Control signals
-        muxpsel: in std_logic_vector(1 downto 0); --select which 8 pixel segment of the 32-bit line is to be selected
-        muxw2sel0:in std_logic_vector(1 downto 0);
-        muxw2sel1:in std_logic_vector(1 downto 0);
-        lvl_enable: in std_logic;
-        rst_lvl: in std_logic;
-        rst_reg: in std_logic;
-        evaluate_enable : in std_logic;
-        write_enable: in std_logic_vector(1 downto 0);
+            muxpsel: in std_logic_vector(1 downto 0); --select which 8 pixel segment of the 32-bit line is to be selected
+            muxw2sel0:in std_logic_vector(1 downto 0);
+            muxw2sel1:in std_logic_vector(1 downto 0);
+            lvl_enable: in std_logic; 
+            rst_lvl: in std_logic;
+            rst_reg: in std_logic;
+            evaluate_enable : in std_logic;
+            write_enable: in std_logic_vector(1 downto 0);
 
-        --NEURON MEMORY PORTS
-        neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
-        neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
-        neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
-        accum_eval_lvl : out std_logic_vector(3 downto 0);
-        evaluate_enable_accum : in std_logic
-        );
+            --NEURON MEMORY PORTS
+            neuron1_in: out std_logic_vector(13 downto 0); -- dual channel memory input
+            neuron1_out1: in std_logic_vector(13 downto 0); -- dual channel memory output
+            neuron1_out2: in std_logic_vector(13 downto 0); -- dual channel memory output
+            accum_eval_lvl : out std_logic_vector(3 downto 0);
+            evaluate_enable_accum : in std_logic
+            
+            );
     end component;
 
     component control
@@ -147,8 +147,8 @@ architecture Behavioral of circuito is
         --TO DATAPATH
         starter_address : out std_logic_vector(11 downto 0); --img memory
         
-        address_enables : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
-        address_resets : out std_logic_vector(3 downto 0); --[mem, w2, w1, p]
+        address_enables : out std_logic_vector(4 downto 0); --[mem, w2, w1, p]
+        address_resets : out std_logic_vector(4 downto 0); --[mem, w2, w1, p]
         
         counter_enables : out std_logic_vector(5 downto 0); --[aux2, aux1, mem, w2, w1, p]
         counter_resets : out std_logic_vector(5 downto 0); --[aux2, aux1, mem, w2, w1, p]
@@ -171,7 +171,7 @@ architecture Behavioral of circuito is
     
     signal starter_address : std_logic_vector(11 downto 0);
     signal write_enable: std_logic_vector (1 downto 0);
-    signal address_enables, address_resets : std_logic_vector(3 downto 0);
+    signal address_enables, address_resets : std_logic_vector(4 downto 0);
     signal counter_enables, counter_resets : std_logic_vector (5 downto 0);
     signal muxpsel, muxw2sel : std_logic_vector(1 downto 0);
     signal mem_we, reg_rst : std_logic;
@@ -221,7 +221,9 @@ begin
         memAddr => addr_m0,
         memAddr2 => addr_m1,
         rstmem_gen => address_resets(3),
+        rstmemread_gen => address_resets(4),
         mem_enable => address_enables(3),
+        memread_enable => address_enables(4),
         NeuronCounter => caux1,
         Neuron2Counter =>caux2,
         rst_eval => rst_eval,
