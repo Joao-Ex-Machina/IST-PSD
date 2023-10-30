@@ -200,43 +200,43 @@ begin
         when s_layer2 =>
             if unsigned(caux2) <= 9 then
                 next_state <= s_layer2;
-                if unsigned(cw2) <= 3 then
-                    if unsigned(cmem) <= 2 then
+                if unsigned(cw2) <= 7 then
+                    if unsigned(cmem) <= 0 then
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
                         address_enables <= "10000";
                         address_resets <=  "00000";
                         counter_enables <= "001000";
                         counter_resets <=  "000000";
                         muxpsel <= "00";
-                        muxw2sel <= cmem(1 downto 0);
+                        muxw2sel <= "00";--cmem(1 downto 0);
                         reg_rst <= '0';
                         rst_eval <= '0';
                         evaluate_enable <= '0';
                         evaluate_enable_accum <= '0';
                         write_enable <= "10"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
-                    elsif unsigned(cmem)=3 then
+                    elsif unsigned(cmem)=1 then
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
                         address_enables <= "00100";
                         address_resets <=  "00000";
                         counter_enables <= "001000";
                         counter_resets <=  "000000";
                         muxpsel <= "00";
-                        muxw2sel <= cmem(1 downto 0);
+                        muxw2sel <= "10";--cmem(1 downto 0);
                         reg_rst <= '0';
                         rst_eval <= '0';
                         evaluate_enable <= '0';
                         evaluate_enable_accum <= '0';
                         write_enable <= "10"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
-                    else --cmem==4
+                    else --cmem==2
                         starter_address <= std_logic_vector(unsigned(img_number)*32);
                         address_enables <= "10000";
                         address_resets <=  "00000";
                         counter_enables <= "000100";
                         counter_resets <=  "001000";
                         muxpsel <= "00";
-                        muxw2sel <= cmem(1 downto 0);
+                        muxw2sel <= "00";
                         reg_rst <= '0';
                         rst_eval <= '0';
                         evaluate_enable <= '0';
@@ -244,7 +244,7 @@ begin
                         write_enable <= "00"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
                     end if;
-                elsif unsigned(cw2)=4 then --cw2==4
+                elsif unsigned(cw2)=8 then --cw2==8
                     starter_address <= std_logic_vector(unsigned(img_number)*32);
                     address_enables <= "00000";
                     address_resets <=  "10000";
@@ -261,7 +261,7 @@ begin
                 else 
                     starter_address <= std_logic_vector(unsigned(img_number)*32);
                     address_enables <= "00000";
-                    address_resets <=  "10000";
+                    address_resets <=  "00000";
                     counter_enables <= "100000";
                     counter_resets <=  "001100";
                     muxpsel <= "00";

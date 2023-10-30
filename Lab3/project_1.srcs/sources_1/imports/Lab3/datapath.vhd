@@ -200,16 +200,17 @@ begin
 --||---------------||
 
 --Fetch second weights for memories, partition them and...
-     with muxw2sel0 select
-        muxedw20 <= w2line0(7 downto 0) when "00",
-                    w2line0(15 downto 8) when "01",
-                    w2line0(23 downto 16)  when "10",
+     with muxw2sel0(0) select
+        muxedw20 <= w2line0(7 downto 0) when '0',
+                    w2line0(23 downto 16) when others;
+                    --w2line0(23 downto 16)  when "10",
+                    --w2line0(31 downto 24)   when others;
+    with muxw2sel0(0) select
+        muxedw21 <= 
+                    --w2line1(7 downto 0) when "00",
+                    --w2line1(15 downto 8) when "01",
+                    w2line0(15 downto 8)  when '0',
                     w2line0(31 downto 24)   when others;
-    with muxw2sel1 select
-        muxedw21 <= w2line1(7 downto 0) when "00",
-                    w2line1(15 downto 8) when "01",
-                    w2line1(23 downto 16)  when "10",
-                    w2line1(31 downto 24)   when others;
 
 -- ...multiply by the neuron values
     mulplication10 <= signed(neuron1_out1) * signed(muxedw20);
@@ -222,7 +223,7 @@ begin
 -- sum the neuron-weight products together
 --    add_2layer <= signed(auxreg3_out) + signed(auxreg4_out);
 
-     add_2layer <= (mulplication10(21) & mulplication10) + (multiplication11(21) & multiplication11); 
+     add_2layer <= signed(mulplication10(21) & mulplication10) + signed(multiplication11(21) & multiplication11); 
 -- add with the accumulated
     neuron_part2 <= add_2layer + signed (accum2_out);
     accum2_in <= std_logic_vector(neuron_part2);
@@ -289,8 +290,8 @@ process (clk)
                  w2Addr_aux<= (others => '0');
                 w2Addr2_aux <= std_logic_vector(unsigned(w2Addr_aux)+1);
             elsif w2_enable='1' then
-                w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +2);
-                w2Addr2_aux <= std_logic_vector(unsigned(w2Addr2_aux)+2); -- Address for second output
+                w2Addr_aux <= std_logic_vector(unsigned(w2Addr_aux) +1);
+                w2Addr2_aux <= w2Addr_aux;--std_logic_vector(unsigned(w2Addr2_aux)+2); -- Address for second output
             end if;
         end if;
     end process;
@@ -313,7 +314,7 @@ process (clk)
         if clk'event and clk='1' then
             if rstmemread_gen='1' then
                  memAddrRead_aux<= (others => '0');
-                memAddrRead2_aux <= std_logic_vector(unsigned(memAddrRead_aux)+1);
+                memAddrRead2_aux <= "00001";
             elsif memread_enable='1' then
                 memAddrRead_aux <= std_logic_vector(unsigned(memAddrRead_aux) +2);
                 memAddrRead2_aux <= std_logic_vector(unsigned(memAddrRead2_aux)+2); -- Address for second output
@@ -451,7 +452,7 @@ process (clk)
         end if;
     end process;
 
-    enable_and <= accum_eval_en and evaluate_enable;
+    --enable_and <= accum_eval_en and evaluate_enable;
 
 process (clk)
     begin
