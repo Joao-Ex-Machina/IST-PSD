@@ -1,0 +1,841 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Mon Oct 30 14:17:43 2023
+| Host         : Shub-Niggurath running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file circuito_timing_summary_routed.rpt -pb circuito_timing_summary_routed.pb -rpx circuito_timing_summary_routed.rpx -warn_on_violation
+| Design       : circuito
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  175         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (175)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (651)
+5. checking no_input_delay (8)
+6. checking no_output_delay (4)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (175)
+--------------------------
+ There are 175 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (651)
+--------------------------------------------------
+ There are 651 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (8)
+------------------------------
+ There are 8 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (4)
+-------------------------------
+ There are 4 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  655          inf        0.000                      0                  655           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           655 Endpoints
+Min Delay           655 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[4]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        19.150ns  (logic 9.534ns (49.785%)  route 9.616ns (50.215%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.910    19.150    instance_datapath/accum_eval_out_0
+    SLICE_X9Y6           FDRE                                         r  instance_datapath/accum_eval_out_reg[4]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[5]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        19.150ns  (logic 9.534ns (49.785%)  route 9.616ns (50.215%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.910    19.150    instance_datapath/accum_eval_out_0
+    SLICE_X9Y6           FDRE                                         r  instance_datapath/accum_eval_out_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[6]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        19.150ns  (logic 9.534ns (49.785%)  route 9.616ns (50.215%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.910    19.150    instance_datapath/accum_eval_out_0
+    SLICE_X9Y6           FDRE                                         r  instance_datapath/accum_eval_out_reg[6]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[0]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X10Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[10]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X11Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[10]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[11]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X11Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[11]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[12]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X11Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[12]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[1]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X10Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[2]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X10Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/Neuron2Counter_aux_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_out_reg[3]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.996ns  (logic 9.534ns (50.191%)  route 9.462ns (49.809%))
+  Logic Levels:           12  (CARRY4=1 DSP48E1=3 FDRE=1 LUT2=1 LUT3=1 LUT4=2 LUT5=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y7           FDRE                         0.000     0.000 r  instance_datapath/Neuron2Counter_aux_reg[3]/C
+    SLICE_X4Y7           FDRE (Prop_fdre_C_Q)         0.456     0.456 f  instance_datapath/Neuron2Counter_aux_reg[3]/Q
+                         net (fo=4, routed)           0.709     1.165    instance_datapath/Neuron2Counter_aux_reg[3]
+    SLICE_X4Y7           LUT5 (Prop_lut5_I2_O)        0.124     1.289 r  instance_datapath/accum_out[13]_i_4/O
+                         net (fo=5, routed)           0.888     2.177    instance_control/next_state1__3
+    SLICE_X5Y7           LUT3 (Prop_lut3_I1_O)        0.152     2.329 r  instance_control/FSM_sequential_curr_state[1]_i_2/O
+                         net (fo=6, routed)           0.985     3.314    instance_datapath/accum_eval_lvl_aux_reg[0]_0
+    SLICE_X5Y9           LUT5 (Prop_lut5_I0_O)        0.326     3.640 r  instance_datapath/neuron_part2_i_2/O
+                         net (fo=7, routed)           1.115     4.755    instance_datapath/neuron_part2_i_2_n_0
+    SLICE_X9Y5           LUT2 (Prop_lut2_I0_O)        0.152     4.907 r  instance_datapath/mulplication10_i_9/O
+                         net (fo=16, routed)          0.696     5.603    instance_mems/muxw2sel0[1]
+    SLICE_X8Y4           LUT6 (Prop_lut6_I2_O)        0.332     5.935 r  instance_mems/mulplication10_i_1/O
+                         net (fo=11, routed)          1.186     7.120    instance_datapath/B[7]
+    DSP48_X0Y0           DSP48E1 (Prop_dsp48e1_B[10]_PCOUT[47])
+                                                      3.851    10.971 r  instance_datapath/mulplication10/PCOUT[47]
+                         net (fo=1, routed)           0.002    10.973    instance_datapath/mulplication10_n_106
+    DSP48_X0Y1           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    12.686 r  instance_datapath/add_2layer/PCOUT[47]
+                         net (fo=1, routed)           0.002    12.688    instance_datapath/add_2layer_n_106
+    DSP48_X0Y2           DSP48E1 (Prop_dsp48e1_PCIN[47]_P[25])
+                                                      1.518    14.206 r  instance_datapath/neuron_part2/P[25]
+                         net (fo=4, routed)           1.913    16.119    instance_datapath/neuron_part2_n_80
+    SLICE_X11Y9          LUT4 (Prop_lut4_I1_O)        0.124    16.243 r  instance_datapath/accum_eval_lvl_aux0_carry__2_i_4/O
+                         net (fo=1, routed)           0.000    16.243    instance_datapath/accum_eval_lvl_aux0_carry__2_i_4_n_0
+    SLICE_X11Y9          CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.457    16.700 r  instance_datapath/accum_eval_lvl_aux0_carry__2/CO[1]
+                         net (fo=2, routed)           1.211    17.911    instance_datapath/accum_eval_lvl_aux0_carry__2_n_2
+    SLICE_X6Y8           LUT4 (Prop_lut4_I1_O)        0.329    18.240 r  instance_datapath/accum_eval_out[26]_i_2/O
+                         net (fo=27, routed)          0.755    18.996    instance_datapath/accum_eval_out_0
+    SLICE_X10Y6          FDRE                                         r  instance_datapath/accum_eval_out_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 instance_datapath/level_counter_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_lvl_aux_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.264ns  (logic 0.128ns (48.524%)  route 0.136ns (51.476%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y4           FDRE                         0.000     0.000 r  instance_datapath/level_counter_reg[3]/C
+    SLICE_X0Y4           FDRE (Prop_fdre_C_Q)         0.128     0.128 r  instance_datapath/level_counter_reg[3]/Q
+                         net (fo=2, routed)           0.136     0.264    instance_datapath/level_counter_reg[3]
+    SLICE_X0Y3           FDRE                                         r  instance_datapath/accum_eval_lvl_aux_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/level_counter_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_lvl_aux_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.267ns  (logic 0.141ns (52.822%)  route 0.126ns (47.178%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y4           FDRE                         0.000     0.000 r  instance_datapath/level_counter_reg[2]/C
+    SLICE_X0Y4           FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/level_counter_reg[2]/Q
+                         net (fo=3, routed)           0.126     0.267    instance_datapath/level_counter_reg[2]
+    SLICE_X0Y3           FDRE                                         r  instance_datapath/accum_eval_lvl_aux_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/level_counter_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/accum_eval_lvl_aux_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.283ns  (logic 0.141ns (49.886%)  route 0.142ns (50.114%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y4           FDRE                         0.000     0.000 r  instance_datapath/level_counter_reg[0]/C
+    SLICE_X0Y4           FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/level_counter_reg[0]/Q
+                         net (fo=5, routed)           0.142     0.283    instance_datapath/level_counter_reg[0]
+    SLICE_X0Y3           FDRE                                         r  instance_datapath/accum_eval_lvl_aux_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_1_cooolDelFlop/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/ENARDEN
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.305ns  (logic 0.141ns (46.253%)  route 0.164ns (53.747%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y13          FDCE                         0.000     0.000 r  instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_1_cooolDelFlop/C
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_1_cooolDelFlop/Q
+                         net (fo=4, routed)           0.164     0.305    instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_sig_1
+    RAMB36_X0Y2          RAMB36E1                                     r  instance_mems/instance_images/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/ENARDEN
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/w1Addr2_aux_reg[7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/ADDRBWRADDR[10]
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.309ns  (logic 0.141ns (45.658%)  route 0.168ns (54.342%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y7          FDRE                         0.000     0.000 r  instance_datapath/w1Addr2_aux_reg[7]/C
+    SLICE_X49Y7          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/w1Addr2_aux_reg[7]/Q
+                         net (fo=5, routed)           0.168     0.309    instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addrb[7]
+    RAMB36_X1Y1          RAMB36E1                                     r  instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/ADDRBWRADDR[10]
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/w1Addr2_aux_reg[12]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.311ns  (logic 0.141ns (45.389%)  route 0.170ns (54.611%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y9          FDRE                         0.000     0.000 r  instance_datapath/w1Addr2_aux_reg[12]/C
+    SLICE_X49Y9          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/w1Addr2_aux_reg[12]/Q
+                         net (fo=8, routed)           0.170     0.311    instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/addrb[0]
+    SLICE_X49Y10         FDRE                                         r  instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/memAddrRead_aux_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/memAddrRead2_aux_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.314ns  (logic 0.209ns (66.488%)  route 0.105ns (33.512%))
+  Logic Levels:           2  (FDRE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y5          FDRE                         0.000     0.000 r  instance_datapath/memAddrRead_aux_reg[1]/C
+    SLICE_X10Y5          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  instance_datapath/memAddrRead_aux_reg[1]/Q
+                         net (fo=6, routed)           0.105     0.269    instance_datapath/memAddrRead_aux_reg[1]
+    SLICE_X11Y5          LUT3 (Prop_lut3_I0_O)        0.045     0.314 r  instance_datapath/memAddrRead2_aux[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.314    instance_datapath/p_0_in__0[1]
+    SLICE_X11Y5          FDRE                                         r  instance_datapath/memAddrRead2_aux_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/w1Addr_aux_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/w1Addr2_aux_reg[10]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.315ns  (logic 0.252ns (79.968%)  route 0.063ns (20.032%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y8          FDRE                         0.000     0.000 r  instance_datapath/w1Addr_aux_reg[10]/C
+    SLICE_X48Y8          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/w1Addr_aux_reg[10]/Q
+                         net (fo=6, routed)           0.063     0.204    instance_datapath/addr_w10[9]
+    SLICE_X49Y8          LUT3 (Prop_lut3_I0_O)        0.045     0.249 r  instance_datapath/w1Addr2_aux[8]_i_3/O
+                         net (fo=1, routed)           0.000     0.249    instance_datapath/w1Addr2_aux[8]_i_3_n_0
+    SLICE_X49Y8          CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.066     0.315 r  instance_datapath/w1Addr2_aux_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     0.315    instance_datapath/w1Addr2_aux_reg[8]_i_1_n_5
+    SLICE_X49Y8          FDRE                                         r  instance_datapath/w1Addr2_aux_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/w1Addr_aux_reg[6]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_datapath/w1Addr2_aux_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.315ns  (logic 0.252ns (79.968%)  route 0.063ns (20.032%))
+  Logic Levels:           3  (CARRY4=1 FDRE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y7          FDRE                         0.000     0.000 r  instance_datapath/w1Addr_aux_reg[6]/C
+    SLICE_X48Y7          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/w1Addr_aux_reg[6]/Q
+                         net (fo=6, routed)           0.063     0.204    instance_datapath/addr_w10[5]
+    SLICE_X49Y7          LUT3 (Prop_lut3_I0_O)        0.045     0.249 r  instance_datapath/w1Addr2_aux[4]_i_3/O
+                         net (fo=1, routed)           0.000     0.249    instance_datapath/w1Addr2_aux[4]_i_3_n_0
+    SLICE_X49Y7          CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.066     0.315 r  instance_datapath/w1Addr2_aux_reg[4]_i_1/O[2]
+                         net (fo=1, routed)           0.000     0.315    instance_datapath/w1Addr2_aux_reg[4]_i_1_n_5
+    SLICE_X49Y7          FDRE                                         r  instance_datapath/w1Addr2_aux_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 instance_datapath/w1Addr2_aux_reg[12]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_12_cooolDelFlop/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.317ns  (logic 0.141ns (44.411%)  route 0.176ns (55.589%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y9          FDRE                         0.000     0.000 r  instance_datapath/w1Addr2_aux_reg[12]/C
+    SLICE_X49Y9          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  instance_datapath/w1Addr2_aux_reg[12]/Q
+                         net (fo=8, routed)           0.176     0.317    instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addrb[12]
+    SLICE_X50Y9          FDCE                                         r  instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/instance_mems/instance_weights1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_cooolgate_en_gate_12_cooolDelFlop/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698524274" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
-  <File Type="PA-TCL" Name="circuito.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="circuito_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="circuito_reports.tcl"/>
-  <File Type="RDS-RDS" Name="circuito.vds"/>
-  <File Type="RDS-UTIL" Name="circuito_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="circuito_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="circuito.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="circuito_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698675022" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
   <File Type="VDS-TIMING-PB" Name="circuito_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="circuito_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="circuito.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="circuito_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="circuito_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="circuito_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="circuito.vds"/>
+  <File Type="REPORTS-TCL" Name="circuito_reports.tcl"/>
+  <File Type="PA-TCL" Name="circuito.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/middle_memory/middle_memory.xci">
@@ -134,6 +134,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="weights1"/>
-  <BlockFileSet Type="BlockSrcs" Name="images_mem"/>
   <BlockFileSet Type="BlockSrcs" Name="weights2"/>
+  <BlockFileSet Type="BlockSrcs" Name="images_mem"/>
 </GenRun>

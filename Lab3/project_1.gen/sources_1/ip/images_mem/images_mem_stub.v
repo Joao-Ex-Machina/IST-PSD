@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Fri Oct 27 16:22:20 2023
+// Date        : Fri Oct 27 16:22:19 2023
 // Host        : DESKTOP-NOHGJAN running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/Francisco/OneDrive/rea de
-//               Trabalho/L3_caca/project_1.gen/sources_1/ip/images_mem/images_mem_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top images_mem -prefix
+//               images_mem_ images_mem_stub.v
 // Design      : images_mem
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

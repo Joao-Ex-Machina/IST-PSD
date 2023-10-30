@@ -125,7 +125,7 @@ architecture Behavioral of datapath is
     signal accum_eval_in :std_logic_vector(26 downto 0);
     signal accum_eval_out :std_logic_vector(26 downto 0);
     signal accum_eval_lvl_in: std_logic_vector(3 downto 0);
-    signal accum_eval_en: std_logic;
+  --  signal accum_eval_en: std_logic;
 -- COUNTERS AND GENERATORS
     signal imgAddr_aux : std_logic_vector(11 downto 0);
     signal w1Addr_aux : std_logic_vector(12 downto 0);
@@ -156,21 +156,21 @@ begin
 
 -- mux
     with muxpsel select 
-        muxedp <=   pline(31 downto 24) when "00",
-                    pline(23 downto 16) when "01",
-                    pline(15 downto 8) when "10",
-                    pline(7 downto 0) when others;
+        muxedp <=   pline(7 downto 0) when "00",
+                    pline(15 downto 8) when "01",
+                    pline(23 downto 16) when "10",
+                    pline(31 downto 24) when others;
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
 -- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
-    multiplication00 <= wline0(3 downto 0) when muxedp(3)='1' else "0000";
-    multiplication01 <= wline0(7 downto 4) when muxedp(2)='1' else "0000";
-    multiplication02 <= wline0(11 downto 8) when muxedp(1)='1' else "0000";
-    multiplication03 <= wline0(15 downto 12) when muxedp(0)='1' else "0000";
-    multiplication04 <= wline1(3 downto 0) when muxedp(7)='1' else "0000";
-    multiplication05 <= wline1(7 downto 4) when muxedp(6)='1' else "0000";
-    multiplication06 <= wline1(11 downto 8) when muxedp(5)='1' else "0000";
-    multiplication07 <= wline1(15 downto 12) when muxedp(4)='1' else "0000";
+    multiplication00 <= wline0(3 downto 0) when muxedp(0)='1' else "0000";
+    multiplication01 <= wline0(7 downto 4) when muxedp(1)='1' else "0000";
+    multiplication02 <= wline0(11 downto 8) when muxedp(2)='1' else "0000";
+    multiplication03 <= wline0(15 downto 12) when muxedp(3)='1' else "0000";
+    multiplication04 <= wline1(3 downto 0) when muxedp(4)='1' else "0000";
+    multiplication05 <= wline1(7 downto 4) when muxedp(5)='1' else "0000";
+    multiplication06 <= wline1(11 downto 8) when muxedp(6)='1' else "0000";
+    multiplication07 <= wline1(15 downto 12) when muxedp(7)='1' else "0000";
     multiplication0 <= multiplication07 & multiplication06 & multiplication05 & multiplication04 & multiplication03 & multiplication02 & multiplication01 & multiplication00;
 
 -- add 1st round
@@ -201,15 +201,15 @@ begin
 
 --Fetch second weights for memories, partition them and...
      with muxw2sel0 select
-        muxedw20 <= w2line0(31 downto 24) when "00",
-                    w2line0(23 downto 16) when "01",
-                    w2line0(15 downto 8)  when "10",
-                    w2line0(7 downto 0)   when others;
+        muxedw20 <= w2line0(7 downto 0) when "00",
+                    w2line0(15 downto 8) when "01",
+                    w2line0(23 downto 16)  when "10",
+                    w2line0(31 downto 24)   when others;
     with muxw2sel1 select
-        muxedw21 <= w2line1(31 downto 24) when "00",
-                    w2line1(23 downto 16) when "01",
-                    w2line1(15 downto 8)  when "10",
-                    w2line1(7 downto 0)   when others;
+        muxedw21 <= w2line1(7 downto 0) when "00",
+                    w2line1(15 downto 8) when "01",
+                    w2line1(23 downto 16)  when "10",
+                    w2line1(31 downto 24)   when others;
 
 -- ...multiply by the neuron values
     mulplication10 <= signed(neuron1_out1) * signed(muxedw20);
@@ -468,7 +468,7 @@ process (clk)
     begin
         if clk'event and clk='1' then
             if rst_eval='1' then
-                 accum_eval_out <= (others => '0');
+                 accum_eval_out <= "100000000000000000000000000";
             elsif evaluate_enable_accum='1' then
                 accum_eval_out <= accum_eval_in ;
             end if;

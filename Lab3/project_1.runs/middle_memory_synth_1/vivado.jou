@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat Oct 28 14:35:39 2023
+# Process ID: 13593
+# Current directory: /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/middle_memory_synth_1
+# Command line: vivado -log middle_memory.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source middle_memory.tcl
+# Log file: /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/middle_memory_synth_1/middle_memory.vds
+# Journal file: /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/middle_memory_synth_1/vivado.jou
+# Running On: Shub-Niggurath, OS: Linux, CPU Frequency: 3169.606 MHz, CPU Physical cores: 4, Host memory: 16720 MB
+#-----------------------------------------------------------
+source middle_memory.tcl -notrace
