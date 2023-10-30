@@ -260,7 +260,7 @@ begin
                     mem_we <= '0';
                 else 
                     starter_address <= std_logic_vector(unsigned(img_number)*32);
-                    address_enables <= "00000";
+                    address_enables <= "10000";
                     address_resets <=  "00000";
                     counter_enables <= "100000";
                     counter_resets <=  "001100";

@@ -76,7 +76,7 @@ begin
         wait for clk_period * 10;
         rst <= '1' after 20 ns,
                 '0' after 40 ns;
-        img_number <=  "000001" after 40 ns;
+        img_number <=  "000000" after 40 ns;
         
         init <= '1' after 40 ns,
                 '0' after 80 ns;

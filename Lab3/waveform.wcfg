@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="52,065.850 ns"></ZoomStartTime>
-      <ZoomEndTime time="52,080.751 ns"></ZoomEndTime>
-      <Cursor1Time time="52,135.100 ns"></Cursor1Time>
+      <ZoomStartTime time="51,756.400 ns"></ZoomStartTime>
+      <ZoomEndTime time="51,868.001 ns"></ZoomEndTime>
+      <Cursor1Time time="51,797.200 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="373"></NameColumnWidth>
-      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+      <NameColumnWidth column_width="140"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="41" />
+   <WVObjectSize size="42" />
    <wvobject type="logic" fp_name="/circuito_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -92,10 +92,6 @@
       <obj_property name="ObjectShortName">address_resets[4:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/circuito_tb/uut/instance_mems/weight2_40">
-      <obj_property name="ElementShortName">weight2_40[31:0]</obj_property>
-      <obj_property name="ObjectShortName">weight2_40[31:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/pline">
       <obj_property name="ElementShortName">pline[31:0]</obj_property>
       <obj_property name="ObjectShortName">pline[31:0]</obj_property>
@@ -139,9 +135,18 @@
       <obj_property name="ObjectShortName">out_middle1[13:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/circuito_tb/uut/instance_mems/weight2_41">
-      <obj_property name="ElementShortName">weight2_41[31:0]</obj_property>
-      <obj_property name="ObjectShortName">weight2_41[31:0]</obj_property>
+   <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/muxedw20">
+      <obj_property name="ElementShortName">muxedw20[7:0]</obj_property>
+      <obj_property name="ObjectShortName">muxedw20[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/muxedw21">
+      <obj_property name="ElementShortName">muxedw21[7:0]</obj_property>
+      <obj_property name="ObjectShortName">muxedw21[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/circuito_tb/uut/instance_mems/weight2_40">
+      <obj_property name="ElementShortName">weight2_40[31:0]</obj_property>
+      <obj_property name="ObjectShortName">weight2_40[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/neuron_part2">
       <obj_property name="ElementShortName">neuron_part2[26:0]</obj_property>
@@ -160,6 +165,7 @@
    <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/accum2_in">
       <obj_property name="ElementShortName">accum2_in[26:0]</obj_property>
       <obj_property name="ObjectShortName">accum2_in[26:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/circuito_tb/uut/instance_datapath/accum_eval_lvl_in">
       <obj_property name="ElementShortName">accum_eval_lvl_in[3:0]</obj_property>

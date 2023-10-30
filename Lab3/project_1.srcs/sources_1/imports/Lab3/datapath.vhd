@@ -200,12 +200,12 @@ begin
 --||---------------||
 
 --Fetch second weights for memories, partition them and...
-     with muxw2sel0(0) select
+     with muxw2sel0(1) select
         muxedw20 <= w2line0(7 downto 0) when '0',
                     w2line0(23 downto 16) when others;
                     --w2line0(23 downto 16)  when "10",
                     --w2line0(31 downto 24)   when others;
-    with muxw2sel0(0) select
+    with muxw2sel0(1) select
         muxedw21 <= 
                     --w2line1(7 downto 0) when "00",
                     --w2line1(15 downto 8) when "01",
@@ -229,8 +229,8 @@ begin
     accum2_in <= std_logic_vector(neuron_part2);
 
 -- evaluator
-    accum_eval_in <= std_logic_vector(neuron_part2) when neuron_part2 >= signed(accum_eval_out) else accum_eval_out;
-    accum_eval_lvl_in <= level_counter when neuron_part2 >= signed(accum_eval_out) else accum_eval_lvl_aux;
+    accum_eval_in <= (accum2_out) when signed(accum2_out) >= signed(accum_eval_out) else accum_eval_out;
+    accum_eval_lvl_in <= level_counter when signed(accum2_out) >= signed(accum_eval_out) else accum_eval_lvl_aux;
     --accum_eval_en <= '1' when neuron_part2 >= signed(accum_eval_out) else '0';
 
 --||----------------||
