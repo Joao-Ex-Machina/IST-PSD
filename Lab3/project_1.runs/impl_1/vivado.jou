@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Oct 30 20:24:31 2023
-# Process ID: 6412
+# Start of session at: Tue Oct 31 19:25:17 2023
+# Process ID: 3240
 # Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/impl_1
-# Command line: vivado.exe -log circuito.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source circuito.tcl -notrace
-# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/impl_1/circuito.vdi
+# Command line: vivado.exe -log fpga_basicIO_mems.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source fpga_basicIO_mems.tcl -notrace
+# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/impl_1/fpga_basicIO_mems.vdi
 # Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/impl_1\vivado.jou
 # Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
 #-----------------------------------------------------------
-source circuito.tcl -notrace
+source fpga_basicIO_mems.tcl -notrace
