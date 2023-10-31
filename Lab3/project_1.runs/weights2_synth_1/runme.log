@@ -3,21 +3,24 @@
     with args -log weights2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source weights2.tcl
 
 
+ECHO is off.
+ECHO is off.
+
 ****** Vivado v2023.1 (64-bit)
-  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
   **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
   **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source weights2.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1336.785 ; gain = 0.023 ; free physical = 7718 ; free virtual = 13663
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 480.734 ; gain = 199.613
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: weights2
-INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 8ff22ec413ac7053 to dir: /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2.dcp to /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1/weights2.dcp.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_stub.v to /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1/weights2_stub.v.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_sim_netlist.vhdl to /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1/weights2_sim_netlist.vhdl.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_stub.vhdl to /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1/weights2_stub.vhdl.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_sim_netlist.v to /home/jcr/IST/MEng/PSD/Projects/Lab3/project_1.runs/weights2_synth_1/weights2_sim_netlist.v.
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 8ff22ec413ac7053 to dir: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2.dcp to C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1/weights2.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_sim_netlist.v to C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1/weights2_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_sim_netlist.vhdl to C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1/weights2_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_stub.v to C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1/weights2_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.cache/ip/2023.1/8/f/8ff22ec413ac7053/weights2_stub.vhdl to C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.runs/weights2_synth_1/weights2_stub.vhdl.
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP weights2, cache-ID = 8ff22ec413ac7053.
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 30 10:50:47 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 30 19:54:45 2023...

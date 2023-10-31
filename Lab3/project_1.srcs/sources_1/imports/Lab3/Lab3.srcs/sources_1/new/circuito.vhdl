@@ -35,7 +35,7 @@ entity circuito is
     Port(
     clk, rst : in std_logic;
     init : in std_logic;
-    img_number : in std_logic_vector(5 downto 0);
+    img_number : in std_logic_vector(6 downto 0);
     
     data_out : out std_logic_vector(3 downto 0)
     );
@@ -142,7 +142,7 @@ architecture Behavioral of circuito is
         Port (
         clk, rst : in std_logic;
         init : in std_logic;
-        img_number : in std_logic_vector(5 downto 0);
+        img_number : in std_logic_vector(6 downto 0);
         
         --TO DATAPATH
         starter_address : out std_logic_vector(11 downto 0); --img memory

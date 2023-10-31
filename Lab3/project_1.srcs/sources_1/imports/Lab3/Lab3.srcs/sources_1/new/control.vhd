@@ -35,7 +35,7 @@ entity control is
     Port (
     clk, rst : in std_logic;
     init : in std_logic;
-    img_number : in std_logic_vector(5 downto 0);
+    img_number : in std_logic_vector(6 downto 0);
     
     --TO DATAPATH
     starter_address : out std_logic_vector(11 downto 0); --img memory
@@ -91,7 +91,7 @@ begin
         when s_init =>
             if init='1' then 
                 next_state <= s_layer1;  
-                starter_address <= std_logic_vector(unsigned(img_number)*32);
+                starter_address <= img_number & "00000";
                 address_enables <= "00010";
                 address_resets <=  "00001";
                 counter_enables <= (others => '0');
@@ -105,7 +105,7 @@ begin
                 write_enable <= (others => '0');
                 mem_we <= '0';
             else
-                starter_address <= std_logic_vector(unsigned(img_number)*32);
+                starter_address <= img_number & "00000";
                 address_enables <= (others => '0');
                 address_resets <= (others => '1');
                 counter_enables <= (others => '0');
@@ -124,7 +124,7 @@ begin
                 next_state <= s_layer1;
                 if unsigned(cp) <= 31 then
                     if unsigned(cw1) <= 2 then
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "00010";
                         address_resets <= (others => '0');
                         counter_enables <= "000010";
@@ -138,7 +138,7 @@ begin
                         write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
                         mem_we <= '0';
                     elsif unsigned(cw1) = 3 then
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "00001";
                         address_resets <= (others => '0');
                         counter_enables <= "000010";
@@ -152,7 +152,7 @@ begin
                         write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
                         mem_we <= '0';
                     else --cw1==4
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "00010";
                         address_resets <=  "00000";
                         counter_enables <= "000001";
@@ -167,7 +167,7 @@ begin
                         mem_we <= '0';
                     end if;
                 else --cp==32
-                    starter_address <= std_logic_vector(unsigned(img_number)*32);
+                    starter_address <= img_number & "00000";
                     address_enables <= "01000";
                     address_resets <=  "00001";
                     counter_enables <= "010000";
@@ -183,7 +183,7 @@ begin
                 end if;
             else --caux1==32
                 next_state <= s_layer2;
-                starter_address <= std_logic_vector(unsigned(img_number)*32);
+                starter_address <= img_number & "00000";
                 address_enables <= "10000";
                 address_resets <=  "01111";
                 counter_enables <= "000000";
@@ -202,7 +202,7 @@ begin
                 next_state <= s_layer2;
                 if unsigned(cw2) <= 7 then
                     if unsigned(cmem) <= 0 then
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "10000";
                         address_resets <=  "00000";
                         counter_enables <= "001000";
@@ -216,7 +216,7 @@ begin
                         write_enable <= "10"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
                     elsif unsigned(cmem)=1 then
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "00100";
                         address_resets <=  "00000";
                         counter_enables <= "001000";
@@ -230,7 +230,7 @@ begin
                         write_enable <= "10"; --JOAO ISTO TA CERTO?
                         mem_we <= '0';
                     else --cmem==2
-                        starter_address <= std_logic_vector(unsigned(img_number)*32);
+                        starter_address <= img_number & "00000";
                         address_enables <= "10000";
                         address_resets <=  "00000";
                         counter_enables <= "000100";
@@ -245,7 +245,7 @@ begin
                         mem_we <= '0';
                     end if;
                 elsif unsigned(cw2)=8 then --cw2==8
-                    starter_address <= std_logic_vector(unsigned(img_number)*32);
+                    starter_address <= img_number & "00000";
                     address_enables <= "00000";
                     address_resets <=  "10000";
                     counter_enables <= "000100";
@@ -259,7 +259,7 @@ begin
                     write_enable <= "00"; --JOAO ISTO TA CERTO?
                     mem_we <= '0';
                 else 
-                    starter_address <= std_logic_vector(unsigned(img_number)*32);
+                    starter_address <= img_number & "00000";
                     address_enables <= "10000";
                     address_resets <=  "00000";
                     counter_enables <= "100000";
@@ -275,7 +275,7 @@ begin
                 end if;
             else --caux2==10
                 next_state <= s_init;
-                starter_address <= std_logic_vector(unsigned(img_number)*32);
+                starter_address <= img_number & "00000";
                 address_enables <= "00000";
                 address_resets <=  "11111";
                 counter_enables <= "000000";

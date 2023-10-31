@@ -38,7 +38,7 @@ ARCHITECTURE behavior OF circuito_tb IS
 COMPONENT circuito
     Port (
         clk, rst, init : in std_logic;
-        img_number : in std_logic_vector(5 downto 0);
+        img_number : in std_logic_vector(6 downto 0);
         
         --done : out std_logic;
         data_out : out std_logic_vector(3 downto 0)
@@ -49,13 +49,13 @@ END COMPONENT;
 signal clk : std_logic := '0';
 signal rst : std_logic := '0';
 signal init : std_logic := '0';
-signal img_number : std_logic_vector(5 downto 0) := (others => '0');
+signal img_number : std_logic_vector(6 downto 0) := (others => '0');
 -- Outputs
 --signal done : std_logic;
 signal data_out : std_logic_vector(3 downto 0);
 --signal cp, cw1, cw2, cmem, caux1, caux2 : std_logic_vector(5 downto 0);
 -- Clock period definitions
-constant clk_period : time := 10 ns;
+constant clk_period : time := 15 ns;
     
 
 begin
@@ -76,7 +76,7 @@ begin
         wait for clk_period * 10;
         rst <= '1' after 20 ns,
                 '0' after 40 ns;
-        img_number <=  "000000" after 40 ns;
+        img_number <=  "0000000" after 40 ns;
         
         init <= '1' after 40 ns,
                 '0' after 80 ns;
