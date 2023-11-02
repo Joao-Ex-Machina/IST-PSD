@@ -65,7 +65,7 @@ end control;
 
 
 architecture Behavioral of control is
-    type fsm_states is (s_init, s_layer1, s_layer2);
+    type fsm_states is (s_init, s_layer1, s_layer2, s_output);
     signal curr_state, next_state : fsm_states;
     
 begin
@@ -99,7 +99,7 @@ begin
                 muxpsel <= (others => '0');
                 muxw2sel <= (others => '0');
                 reg_rst <= '1';
-                rst_eval <= '0';
+                rst_eval <= '1';
                 evaluate_enable <= '0';
                 evaluate_enable_accum <= '0';
                 write_enable <= (others => '0');
@@ -113,7 +113,7 @@ begin
                 muxpsel <= (others => '0');
                 muxw2sel <= (others => '0');
                 reg_rst <= '1';
-                rst_eval <= '0';
+                rst_eval <= '1';
                 evaluate_enable <= '0';
                 evaluate_enable_accum <= '0';
                 write_enable <= (others => '0');
@@ -274,7 +274,7 @@ begin
                     mem_we <= '0';
                 end if;
             else --caux2==10
-                next_state <= s_init;
+                next_state <= s_output;
                 starter_address <= img_number & "00000";
                 address_enables <= "00000";
                 address_resets <=  "11111";
@@ -287,6 +287,37 @@ begin
                 evaluate_enable <= '0';
                 evaluate_enable_accum <= '0';
                 write_enable <= "00"; --JOAO ISTO TA CERTO?
+                mem_we <= '0';
+            end if;
+        when s_output =>
+            if init='1' then 
+                next_state <= s_layer1;  
+                starter_address <= img_number & "00000";
+                address_enables <= "00010";
+                address_resets <=  "00001";
+                counter_enables <= (others => '0');
+                counter_resets <= (others => '1');
+                muxpsel <= (others => '0');
+                muxw2sel <= (others => '0');
+                reg_rst <= '1';
+                rst_eval <= '0';
+                evaluate_enable <= '0';
+                evaluate_enable_accum <= '0';
+                write_enable <= (others => '0');
+                mem_we <= '0';
+            else
+                starter_address <= img_number & "00000";
+                address_enables <= (others => '0');
+                address_resets <= (others => '1');
+                counter_enables <= (others => '0');
+                counter_resets <= (others => '1');
+                muxpsel <= (others => '0');
+                muxw2sel <= (others => '0');
+                reg_rst <= '1';
+                rst_eval <= '0';
+                evaluate_enable <= '0';
+                evaluate_enable_accum <= '0';
+                write_enable <= (others => '0');
                 mem_we <= '0';
             end if;
         end case;

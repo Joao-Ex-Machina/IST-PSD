@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.statsThreshold 360
 set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
@@ -91,6 +92,7 @@ OPTRACE "Adding files" START { }
 add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/images.coe}}
 add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/layer1.coe}}
 add_files {{C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/layer2.coe}}
+add_files {{c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.ip_user_files/mem_init_files/layer1.coe}}
 read_vhdl -library xil_defaultlib {
   {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl}
   {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd}

@@ -165,12 +165,12 @@ begin
         --cmem => cmem, caux1 => caux1, caux2 => caux2
     );
 --  addrin <= "00" & sw_reg(10 downto 0);
-  digits_do <= x"000" & data_out;
-  digits_img <= x"00" & '0' & img_number;
-  digits <= digits_do when sw_reg(15) = '1' else digits_img;
+  --digits_do <= x"000" & data_out;
+  --digits_img <= x"00" & '0' & img_number;
+  digits <= '0' & img_number & "0000" & data_out;--digits_do when sw_reg(15) = '1' else digits_img;
   inst_disp7m: disp7m port map(
       digit3 => digits(15 downto 12), digit2 => digits(11 downto 8), digit1 => digits(7 downto 4), digit0 => digits(3 downto 0),
-      dp3 => rst, dp2 => '0', dp1 => '0', dp0 => init, minus_sign => minus_sign,
+      dp3 => rst, dp2 => '1', dp1 => '0', dp0 => init, minus_sign => minus_sign,
       clk => clk,
       dactive => dact,
       en_disp_l => an,

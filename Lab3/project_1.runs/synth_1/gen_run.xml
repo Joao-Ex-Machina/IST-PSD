@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698780151" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698940417" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
   <File Type="PA-TCL" Name="fpga_basicIO_mems.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="fpga_basicIO_mems_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="fpga_basicIO_mems_reports.tcl"/>
@@ -96,6 +96,12 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../IST-PSD/Lab3/layer2.coe"/>
         <Attr Name="ImportTime" Val="1696784022"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PIPUSERFILESDIR/mem_init_files/layer1.coe">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
