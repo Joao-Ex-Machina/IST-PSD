@@ -14,7 +14,7 @@ entity mem_acesses is
   port (
     clk: in std_logic;
     addr_p0, addr_p1 : in std_logic_vector(11 downto 0);
-    addr_w10, addr_w11 : in std_logic_vector (12 downto 0);
+    addr_w10, addr_w11 : in std_logic_vector (9 downto 0);
     addr_w20, addr_w21 : in std_logic_vector (6 downto 0);
     addr_m0, addr_m1: in std_logic_vector(4 downto 0);
     im_row0, im_row1 : out std_logic_vector(31 downto 0);
@@ -45,12 +45,12 @@ COMPONENT weights1
   PORT (
     clka : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
     clkb : IN STD_LOGIC;
     web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addrb : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+    addrb : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     dinb : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
     doutb : OUT STD_LOGIC_VECTOR(127 DOWNTO 0) 
   );

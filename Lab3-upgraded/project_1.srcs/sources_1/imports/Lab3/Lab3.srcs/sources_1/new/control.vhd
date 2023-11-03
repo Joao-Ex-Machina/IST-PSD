@@ -123,9 +123,9 @@ begin
             if unsigned(caux1) <= 31 then
                 next_state <= s_layer1;
                 if unsigned(cp) <= 31 then
-                    if unsigned(cw1) <= 2 then
+                    if unsigned(cw1) = 0 then
                         starter_address <= img_number & "00000";
-                        address_enables <= "00010";
+                        address_enables <= "00011";
                         address_resets <= (others => '0');
                         counter_enables <= "000010";
                         counter_resets <= (others => '0');
@@ -137,23 +137,9 @@ begin
                         evaluate_enable_accum <= '0';
                         write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
                         mem_we <= '0';
-                    elsif unsigned(cw1) = 3 then
+                    else --cw1==1 -- está aqui so para as wlines e plines atualizarem
                         starter_address <= img_number & "00000";
-                        address_enables <= "00001";
-                        address_resets <= (others => '0');
-                        counter_enables <= "000010";
-                        counter_resets <= (others => '0');
-                        muxpsel <= cw1(1 downto 0);
-                        muxw2sel <= (others => '0');
-                        reg_rst <= '0';
-                        rst_eval <= '0';
-                        evaluate_enable <= '0';
-                        evaluate_enable_accum <= '0';
-                        write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
-                        mem_we <= '0';
-                    else --cw1==4
-                        starter_address <= img_number & "00000";
-                        address_enables <= "00010";
+                        address_enables <= "00000";
                         address_resets <=  "00000";
                         counter_enables <= "000001";
                         counter_resets <=  "000010";
@@ -191,7 +177,7 @@ begin
                 muxpsel <= cw1(1 downto 0);
                 muxw2sel <= (others => '0');
                 reg_rst <= '0';
-                rst_eval <= '1';
+                rst_eval <= '0';
                 evaluate_enable <= '0';
                 evaluate_enable_accum <= '0';
                 write_enable <= "00"; --JOAO ISTO TA CERTO?

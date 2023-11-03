@@ -1,20 +1,19 @@
 #-----------------------------------------------------------
 # Vivado v2023.1 (64-bit)
-# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Nov  3 12:16:32 2023
-# Process ID: 20113
-# Current directory: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1
-# Command line: vivado -log fpga_basicIO_mems.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_basicIO_mems.tcl
-# Log file: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/fpga_basicIO_mems.vds
-# Journal file: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/vivado.jou
-# Running On: Shub-Niggurath, OS: Linux, CPU Frequency: 1805.744 MHz, CPU Physical cores: 4, Host memory: 16720 MB
+# Start of session at: Fri Nov  3 13:34:37 2023
+# Process ID: 1860
+# Current directory: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1
+# Command line: vivado.exe -log fpga_basicIO_mems.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_basicIO_mems.tcl
+# Log file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/fpga_basicIO_mems.vds
+# Journal file: C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
 #-----------------------------------------------------------
 source fpga_basicIO_mems.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1276.820 ; gain = 1.023 ; free physical = 6260 ; free virtual = 13706
-Command: read_checkpoint -auto_incremental -incremental /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/utils_1/imports/synth_1/circuito.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/utils_1/imports/synth_1/circuito.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/utils_1/imports/synth_1/circuito.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/utils_1/imports/synth_1/circuito.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top fpga_basicIO_mems -part xc7a35tcpg236-1
 Starting synth_design
@@ -23,55 +22,359 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20165
+INFO: [Synth 8-7075] Helper process launched with PID 8896
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2012.316 ; gain = 380.738 ; free physical = 5302 ; free virtual = 12731
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1306.434 ; gain = 412.258
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fpga_basicIO_mems' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
-INFO: [Synth 8-3491] module 'circuito' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:34' bound to instance 'inst_circuito' of component 'circuito' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:159]
-INFO: [Synth 8-638] synthesizing module 'circuito' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
-INFO: [Synth 8-3491] module 'mem_acesses' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:13' bound to instance 'instance_mems' of component 'mem_acesses' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:201]
-INFO: [Synth 8-638] synthesizing module 'mem_acesses' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
-INFO: [Synth 8-3491] module 'images_mem' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/images_mem_stub.v:6' bound to instance 'instance_images' of component 'images_mem' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:89]
-INFO: [Synth 8-6157] synthesizing module 'images_mem' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/images_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'images_mem' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/images_mem_stub.v:6]
-INFO: [Synth 8-3491] module 'weights1' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights1_stub.v:6' bound to instance 'instance_weights1' of component 'weights1' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:103]
-INFO: [Synth 8-6157] synthesizing module 'weights1' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'weights1' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights1_stub.v:6]
-INFO: [Synth 8-3491] module 'weights2' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights2_stub.v:6' bound to instance 'instance_weights2' of component 'weights2' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:117]
-INFO: [Synth 8-6157] synthesizing module 'weights2' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'weights2' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/weights2_stub.v:6]
-INFO: [Synth 8-3491] module 'middle_memory' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/middle_memory_stub.v:6' bound to instance 'instance_middle' of component 'middle_memory' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:131]
-INFO: [Synth 8-6157] synthesizing module 'middle_memory' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/middle_memory_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'middle_memory' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/.Xil/Vivado-20113-Shub-Niggurath/realtime/middle_memory_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'mem_acesses' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
-INFO: [Synth 8-3491] module 'datapath' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:13' bound to instance 'instance_datapath' of component 'datapath' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:216]
-INFO: [Synth 8-638] synthesizing module 'datapath' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:95]
-INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:95]
-INFO: [Synth 8-3491] module 'control' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:34' bound to instance 'instance_control' of component 'control' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:278]
-INFO: [Synth 8-638] synthesizing module 'control' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
-WARNING: [Synth 8-614] signal 'img_number' is read in the process but is not in the sensitivity list [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:86]
-INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
-INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
-INFO: [Synth 8-3491] module 'disp7m' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:9' bound to instance 'inst_disp7m' of component 'disp7m' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:171]
-INFO: [Synth 8-638] synthesizing module 'disp7m' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'disp7m' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'fpga_basicIO_mems' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
+INFO: [Synth 8-3491] module 'circuito' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:34' bound to instance 'inst_circuito' of component 'circuito' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'circuito' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
+INFO: [Synth 8-3491] module 'mem_acesses' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:13' bound to instance 'instance_mems' of component 'mem_acesses' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:201]
+INFO: [Synth 8-638] synthesizing module 'mem_acesses' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
+INFO: [Synth 8-3491] module 'images_mem' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/synth/images_mem.vhd:59' bound to instance 'instance_images' of component 'images_mem' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'images_mem' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/synth/images_mem.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 2 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: images_mem.mif - type: string 
+	Parameter C_INIT_FILE bound to: images_mem.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 3840 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 3840 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 12 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 3840 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 3840 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 12 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 1 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 4 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     20.285598 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_6' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_6' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/synth/images_mem.vhd:245]
+INFO: [Synth 8-256] done synthesizing module 'images_mem' (0#1) [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/synth/images_mem.vhd:74]
+INFO: [Synth 8-3491] module 'weights1' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/synth/weights1.vhd:59' bound to instance 'instance_weights1' of component 'weights1' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'weights1' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/synth/weights1.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 2 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: weights1.mif - type: string 
+	Parameter C_INIT_FILE bound to: weights1.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 128 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 128 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 1024 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 1024 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 10 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 128 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 128 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 1024 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 1024 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 10 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 4 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     23.617202 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_6' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_6' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/synth/weights1.vhd:245]
+INFO: [Synth 8-256] done synthesizing module 'weights1' (0#1) [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/synth/weights1.vhd:74]
+INFO: [Synth 8-3491] module 'weights2' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/synth/weights2.vhd:59' bound to instance 'instance_weights2' of component 'weights2' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'weights2' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/synth/weights2.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 2 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: weights2.mif - type: string 
+	Parameter C_INIT_FILE bound to: weights2.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 80 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 80 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 7 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 32 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 80 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 80 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 7 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 1 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     5.9043 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_6' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_6' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/synth/weights2.vhd:245]
+INFO: [Synth 8-256] done synthesizing module 'weights2' (0#1) [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/synth/weights2.vhd:74]
+INFO: [Synth 8-3491] module 'middle_memory' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/synth/middle_memory.vhd:59' bound to instance 'instance_middle' of component 'middle_memory' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:131]
+INFO: [Synth 8-638] synthesizing module 'middle_memory' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/synth/middle_memory.vhd:74]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 2 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 0 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: no_coe_file_loaded - type: string 
+	Parameter C_INIT_FILE bound to: middle_memory.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 1 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 14 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 14 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 32 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 32 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 5 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 14 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 14 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 32 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 32 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 5 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.9529 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_6' declared at 'c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_6' [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/synth/middle_memory.vhd:245]
+INFO: [Synth 8-256] done synthesizing module 'middle_memory' (0#1) [c:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/synth/middle_memory.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'mem_acesses' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
+INFO: [Synth 8-3491] module 'datapath' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:13' bound to instance 'instance_datapath' of component 'datapath' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:216]
+INFO: [Synth 8-638] synthesizing module 'datapath' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:95]
+INFO: [Synth 8-3491] module 'control' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:34' bound to instance 'instance_control' of component 'control' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:278]
+INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
+WARNING: [Synth 8-614] signal 'img_number' is read in the process but is not in the sensitivity list [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
+INFO: [Synth 8-3491] module 'disp7m' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:9' bound to instance 'inst_disp7m' of component 'disp7m' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'disp7m' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'disp7m' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/disp7m.vhd:21]
 	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'debouncer' declared at '/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:189]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:189]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:50]
 	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'fpga_basicIO_mems' (0#1) [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
-WARNING: [Synth 8-3848] Net multiplication01 in module/entity datapath does not have driver. [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:100]
-WARNING: [Synth 8-3848] Net multiplication01A in module/entity datapath does not have driver. [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:133]
-WARNING: [Synth 8-6014] Unused sequential element btnLreg_reg was removed.  [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:203]
-WARNING: [Synth 8-6014] Unused sequential element btnRreg_reg was removed.  [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:204]
-WARNING: [Synth 8-6014] Unused sequential element btnDreg_reg was removed.  [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:205]
-WARNING: [Synth 8-3848] Net minus_sign in module/entity fpga_basicIO_mems does not have driver. [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/debouncer.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'fpga_basicIO_mems' (0#1) [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
+WARNING: [Synth 8-3848] Net multiplication01 in module/entity datapath does not have driver. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:100]
+WARNING: [Synth 8-3848] Net multiplication01A in module/entity datapath does not have driver. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:133]
+WARNING: [Synth 8-6014] Unused sequential element btnLreg_reg was removed.  [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:203]
+WARNING: [Synth 8-6014] Unused sequential element btnRreg_reg was removed.  [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:204]
+WARNING: [Synth 8-6014] Unused sequential element btnDreg_reg was removed.  [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:205]
+WARNING: [Synth 8-3848] Net minus_sign in module/entity fpga_basicIO_mems does not have driver. [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:56]
 WARNING: [Synth 8-7129] Port w2line1[31] in module datapath is either unconnected or has no load
 WARNING: [Synth 8-7129] Port w2line1[30] in module datapath is either unconnected or has no load
 WARNING: [Synth 8-7129] Port w2line1[29] in module datapath is either unconnected or has no load
@@ -109,69 +412,123 @@ WARNING: [Synth 8-7129] Port muxpsel[0] in module datapath is either unconnected
 WARNING: [Synth 8-7129] Port muxw2sel0[0] in module datapath is either unconnected or has no load
 WARNING: [Synth 8-7129] Port muxw2sel1[1] in module datapath is either unconnected or has no load
 WARNING: [Synth 8-7129] Port muxw2sel1[0] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[4] in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[3] in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[2] in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SLEEP in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_prim_wrapper_init__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEA[0] in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEA[1] in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEB[0] in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[1] in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_generic_cstr__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTA in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ENA in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEA in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTB in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ENB in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_input_block__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AClk in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[3] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[2] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[1] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[0] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[31] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[30] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[29] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[28] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[27] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[26] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[25] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[24] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[23] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[22] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[21] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[20] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[19] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[18] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[17] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[16] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[15] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[14] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[13] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[12] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[11] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[10] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[9] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[8] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[7] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[6] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[5] in module blk_mem_gen_v8_4_6_synth__parameterized2 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2087.254 ; gain = 455.676 ; free physical = 5203 ; free virtual = 12633
+Finished RTL Elaboration : Time (s): cpu = 00:00:56 ; elapsed = 00:01:20 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2105.066 ; gain = 473.488 ; free physical = 5201 ; free virtual = 12631
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:21 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2105.066 ; gain = 473.488 ; free physical = 5201 ; free virtual = 12631
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:21 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2105.066 ; gain = 0.000 ; free physical = 5201 ; free virtual = 12631
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 1943.008 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/middle_memory/middle_memory_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_middle'
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/middle_memory/middle_memory/middle_memory_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_middle'
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/images_mem/images_mem_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_images'
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/images_mem/images_mem/images_mem_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_images'
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/weights2/weights2_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights2'
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights2/weights2/weights2_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights2'
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/weights1/weights1_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights1'
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.gen/sources_1/ip/weights1/weights1/weights1_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights1'
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_basicIO_mems_propImpl.xdc].
+Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/constrs_1/imports/P3/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_basicIO_mems_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_basicIO_mems_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2255.816 ; gain = 0.000 ; free physical = 5194 ; free virtual = 12623
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1943.008 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2255.816 ; gain = 0.000 ; free physical = 5194 ; free virtual = 12623
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_images' at clock pin 'clka' is different from the actual clock period '16.700', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_middle' at clock pin 'clka' is different from the actual clock period '16.700', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_weights1' at clock pin 'clka' is different from the actual clock period '16.700', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_weights2' at clock pin 'clka' is different from the actual clock period '16.700', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1943.008 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5189 ; free virtual = 12618
+Finished Constraint Validation : Time (s): cpu = 00:01:07 ; elapsed = 00:01:31 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5189 ; free virtual = 12618
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:07 ; elapsed = 00:01:31 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_middle. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_images. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_weights2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_weights1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_images. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5189 ; free virtual = 12618
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:32 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'control'
 ---------------------------------------------------------------------------------------------------
@@ -184,7 +541,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module '
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5189 ; free virtual = 12619
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:08 ; elapsed = 00:01:33 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -192,9 +549,8 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   14 Bit       Adders := 1     
-	   2 Input   13 Bit       Adders := 1     
 	   2 Input   12 Bit       Adders := 1     
-	   2 Input   10 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 4     
 	   2 Input    9 Bit       Adders := 2     
 	   2 Input    8 Bit       Adders := 4     
 	   2 Input    7 Bit       Adders := 10    
@@ -207,6 +563,7 @@ Detailed RTL Component Info :
 	               27 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
 	               14 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 6     
 	                5 Bit    Registers := 4     
@@ -214,6 +571,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 2     
 	   2 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 3     
@@ -225,11 +583,10 @@ Detailed RTL Component Info :
 	   2 Input    4 Bit        Muxes := 66    
 	   3 Input    4 Bit        Muxes := 3     
 	   4 Input    4 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 9     
-	   4 Input    2 Bit        Muxes := 5     
-	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 10    
-	   3 Input    1 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 11    
 	   4 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -256,7 +613,7 @@ DSP Report: Generating DSP instance_datapath/accum2_out_reg, operation Mode is: 
 DSP Report: register instance_datapath/accum2_out_reg is absorbed into DSP instance_datapath/accum2_out_reg.
 DSP Report: operator instance_datapath/neuron_part2 is absorbed into DSP instance_datapath/accum2_out_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5169 ; free virtual = 12604
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:36 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -279,19 +636,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5168 ; free virtual = 12603
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:46 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5161 ; free virtual = 12597
+Finished Timing Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:01:47 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5148 ; free virtual = 12583
+Finished Technology Mapping : Time (s): cpu = 00:01:23 ; elapsed = 00:01:47 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -308,32 +665,31 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \inst_circuito/instance_mems/instance_weights1  has unconnected pin enb
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished IO Insertion : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[0] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_28/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[0] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_29/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[1] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_45/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[1] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_46/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[2] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_38/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[2] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_39/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[3] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_40/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[3] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_41/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[0] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_28/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[0] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_29/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[1] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_45/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[1] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_46/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[2] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_38/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[2] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_39/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[3] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_40/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[3] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_41/O' [/home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[0] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_28/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[0] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_29/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[1] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_45/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[1] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_46/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[2] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_38/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[2] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_39/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[3] with 1st driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_40/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:367]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31A[3] with 2nd driver pin 'inst_circuito/instance_datapath/add07A__38_carry_i_41/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:368]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[0] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_28/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[0] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_29/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[1] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_45/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[1] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_46/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[2] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_38/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[2] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_39/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[3] with 1st driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_40/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:325]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin inst_circuito/instance_datapath/multiplication31[3] with 2nd driver pin 'inst_circuito/instance_datapath/add07__38_carry_i_41/O' [C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/datapath.vhd:326]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
@@ -345,25 +701,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -380,61 +736,54 @@ DSP Final Report (the ' indicates corresponding REG is set)
 
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |images_mem    |         1|
-|2     |weights1      |         1|
-|3     |weights2      |         1|
-|4     |middle_memory |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+--------------+------+
-|      |Cell          |Count |
-+------+--------------+------+
-|1     |images_mem    |     1|
-|2     |middle_memory |     1|
-|3     |weights1      |     1|
-|4     |weights2      |     1|
-|5     |BUFG          |     1|
-|6     |CARRY4        |    71|
-|7     |DSP48E1       |     3|
-|9     |LUT1          |    16|
-|10    |LUT2          |   204|
-|11    |LUT3          |    74|
-|12    |LUT4          |   146|
-|13    |LUT5          |   169|
-|14    |LUT6          |   147|
-|15    |FDRE          |   242|
-|16    |FDSE          |     1|
-|17    |IBUF          |    19|
-|18    |OBUF          |    28|
-+------+--------------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    64|
+|3     |DSP48E1  |     3|
+|5     |LUT1     |    17|
+|6     |LUT2     |   217|
+|7     |LUT3     |    74|
+|8     |LUT4     |   144|
+|9     |LUT5     |   160|
+|10    |LUT6     |   148|
+|11    |RAMB18E1 |     1|
+|12    |RAMB36E1 |     9|
+|21    |FDRE     |   235|
+|22    |FDSE     |     1|
+|23    |IBUF     |    19|
+|24    |OBUF     |    28|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:01:52 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 17 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2255.816 ; gain = 473.488 ; free physical = 5147 ; free virtual = 12582
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2255.816 ; gain = 624.238 ; free physical = 5147 ; free virtual = 12582
+Synthesis finished with 0 errors, 16 critical warnings and 691 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:01:49 . Memory (MB): peak = 1943.008 ; gain = 1048.832
+Synthesis Optimization Complete : Time (s): cpu = 00:01:28 ; elapsed = 00:01:53 . Memory (MB): peak = 1943.008 ; gain = 1048.832
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2255.816 ; gain = 0.000 ; free physical = 5434 ; free virtual = 12870
-INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1943.008 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2255.816 ; gain = 0.000 ; free physical = 5434 ; free virtual = 12870
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1943.008 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: d9c35c71
+Synth Design complete | Checksum: 7ebcd364
 INFO: [Common 17-83] Releasing license: Synthesis
-55 Infos, 49 Warnings, 17 Critical Warnings and 0 Errors encountered.
+62 Infos, 108 Warnings, 16 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:40 . Memory (MB): peak = 2255.816 ; gain = 944.277 ; free physical = 5434 ; free virtual = 12869
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1809.003; main = 1491.373; forked = 381.256
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3223.922; main = 2255.820; forked = 1000.117
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint '/home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/fpga_basicIO_mems.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Francisco/OneDrive/rea de Trabalho/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/fpga_basicIO_mems.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fpga_basicIO_mems_utilization_synth.rpt -pb fpga_basicIO_mems_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov  3 12:17:29 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  3 13:36:48 2023...

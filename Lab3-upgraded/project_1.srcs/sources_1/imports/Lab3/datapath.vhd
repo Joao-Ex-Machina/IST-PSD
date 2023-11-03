@@ -18,8 +18,8 @@ entity datapath is
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
             imgAddr2: out std_logic_vector (11 downto 0);
-            w1Addr: out std_logic_vector(12 downto 0);
-            w1Addr2: out std_logic_vector(12 downto 0);
+            w1Addr: out std_logic_vector(9 downto 0);
+            w1Addr2: out std_logic_vector(9 downto 0);
 
             w2Addr: out std_logic_vector(6 downto 0);
             w2Addr2: out std_logic_vector(6 downto 0);
@@ -256,8 +256,8 @@ architecture Behavioral of datapath is
 -- COUNTERS AND GENERATORS
     signal imgAddr_aux : std_logic_vector(11 downto 0);
     signal imgAddr2_aux : std_logic_vector(11 downto 0);
-    signal w1Addr_aux : std_logic_vector(12 downto 0);
-    signal w1Addr2_aux: std_logic_vector(12 downto 0);
+    signal w1Addr_aux : std_logic_vector(9 downto 0);
+    signal w1Addr2_aux: std_logic_vector(9 downto 0);
     signal w2Addr_aux : std_logic_vector(6 downto 0);
     signal w2Addr2_aux : std_logic_vector(6 downto 0);
     signal imgCounter_aux: std_logic_vector (5 downto 0);

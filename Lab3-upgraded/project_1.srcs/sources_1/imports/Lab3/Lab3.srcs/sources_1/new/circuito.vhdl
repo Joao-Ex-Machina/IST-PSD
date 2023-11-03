@@ -47,7 +47,7 @@ architecture Behavioral of circuito is
         Port(
         clk: in std_logic;
         addr_p0, addr_p1 : in std_logic_vector(11 downto 0);
-        addr_w10, addr_w11 : in std_logic_vector (12 downto 0);
+        addr_w10, addr_w11 : in std_logic_vector (9 downto 0);
         addr_w20, addr_w21 : in std_logic_vector (6 downto 0);
         addr_m0, addr_m1: in std_logic_vector(4 downto 0);
         im_row0, im_row1 : out std_logic_vector(31 downto 0);
@@ -68,8 +68,8 @@ architecture Behavioral of circuito is
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
             imgAddr2: out std_logic_vector (11 downto 0);
-            w1Addr: out std_logic_vector(12 downto 0);
-            w1Addr2: out std_logic_vector(12 downto 0);
+            w1Addr: out std_logic_vector(9 downto 0);
+            w1Addr2: out std_logic_vector(9 downto 0);
 
             w2Addr: out std_logic_vector(6 downto 0);
             w2Addr2: out std_logic_vector(6 downto 0);
@@ -185,7 +185,7 @@ architecture Behavioral of circuito is
     
     signal addr_p0 : std_logic_vector(11 downto 0);
     signal addr_p1 : std_logic_vector(11 downto 0);
-    signal addr_w10, addr_w11 : std_logic_vector (12 downto 0);
+    signal addr_w10, addr_w11 : std_logic_vector (9 downto 0);
     signal addr_w20, addr_w21 : std_logic_vector (6 downto 0);
     signal addr_m0, addr_m1: std_logic_vector(4 downto 0);
     signal im_row0 : std_logic_vector(31 downto 0);
