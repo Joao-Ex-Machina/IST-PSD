@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698975091" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1699013789" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/circuito.dcp">
   <File Type="VDS-TIMING-PB" Name="fpga_basicIO_mems_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="fpga_basicIO_mems_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="fpga_basicIO_mems.dcp"/>
@@ -115,6 +115,12 @@
       </FileInfo>
     </File>
     <File Path="$PIPUSERFILESDIR/mem_init_files/mod_mod_layer1.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PIPUSERFILESDIR/mem_init_files/mod_mod_mod_layer1.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

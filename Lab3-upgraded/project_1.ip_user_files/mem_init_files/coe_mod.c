@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     FILE *inputFile, *outputFile;
     char ch;
     int newlineCount = 0;
-    int linesToIgnore = 5; // Number of lines to ignore at the beginning
+    int linesToIgnore = 6; // Number of lines to ignore at the beginning
 
     // Open the input file
     inputFile = fopen(argv[1], "r+");

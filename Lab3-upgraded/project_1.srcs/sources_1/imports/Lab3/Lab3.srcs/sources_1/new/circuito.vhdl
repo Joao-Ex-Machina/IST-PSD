@@ -51,7 +51,7 @@ architecture Behavioral of circuito is
         addr_w20, addr_w21 : in std_logic_vector (6 downto 0);
         addr_m0, addr_m1: in std_logic_vector(4 downto 0);
         im_row0, im_row1 : out std_logic_vector(31 downto 0);
-        weight1_40, weight1_41 : out std_logic_vector(63 downto 0);
+        weight1_40, weight1_41 : out std_logic_vector(127 downto 0);
         weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
         in_middle0: in std_logic_vector(13 downto 0);
         in_middle1: in std_logic_vector(13 downto 0);
@@ -67,6 +67,7 @@ architecture Behavioral of circuito is
             
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
+            imgAddr2: out std_logic_vector (11 downto 0);
             w1Addr: out std_logic_vector(12 downto 0);
             w1Addr2: out std_logic_vector(12 downto 0);
 
@@ -114,8 +115,9 @@ architecture Behavioral of circuito is
 
             -- Data lines from Memory Component
             pline: in std_logic_vector (31 downto 0);
-            wline0: in std_logic_vector (63 downto 0);
-            wline1: in std_logic_vector (63 downto 0);
+            pline1: in std_logic_vector (31 downto 0);
+            wline0: in std_logic_vector (127 downto 0);
+            wline1: in std_logic_vector (127 downto 0);
             w2line0: in std_logic_vector (31 downto 0);
             w2line1: in std_logic_vector (31 downto 0);
         -- Control signals
@@ -182,11 +184,13 @@ architecture Behavioral of circuito is
     
     
     signal addr_p0 : std_logic_vector(11 downto 0);
+    signal addr_p1 : std_logic_vector(11 downto 0);
     signal addr_w10, addr_w11 : std_logic_vector (12 downto 0);
     signal addr_w20, addr_w21 : std_logic_vector (6 downto 0);
     signal addr_m0, addr_m1: std_logic_vector(4 downto 0);
     signal im_row0 : std_logic_vector(31 downto 0);
-    signal weight1_40, weight1_41 : std_logic_vector(63 downto 0);
+    signal im_row1 : std_logic_vector(31 downto 0);
+    signal weight1_40, weight1_41 : std_logic_vector(127 downto 0);
     signal weight2_40, weight2_41 : std_logic_vector(31 downto 0);
     signal in_middle0: std_logic_vector(13 downto 0);
     signal out_middle0, out_middle1 : std_logic_vector(13 downto 0);
@@ -197,11 +201,11 @@ begin
     instance_mems: mem_acesses
     Port map(
         clk => clk,
-        addr_p0 => addr_p0, addr_p1 => (others=>'0'),
+        addr_p0 => addr_p0, addr_p1 =>addr_p1,
         addr_w10 => addr_w10, addr_w11 => addr_w11,
         addr_w20 => addr_w20, addr_w21 => addr_w21,
         addr_m0 => addr_m0, addr_m1 => addr_m1,
-        im_row0 => im_row0, im_row1 => open,
+        im_row0 => im_row0, im_row1 => im_row1,
         weight1_40 => weight1_40, weight1_41 => weight1_41,
         weight2_40 => weight2_40, weight2_41 => weight2_41,
         in_middle0 => in_middle0, in_middle1 => (others => '0'),
@@ -214,6 +218,7 @@ begin
         clk => clk,
         starterAddr => starter_address,
         imgAddr => addr_p0,
+        imgAddr2 => addr_p1,
         w1Addr => addr_w10,
         w1Addr2=>addr_w11,
         w2Addr => addr_w20,
@@ -250,6 +255,7 @@ begin
         w2Counter => cw2,
         MemCounter => cmem,
         pline => im_row0,
+        pline1 => im_row1,
         wline0 => weight1_40,
         wline1 => weight1_41,
         w2line0 => weight2_40,

@@ -1,8 +1,8 @@
 ; This .COE file specifies initialization values for a block
 ; memory of depth=8192=32*32*32 and width=64.
 ; Values are specified in hexadecimal format.
-; I thinke we must change the radix to 64
-memory_initialization_radix=16;
+; I thinke we must change the radix to 128
+memory_initialization_radix=128;
 memory_initialization_vector=
 10F1101E010000F1,
 1200F0FF110F211E,

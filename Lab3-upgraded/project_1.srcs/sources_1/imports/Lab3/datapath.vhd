@@ -17,6 +17,7 @@ entity datapath is
             
             starterAddr: in std_logic_vector (11 downto 0);
             imgAddr: out std_logic_vector (11 downto 0);
+            imgAddr2: out std_logic_vector (11 downto 0);
             w1Addr: out std_logic_vector(12 downto 0);
             w1Addr2: out std_logic_vector(12 downto 0);
 
@@ -64,8 +65,10 @@ entity datapath is
 
             -- Data lines from Memory Component
             pline: in std_logic_vector (31 downto 0);
-            wline0: in std_logic_vector (63 downto 0);
-            wline1: in std_logic_vector (63 downto 0);
+            pline1: in std_logic_vector (31 downto 0);
+            
+            wline0: in std_logic_vector (127 downto 0);
+            wline1: in std_logic_vector (127 downto 0);
             w2line0: in std_logic_vector (31 downto 0);
             w2line1: in std_logic_vector (31 downto 0);
         -- Control signals
@@ -91,7 +94,8 @@ end datapath;
 
 architecture Behavioral of datapath is
     -- LAYER 1
-    signal muxedp: std_logic_vector(7 downto 0);
+    --signal muxedp: std_logic_vector(7 downto 0);
+    
     signal multiplication00: std_logic_vector (3 downto 0);
     signal multiplication01: std_logic_vector (3 downto 0);
     signal multiplication02: std_logic_vector (3 downto 0);
@@ -125,6 +129,39 @@ architecture Behavioral of datapath is
     signal multiplication72: std_logic_vector (3 downto 0);
     signal multiplication73: std_logic_vector (3 downto 0);
     
+    signal multiplication00A: std_logic_vector (3 downto 0);
+    signal multiplication01A: std_logic_vector (3 downto 0);
+    signal multiplication02A: std_logic_vector (3 downto 0);
+    signal multiplication03A: std_logic_vector (3 downto 0);
+    signal multiplication10A: std_logic_vector (3 downto 0);
+    signal multiplication11A: std_logic_vector (3 downto 0);
+    signal multiplication12A: std_logic_vector (3 downto 0);
+    signal multiplication13A: std_logic_vector (3 downto 0);
+    signal multiplication20A: std_logic_vector (3 downto 0);
+    signal multiplication21A: std_logic_vector (3 downto 0);
+    signal multiplication22A: std_logic_vector (3 downto 0);
+    signal multiplication23A: std_logic_vector (3 downto 0);
+    signal multiplication30A: std_logic_vector (3 downto 0);
+    signal multiplication31A: std_logic_vector (3 downto 0);
+    signal multiplication32A: std_logic_vector (3 downto 0);
+    signal multiplication33A: std_logic_vector (3 downto 0);
+    signal multiplication40A: std_logic_vector (3 downto 0);
+    signal multiplication41A: std_logic_vector (3 downto 0);
+    signal multiplication42A: std_logic_vector (3 downto 0);
+    signal multiplication43A: std_logic_vector (3 downto 0);
+    signal multiplication50A: std_logic_vector (3 downto 0);
+    signal multiplication51A: std_logic_vector (3 downto 0);
+    signal multiplication52A: std_logic_vector (3 downto 0);
+    signal multiplication53A: std_logic_vector (3 downto 0);
+    signal multiplication60A: std_logic_vector (3 downto 0);
+    signal multiplication61A: std_logic_vector (3 downto 0);
+    signal multiplication62A: std_logic_vector (3 downto 0);
+    signal multiplication63A: std_logic_vector (3 downto 0);
+    signal multiplication70A: std_logic_vector (3 downto 0);
+    signal multiplication71A: std_logic_vector (3 downto 0);
+    signal multiplication72A: std_logic_vector (3 downto 0);
+    signal multiplication73A: std_logic_vector (3 downto 0);
+
     signal add00: signed (4 downto 0);
     signal add01: signed (4 downto 0);
     signal add10: signed (4 downto 0);
@@ -142,6 +179,23 @@ architecture Behavioral of datapath is
     signal add70: signed (4 downto 0);
     signal add71: signed (4 downto 0);
     
+    signal add00A: signed (4 downto 0);
+    signal add01A: signed (4 downto 0);
+    signal add10A: signed (4 downto 0);
+    signal add11A: signed (4 downto 0);
+    signal add20A: signed (4 downto 0);
+    signal add21A: signed (4 downto 0);
+    signal add30A: signed (4 downto 0);
+    signal add31A: signed (4 downto 0);
+    signal add40A: signed (4 downto 0);
+    signal add41A: signed (4 downto 0);
+    signal add50A: signed (4 downto 0);
+    signal add51A: signed (4 downto 0);
+    signal add60A: signed (4 downto 0);
+    signal add61A: signed (4 downto 0);
+    signal add70A: signed (4 downto 0);
+    signal add71A: signed (4 downto 0);
+    
     signal add0: signed (5 downto 0);
     signal add1: signed (5 downto 0);
     signal add2: signed (5 downto 0);
@@ -151,15 +205,35 @@ architecture Behavioral of datapath is
     signal add6: signed (5 downto 0);
     signal add7: signed (5 downto 0);
     
+    signal add0A: signed (5 downto 0);
+    signal add1A: signed (5 downto 0);
+    signal add2A: signed (5 downto 0);
+    signal add3A: signed (5 downto 0);
+    signal add4A: signed (5 downto 0);
+    signal add5A: signed (5 downto 0);
+    signal add6A: signed (5 downto 0);
+    signal add7A: signed (5 downto 0);
+    
     signal add0to1: signed (6 downto 0);
     signal add23: signed (6 downto 0);
     signal add45: signed (6 downto 0);
     signal add67: signed (6 downto 0);
+    
+    signal add0to1A: signed (6 downto 0);
+    signal add23A: signed (6 downto 0);
+    signal add45A: signed (6 downto 0);
+    signal add67A: signed (6 downto 0);
      
     signal add0to3: signed (7 downto 0);
     signal add47: signed (7 downto 0);
     
+    signal add0to3A: signed (7 downto 0);
+    signal add47A: signed (7 downto 0);
+    
     signal add07: signed (8 downto 0);
+    signal add07A: signed (8 downto 0);
+    
+    signal addnoAtoA:signed (9 downto 0);
     
     signal neuron_part: signed (13 downto 0);
     signal accum_in :std_logic_vector(13 downto 0);
@@ -181,6 +255,7 @@ architecture Behavioral of datapath is
   --  signal accum_eval_en: std_logic;
 -- COUNTERS AND GENERATORS
     signal imgAddr_aux : std_logic_vector(11 downto 0);
+    signal imgAddr2_aux : std_logic_vector(11 downto 0);
     signal w1Addr_aux : std_logic_vector(12 downto 0);
     signal w1Addr2_aux: std_logic_vector(12 downto 0);
     signal w2Addr_aux : std_logic_vector(6 downto 0);
@@ -207,44 +282,92 @@ begin
 --||               ||
 --||---------------||
 
--- No need for the previous mux, we now have re-shapen w1 memory to have a weight line of 64 instad of 16
+-- No need for the previous mux, we now have re-shapen w1 memory to have a weight line of 128 instad of 16
 -- "multiply"
 -- It really does not matter how we do it, Vivado knows best
--- We simply choose the mux for multiplication to be certain that the image pixels must be binarized
-    multiplication00 <= wline0(3 downto 0)   when pline(12)='1' else "0000";
-    multiplication01 <= wline0(7 downto 4)   when pline(13)='1' else "0000";
-    multiplication02 <= wline0(11 downto 8)  when pline(14)='1' else "0000";
-    multiplication03 <= wline0(15 downto 12) when pline(15)='1' else "0000";
-    multiplication10 <= wline0(19 downto 16) when pline(8)='1' else "0000";
-    multiplication11 <= wline0(23 downto 20) when pline(9)='1' else "0000";
-    multiplication12 <= wline0(27 downto 24) when pline(10)='1' else "0000";
-    multiplication13 <= wline0(31 downto 28) when pline(11)='1' else "0000";
-    multiplication20 <= wline0(35 downto 32) when pline(4)='1' else "0000";
-    multiplication21 <= wline0(39 downto 36) when pline(5)='1' else "0000";
-    multiplication22 <= wline0(43 downto 40) when pline(6)='1' else "0000";
-    multiplication23 <= wline0(47 downto 44) when pline(7)='1' else "0000";
-    multiplication30 <= wline0(51 downto 48) when pline(0)='1' else "0000";
-    multiplication31 <= wline0(55 downto 52) when pline(1)='1' else "0000";
-    multiplication32 <= wline0(59 downto 56) when pline(2)='1' else "0000";
-    multiplication33 <= wline0(63 downto 60) when pline(3)='1' else "0000";
-                                                  
-    multiplication40 <= wline1(3 downto 0)   when pline(28)='1' else "0000";
-    multiplication41 <= wline1(7 downto 4)   when pline(29)='1' else "0000";
-    multiplication42 <= wline1(11 downto 8)  when pline(30)='1' else "0000";
-    multiplication43 <= wline1(15 downto 12) when pline(31)='1' else "0000";
-    multiplication50 <= wline1(19 downto 16) when pline(24)='1' else "0000";
-    multiplication51 <= wline1(23 downto 20) when pline(25)='1' else "0000";
-    multiplication52 <= wline1(27 downto 24) when pline(26)='1' else "0000";
-    multiplication53 <= wline1(31 downto 28) when pline(27)='1' else "0000";
-    multiplication60 <= wline1(35 downto 32) when pline(20)='1' else "0000";
-    multiplication61 <= wline1(39 downto 36) when pline(21)='1' else "0000";
-    multiplication62 <= wline1(43 downto 40) when pline(22)='1' else "0000";
-    multiplication63 <= wline1(47 downto 44) when pline(23)='1' else "0000";
-    multiplication70 <= wline1(51 downto 48) when pline(16)='1' else "0000";
-    multiplication71 <= wline1(55 downto 52) when pline(17)='1' else "0000";
-    multiplication72 <= wline1(59 downto 56) when pline(18)='1' else "0000";
-    multiplication73 <= wline1(63 downto 60) when pline(19)='1' else "0000";
+-- We simply choose the mux for multiplication to be certain that the image pixels must be binarized                                         
+   
+    multiplication40 <= wline0(3 downto 0)   when pline(28)='1' else "0000";
+    multiplication41 <= wline0(7 downto 4)   when pline(29)='1' else "0000";
+    multiplication42 <= wline0(11 downto 8)  when pline(30)='1' else "0000";
+    multiplication43 <= wline0(15 downto 12) when pline(31)='1' else "0000";
     
+    multiplication50 <= wline0(19 downto 16) when pline(24)='1' else "0000";
+    multiplication51 <= wline0(23 downto 20) when pline(25)='1' else "0000";
+    multiplication52 <= wline0(27 downto 24) when pline(26)='1' else "0000";
+    multiplication53 <= wline0(31 downto 28) when pline(27)='1' else "0000";
+    
+    multiplication60 <= wline0(35 downto 32) when pline(20)='1' else "0000";
+    multiplication61 <= wline0(39 downto 36) when pline(21)='1' else "0000";
+    multiplication62 <= wline0(43 downto 40) when pline(22)='1' else "0000";
+    multiplication63 <= wline0(47 downto 44) when pline(23)='1' else "0000";
+    
+    multiplication70 <= wline0(51 downto 48) when pline(16)='1' else "0000";
+    multiplication71 <= wline0(55 downto 52) when pline(17)='1' else "0000";
+    multiplication72 <= wline0(59 downto 56) when pline(18)='1' else "0000";
+    multiplication73 <= wline0(63 downto 60) when pline(19)='1' else "0000";
+
+    multiplication00 <= wline0(67 downto 64) when pline(12)='1' else "0000";
+    multiplication02 <= wline0(71 downto 68) when pline(13)='1' else "0000";
+    multiplication03 <= wline0(75 downto 72) when pline(14)='1' else "0000";
+    multiplication10 <= wline0(79 downto 76) when pline(15)='1' else "0000";
+    
+    multiplication11 <= wline0(83 downto 80) when pline(8)='1' else "0000";
+    multiplication12 <= wline0(87 downto 84) when pline(9)='1' else "0000";
+    multiplication13 <= wline0(91 downto 88) when pline(10)='1' else "0000";
+    multiplication20 <= wline0(95 downto 92) when pline(11)='1' else "0000";
+    
+    multiplication21 <= wline0(99 downto 96) when pline(4)='1' else "0000";
+    multiplication22 <= wline0(103 downto 100) when pline(5)='1' else "0000";
+    multiplication23 <= wline0(107 downto 104) when pline(6)='1' else "0000";
+    multiplication30 <= wline0(111 downto 108) when pline(7)='1' else "0000";
+    
+    multiplication31 <= wline0(115 downto 112) when pline(0)='1' else "0000";
+    multiplication31 <= wline0(119 downto 116) when pline(1)='1' else "0000";
+    multiplication32 <= wline0(123 downto 120) when pline(2)='1' else "0000";
+    multiplication33 <= wline0(127 downto 124) when pline(3)='1' else "0000";
+    
+    
+    
+    multiplication40A<= wline1(3 downto 0)   when pline1(28)='1' else "0000";
+    multiplication41A<= wline1(7 downto 4)   when pline1(29)='1' else "0000";
+    multiplication42A<= wline1(11 downto 8)  when pline1(30)='1' else "0000";
+    multiplication43A<= wline1(15 downto 12) when pline1(31)='1' else "0000";
+                        
+    multiplication50A<= wline1(19 downto 16) when pline1(24)='1' else "0000";
+    multiplication51A<= wline1(23 downto 20) when pline1(25)='1' else "0000";
+    multiplication52A<= wline1(27 downto 24) when pline1(26)='1' else "0000";
+    multiplication53A<= wline1(31 downto 28) when pline1(27)='1' else "0000";
+                          
+    multiplication60A<= wline1(35 downto 32) when pline1(20)='1' else "0000";
+    multiplication61A<= wline1(39 downto 36) when pline1(21)='1' else "0000";
+    multiplication62A<= wline1(43 downto 40) when pline1(22)='1' else "0000";
+    multiplication63A<= wline1(47 downto 44) when pline1(23)='1' else "0000";
+                           
+    multiplication70A<= wline1(51 downto 48) when pline1(16)='1' else "0000";
+    multiplication71A<= wline1(55 downto 52) when pline1(17)='1' else "0000";
+    multiplication72A<= wline1(59 downto 56) when pline1(18)='1' else "0000";
+    multiplication73A<= wline1(63 downto 60) when pline1(19)='1' else "0000";
+                            
+    multiplication00A<= wline1(67 downto 64) when pline1(12)='1' else "0000";
+    multiplication02A<= wline1(71 downto 68) when pline1(13)='1' else "0000";
+    multiplication03A<= wline1(75 downto 72) when pline1(14)='1' else "0000";
+    multiplication10A<= wline1(79 downto 76) when pline1(15)='1' else "0000";
+                           
+    multiplication11A<= wline1(83 downto 80) when pline1(8)='1' else "0000";
+    multiplication12A<= wline1(87 downto 84) when pline1(9)='1' else "0000";
+    multiplication13A<= wline1(91 downto 88) when pline1(10)='1' else "0000";
+    multiplication20A<= wline1(95 downto 92) when pline1(11)='1' else "0000";
+                            
+    multiplication21A<= wline1(99 downto 96) when pline1(4)='1' else "0000";
+    multiplication22A<= wline1(103 downto 100) when pline1(5)='1' else "0000";
+    multiplication23A<= wline1(107 downto 104) when pline1(6)='1' else "0000";
+    multiplication30A<= wline1(111 downto 108) when pline1(7)='1' else "0000";
+                           
+    multiplication31A<= wline1(115 downto 112) when pline1(0)='1' else "0000";
+    multiplication31A<= wline1(119 downto 116) when pline1(1)='1' else "0000";
+    multiplication32A<= wline1(123 downto 120) when pline1(2)='1' else "0000";
+    multiplication33A<= wline1(127 downto 124) when pline1(3)='1' else "0000";
     
 -- add 1st round
     add00 <= signed(multiplication00(3)& multiplication00) + signed(multiplication01(3)& multiplication01);
@@ -263,7 +386,24 @@ begin
     add61 <= signed(multiplication62(3)& multiplication62) + signed(multiplication63(3)& multiplication63);
     add70 <= signed(multiplication70(3)& multiplication70) + signed(multiplication71(3)& multiplication71);
     add71 <= signed(multiplication72(3)& multiplication72) + signed(multiplication73(3)& multiplication73);
-  
+    
+    add00A<= signed(multiplication00A(3)& multiplication00A) + signed(multiplication01A(3)& multiplication01A);
+    add01A<= signed(multiplication02A(3)& multiplication02A) + signed(multiplication03A(3)& multiplication03A);
+    add10A<= signed(multiplication10A(3)& multiplication10A) + signed(multiplication11A(3)& multiplication11A);
+    add11A<= signed(multiplication12A(3)& multiplication12A) + signed(multiplication13A(3)& multiplication13A);
+    add20A<= signed(multiplication20A(3)& multiplication20A) + signed(multiplication21A(3)& multiplication21A);
+    add21A<= signed(multiplication22A(3)& multiplication22A) + signed(multiplication23A(3)& multiplication23A);
+    add30A<= signed(multiplication30A(3)& multiplication30A) + signed(multiplication31A(3)& multiplication31A);
+    add31A<= signed(multiplication32A(3)& multiplication32A) + signed(multiplication33A(3)& multiplication33A);
+    add40A<= signed(multiplication40A(3)& multiplication40A) + signed(multiplication41A(3)& multiplication41A);
+    add41A<= signed(multiplication42A(3)& multiplication42A) + signed(multiplication43A(3)& multiplication43A);
+    add50A<= signed(multiplication50A(3)& multiplication50A) + signed(multiplication51A(3)& multiplication51A);
+    add51A<= signed(multiplication52A(3)& multiplication52A) + signed(multiplication53A(3)& multiplication53A);
+    add60A<= signed(multiplication60A(3)& multiplication60A) + signed(multiplication61A(3)& multiplication61A);
+    add61A<= signed(multiplication62A(3)& multiplication62A) + signed(multiplication63A(3)& multiplication63A);
+    add70A<= signed(multiplication70A(3)& multiplication70A) + signed(multiplication71A(3)& multiplication71A);
+    add71A<= signed(multiplication72A(3)& multiplication72A) + signed(multiplication73A(3)& multiplication73A);
+                                    
 -- add 2nd round
     add0 <= (add00(4) & add00)+(add01(4) & add01);
     add1 <= (add10(4) & add10)+(add11(4) & add11);
@@ -274,6 +414,15 @@ begin
     add6 <= (add60(4) & add60)+(add61(4) & add61);
     add7 <= (add70(4) & add70)+(add71(4) & add71);
     
+    add0A <= (add00A(4) & add00A)+(add01A(4) & add01A);
+    add1A <= (add10A(4) & add10A)+(add11A(4) & add11A);
+    add2A <= (add20A(4) & add20A)+(add21A(4) & add21A);
+    add3A <= (add30A(4) & add30A)+(add31A(4) & add31A);
+    add4A <= (add40A(4) & add40A)+(add41A(4) & add41A);
+    add5A <= (add50A(4) & add50A)+(add51A(4) & add51A);
+    add6A <= (add60A(4) & add60A)+(add61A(4) & add61A);
+    add7A <= (add70A(4) & add70A)+(add71A(4) & add71A);
+    
     --The next adds should not add additional significative slack since they are very simple operations performed in LUTs
 -- add 3rd round
 
@@ -281,16 +430,26 @@ begin
     add23 <= (add2(5) & add2)+(add3(5) & add3);
     add45 <= (add4(5) & add4)+(add5(5) & add5);
     add67 <= (add6(5) & add6)+(add7(5) & add7);
+    
+    add0to1A <= (add0A(5) & add0A)+(add1A(5) & add1A);
+    add23A <= (add2A(5) & add2A)+(add3A(5) & add3A);
+    add45A <= (add4A(5) & add4A)+(add5A(5) & add5A);
+    add67A <= (add6A(5) & add6A)+(add7A(5) & add7A);
 
 --add 4th round
     add0to3 <= (add0to1(6) & add0to1)+(add23(6) & add23);
     add47 <= (add45(6) & add45)+(add67(6) & add67);
-
+    
+    add0to3A <= (add0to1A(6) & add0to1A)+(add23A(6) & add23A);
+    add47A <= (add45A(6) & add45A)+(add67A(6) & add67A);
+    
 --add 5th round
     add07 <= (add0to3(7) & add0to3)+(add47(7) & add47);
-
+    add07A <= (add0to3A(7) & add0to3A)+(add47A(7) & add47A);
+--add 6th round
+    addnoAtoA <= (add07(7) & add07)+(add07A(7) & add07A);
 -- add this round with the accumulated
-    neuron_part <= add07 + signed(accum_out);
+    neuron_part <= addnoAtoA + signed(accum_out);
     accum_in <= std_logic_vector(neuron_part); --and feedback it into the accumulator
 
 -- ReLu the total rounds adder output and connect it to memory input (FSM will determine if stored and where)
@@ -343,6 +502,7 @@ begin
 
 -- Fuse internal wires with external ports
     imgAddr <= imgAddr_aux;
+    imgAddr2 <= imgAddr2_aux;
     w1Addr <= w1Addr_aux;
     w2Addr <= w2Addr_aux;
     w1Addr2 <= w1Addr2_aux;
@@ -364,8 +524,10 @@ process (clk)
         if clk'event and clk='1' then
             if rstImg_gen='1' then
                  imgAddr_aux<= starterAddr;
+                 imgAddr2_aux<= std_logic_vector(signed(starterAddr)+1);
             elsif img_enable='1' then
-                 imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +1);
+                 imgAddr_aux <= std_logic_vector(unsigned(imgAddr_aux) +2);
+                 imgAddr2_aux <= std_logic_vector(unsigned(imgAddr2_aux) +2);
             end if;
         end if;
     end process;

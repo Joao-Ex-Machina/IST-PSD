@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Nov  3 01:31:34 2023
-# Process ID: 40626
+# Start of session at: Fri Nov  3 12:16:32 2023
+# Process ID: 20113
 # Current directory: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1
 # Command line: vivado -log fpga_basicIO_mems.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_basicIO_mems.tcl
 # Log file: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/fpga_basicIO_mems.vds
 # Journal file: /home/jcr/IST-PSD/Lab3-upgraded/project_1.runs/synth_1/vivado.jou
-# Running On: Shub-Niggurath, OS: Linux, CPU Frequency: 2781.524 MHz, CPU Physical cores: 4, Host memory: 16720 MB
+# Running On: Shub-Niggurath, OS: Linux, CPU Frequency: 1805.744 MHz, CPU Physical cores: 4, Host memory: 16720 MB
 #-----------------------------------------------------------
 source fpga_basicIO_mems.tcl -notrace

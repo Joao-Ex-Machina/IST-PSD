@@ -18,7 +18,7 @@ entity mem_acesses is
     addr_w20, addr_w21 : in std_logic_vector (6 downto 0);
     addr_m0, addr_m1: in std_logic_vector(4 downto 0);
     im_row0, im_row1 : out std_logic_vector(31 downto 0);
-    weight1_40, weight1_41 : out std_logic_vector(63 downto 0);
+    weight1_40, weight1_41 : out std_logic_vector(127 downto 0);
     weight2_40, weight2_41 : out std_logic_vector(31 downto 0);
     in_middle0, in_middle1 : in std_logic_vector(13 downto 0);
     out_middle0, out_middle1 : out std_logic_vector(13 downto 0);
@@ -46,13 +46,13 @@ COMPONENT weights1
     clka : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
     clkb : IN STD_LOGIC;
     web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addrb : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
-    dinb : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-    doutb : OUT STD_LOGIC_VECTOR(63 DOWNTO 0) 
+    dinb : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+    doutb : OUT STD_LOGIC_VECTOR(127 DOWNTO 0) 
   );
 END COMPONENT;
 COMPONENT weights2

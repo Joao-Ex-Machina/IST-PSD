@@ -92,6 +92,7 @@ add_files /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/
 add_files /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/layer2.coe
 add_files /home/jcr/IST-PSD/Lab3-upgraded/project_1.ip_user_files/mem_init_files/layer1.coe
 add_files /home/jcr/IST-PSD/Lab3-upgraded/project_1.ip_user_files/mem_init_files/mod_mod_layer1.coe
+add_files /home/jcr/IST-PSD/Lab3-upgraded/project_1.ip_user_files/mem_init_files/mod_mod_mod_layer1.coe
 read_vhdl -library xil_defaultlib {
   /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl
   /home/jcr/IST-PSD/Lab3-upgraded/project_1.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd
