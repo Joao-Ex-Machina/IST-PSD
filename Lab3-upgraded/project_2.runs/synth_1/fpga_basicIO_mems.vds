@@ -1,0 +1,404 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Nov  3 15:47:11 2023
+# Process ID: 16276
+# Current directory: C:/tmp/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log fpga_basicIO_mems.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_basicIO_mems.tcl
+# Log file: C:/tmp/project_2/project_2.runs/synth_1/fpga_basicIO_mems.vds
+# Journal file: C:/tmp/project_2/project_2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NOHGJAN, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 12728 MB
+#-----------------------------------------------------------
+source fpga_basicIO_mems.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 480.895 ; gain = 199.758
+Command: synth_design -top fpga_basicIO_mems -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 14592
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1303.117 ; gain = 409.938
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'fpga_basicIO_mems' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
+INFO: [Synth 8-3491] module 'circuito' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:34' bound to instance 'inst_circuito' of component 'circuito' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'circuito' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
+INFO: [Synth 8-3491] module 'mem_acesses' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:13' bound to instance 'instance_mems' of component 'mem_acesses' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:201]
+INFO: [Synth 8-638] synthesizing module 'mem_acesses' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
+INFO: [Synth 8-3491] module 'images_mem' declared at 'C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/images_mem_stub.v:6' bound to instance 'instance_images' of component 'images_mem' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:89]
+INFO: [Synth 8-6157] synthesizing module 'images_mem' [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/images_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'images_mem' (0#1) [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/images_mem_stub.v:6]
+INFO: [Synth 8-3491] module 'weights1' declared at 'C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights1_stub.v:6' bound to instance 'instance_weights1' of component 'weights1' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:103]
+INFO: [Synth 8-6157] synthesizing module 'weights1' [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'weights1' (0#1) [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights1_stub.v:6]
+INFO: [Synth 8-3491] module 'weights2' declared at 'C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights2_stub.v:6' bound to instance 'instance_weights2' of component 'weights2' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:117]
+INFO: [Synth 8-6157] synthesizing module 'weights2' [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'weights2' (0#1) [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/weights2_stub.v:6]
+INFO: [Synth 8-3491] module 'middle_memory' declared at 'C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/middle_memory_stub.v:6' bound to instance 'instance_middle' of component 'middle_memory' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:131]
+INFO: [Synth 8-6157] synthesizing module 'middle_memory' [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/middle_memory_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'middle_memory' (0#1) [C:/tmp/project_2/project_2.runs/synth_1/.Xil/Vivado-16276-DESKTOP-NOHGJAN/realtime/middle_memory_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'mem_acesses' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/imports/P3/mem_acesses.vhd:29]
+INFO: [Synth 8-3491] module 'datapath' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/datapath.vhd:13' bound to instance 'instance_datapath' of component 'datapath' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:216]
+INFO: [Synth 8-638] synthesizing module 'datapath' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/datapath.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/datapath.vhd:95]
+INFO: [Synth 8-3491] module 'control' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:34' bound to instance 'instance_control' of component 'control' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:278]
+INFO: [Synth 8-638] synthesizing module 'control' [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
+WARNING: [Synth 8-614] signal 'img_number' is read in the process but is not in the sensitivity list [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'control' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/control.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'circuito' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/Lab3/Lab3.srcs/sources_1/new/circuito.vhdl:44]
+INFO: [Synth 8-3491] module 'disp7m' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/disp7m.vhd:9' bound to instance 'inst_disp7m' of component 'disp7m' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'disp7m' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/disp7m.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'disp7m' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/disp7m.vhd:21]
+	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:189]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/debouncer.vhd:50]
+	Parameter DEBNC_CLOCKS bound to: 1048576 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/debouncer.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'fpga_basicIO_mems' (0#1) [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:48]
+WARNING: [Synth 8-6014] Unused sequential element btnLreg_reg was removed.  [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:203]
+WARNING: [Synth 8-6014] Unused sequential element btnRreg_reg was removed.  [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:204]
+WARNING: [Synth 8-6014] Unused sequential element btnDreg_reg was removed.  [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:205]
+WARNING: [Synth 8-3848] Net minus_sign in module/entity fpga_basicIO_mems does not have driver. [C:/tmp/project_2/project_2.srcs/sources_1/imports/P3/fpga_basicIO_mems.vhd:56]
+WARNING: [Synth 8-7129] Port w2line1[31] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[30] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[29] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[28] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[27] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[26] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[25] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[24] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[23] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[22] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[21] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[20] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[19] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[18] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[17] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[16] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[15] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[14] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[13] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[12] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[11] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[10] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[9] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[8] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[7] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[6] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[5] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[4] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[3] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[2] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[1] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w2line1[0] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port muxpsel[1] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port muxpsel[0] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port muxw2sel0[0] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port muxw2sel1[1] in module datapath is either unconnected or has no load
+WARNING: [Synth 8-7129] Port muxw2sel1[0] in module datapath is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1405.984 ; gain = 512.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1405.984 ; gain = 512.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1405.984 ; gain = 512.805
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1405.984 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/weights1/weights1/weights1_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights1'
+Finished Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/weights1/weights1/weights1_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights1'
+Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/images_mem/images_mem/images_mem_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_images'
+Finished Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/images_mem/images_mem/images_mem_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_images'
+Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/weights2/weights2/weights2_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights2'
+Finished Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/weights2/weights2/weights2_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_weights2'
+Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/middle_memory/middle_memory/middle_memory_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_middle'
+Finished Parsing XDC File [c:/tmp/project_2/project_2.gen/sources_1/ip/middle_memory/middle_memory/middle_memory_in_context.xdc] for cell 'inst_circuito/instance_mems/instance_middle'
+Parsing XDC File [C:/tmp/project_2/project_2.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/tmp/project_2/project_2.srcs/constrs_1/imports/P3/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/tmp/project_2/project_2.srcs/constrs_1/imports/P3/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_basicIO_mems_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_basicIO_mems_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/tmp/project_2/project_2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/tmp/project_2/project_2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1509.883 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1509.883 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_images' at clock pin 'clka' is different from the actual clock period '16.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_middle' at clock pin 'clka' is different from the actual clock period '16.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_weights1' at clock pin 'clka' is different from the actual clock period '16.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'inst_circuito/instance_mems/instance_weights2' at clock pin 'clka' is different from the actual clock period '16.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_weights1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_images. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_weights2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst_circuito/instance_mems/instance_middle. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'control'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_init |                               00 |                               00
+                s_layer1 |                               01 |                               01
+                s_layer2 |                               10 |                               10
+                s_output |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 10    
+	   2 Input    6 Bit       Adders := 22    
+	   2 Input    5 Bit       Adders := 35    
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 3     
+	   3 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 5     
+	   4 Input    5 Bit        Muxes := 3     
+	   3 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 66    
+	   3 Input    4 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 11    
+	   4 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP instance_datapath/mulplication10_2layer, operation Mode is: A*B.
+DSP Report: operator instance_datapath/mulplication10_2layer is absorbed into DSP instance_datapath/mulplication10_2layer.
+DSP Report: Generating DSP instance_datapath/add_2layer, operation Mode is: PCIN+A*B.
+DSP Report: operator instance_datapath/add_2layer is absorbed into DSP instance_datapath/add_2layer.
+DSP Report: operator instance_datapath/multiplication11_2layer is absorbed into DSP instance_datapath/add_2layer.
+DSP Report: Generating DSP instance_datapath/accum2_out_reg, operation Mode is: (PCIN+P)'.
+DSP Report: register instance_datapath/accum2_out_reg is absorbed into DSP instance_datapath/accum2_out_reg.
+DSP Report: operator instance_datapath/neuron_part2 is absorbed into DSP instance_datapath/accum2_out_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|datapath    | A*B         | 14     | 8      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|datapath    | PCIN+A*B    | 14     | 8      | -      | -      | 23     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|datapath    | (PCIN+P)'   | -      | -      | -      | -      | -1     | -    | -    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1509.883 ; gain = 616.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|datapath    | A*B         | 30     | 18     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|datapath    | PCIN+A*B    | 30     | 18     | -      | -      | 23     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|datapath    | (PCIN+P)'   | -      | -      | -      | -      | 27     | -    | -    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |images_mem    |         1|
+|2     |weights1      |         1|
+|3     |weights2      |         1|
+|4     |middle_memory |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |images_mem    |     1|
+|2     |middle_memory |     1|
+|3     |weights1      |     1|
+|4     |weights2      |     1|
+|5     |BUFG          |     1|
+|6     |CARRY4        |    64|
+|7     |DSP48E1       |     3|
+|9     |LUT1          |    17|
+|10    |LUT2          |   199|
+|11    |LUT3          |    83|
+|12    |LUT4          |   136|
+|13    |LUT5          |   173|
+|14    |LUT6          |   149|
+|15    |FDRE          |   234|
+|16    |FDSE          |     1|
+|17    |IBUF          |    19|
+|18    |OBUF          |    28|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.824 ; gain = 624.645
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 1517.824 ; gain = 520.746
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1517.824 ; gain = 624.645
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1529.859 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1538.512 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 2d207067
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1538.512 ; gain = 1023.715
+INFO: [Common 17-1381] The checkpoint 'C:/tmp/project_2/project_2.runs/synth_1/fpga_basicIO_mems.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fpga_basicIO_mems_utilization_synth.rpt -pb fpga_basicIO_mems_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  3 15:48:10 2023...

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="circuito_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="circuito_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="101.000001 us"></ZoomEndTime>
+      <Cursor1Time time="30.649371 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="192"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="45" />
+   <wvobject fp_name="/circuito_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/init" type="logic">
+      <obj_property name="ElementShortName">init</obj_property>
+      <obj_property name="ObjectShortName">init</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/img_number" type="array">
+      <obj_property name="ElementShortName">img_number[6:0]</obj_property>
+      <obj_property name="ObjectShortName">img_number[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/cw1" type="array">
+      <obj_property name="ElementShortName">cw1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">cw1[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/cp" type="array">
+      <obj_property name="ElementShortName">cp[5:0]</obj_property>
+      <obj_property name="ObjectShortName">cp[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/caux1" type="array">
+      <obj_property name="ElementShortName">caux1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">caux1[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/addr_w10" type="array">
+      <obj_property name="ElementShortName">addr_w10[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_w10[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/addr_w11" type="array">
+      <obj_property name="ElementShortName">addr_w11[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_w11[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/cmem" type="array">
+      <obj_property name="ElementShortName">cmem[5:0]</obj_property>
+      <obj_property name="ObjectShortName">cmem[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/cw2" type="array">
+      <obj_property name="ElementShortName">cw2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">cw2[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/addr_w20" type="array">
+      <obj_property name="ElementShortName">addr_w20[6:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_w20[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/memAddr" type="array">
+      <obj_property name="ElementShortName">memAddr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">memAddr[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/memAddr2" type="array">
+      <obj_property name="ElementShortName">memAddr2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">memAddr2[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/address_enables" type="array">
+      <obj_property name="ElementShortName">address_enables[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_enables[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/address_resets" type="array">
+      <obj_property name="ElementShortName">address_resets[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_resets[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/addr_p0" type="array">
+      <obj_property name="ElementShortName">addr_p0[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_p0[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/addr_p1" type="array">
+      <obj_property name="ElementShortName">addr_p1[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_p1[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/pline" type="array">
+      <obj_property name="ElementShortName">pline[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pline[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/pline1" type="array">
+      <obj_property name="ElementShortName">pline1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pline1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/wline0" type="array">
+      <obj_property name="ElementShortName">wline0[127:0]</obj_property>
+      <obj_property name="ObjectShortName">wline0[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/wline1" type="array">
+      <obj_property name="ElementShortName">wline1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">wline1[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/add07" type="array">
+      <obj_property name="ElementShortName">add07[8:0]</obj_property>
+      <obj_property name="ObjectShortName">add07[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/neuron1_in" type="array">
+      <obj_property name="ElementShortName">neuron1_in[13:0]</obj_property>
+      <obj_property name="ObjectShortName">neuron1_in[13:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/accum_out" type="array">
+      <obj_property name="ElementShortName">accum_out[13:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_out[13:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/out_middle0" type="array">
+      <obj_property name="ElementShortName">out_middle0[13:0]</obj_property>
+      <obj_property name="ObjectShortName">out_middle0[13:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/out_middle1" type="array">
+      <obj_property name="ElementShortName">out_middle1[13:0]</obj_property>
+      <obj_property name="ObjectShortName">out_middle1[13:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/muxedw20" type="array">
+      <obj_property name="ElementShortName">muxedw20[7:0]</obj_property>
+      <obj_property name="ObjectShortName">muxedw20[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/muxedw21" type="array">
+      <obj_property name="ElementShortName">muxedw21[7:0]</obj_property>
+      <obj_property name="ObjectShortName">muxedw21[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/weight2_40" type="array">
+      <obj_property name="ElementShortName">weight2_40[31:0]</obj_property>
+      <obj_property name="ObjectShortName">weight2_40[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/neuron_part2" type="array">
+      <obj_property name="ElementShortName">neuron_part2[26:0]</obj_property>
+      <obj_property name="ObjectShortName">neuron_part2[26:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/accum_eval_out" type="array">
+      <obj_property name="ElementShortName">accum_eval_out[26:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_eval_out[26:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/add_2layer" type="array">
+      <obj_property name="ElementShortName">add_2layer[22:0]</obj_property>
+      <obj_property name="ObjectShortName">add_2layer[22:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_mems/write_enable" type="array">
+      <obj_property name="ElementShortName">write_enable[0:0]</obj_property>
+      <obj_property name="ObjectShortName">write_enable[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/accum2_in" type="array">
+      <obj_property name="ElementShortName">accum2_in[26:0]</obj_property>
+      <obj_property name="ObjectShortName">accum2_in[26:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/accum_eval_lvl_in" type="array">
+      <obj_property name="ElementShortName">accum_eval_lvl_in[3:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_eval_lvl_in[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/caux2" type="array">
+      <obj_property name="ElementShortName">caux2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">caux2[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/write_enable" type="array">
+      <obj_property name="ElementShortName">write_enable[1:0]</obj_property>
+      <obj_property name="ObjectShortName">write_enable[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_datapath/neuron1_in" type="array">
+      <obj_property name="ElementShortName">neuron1_in[13:0]</obj_property>
+      <obj_property name="ObjectShortName">neuron1_in[13:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/address_enables" type="array">
+      <obj_property name="ElementShortName">address_enables[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_enables[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/address_resets" type="array">
+      <obj_property name="ElementShortName">address_resets[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_resets[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/counter_enables" type="array">
+      <obj_property name="ElementShortName">counter_enables[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_enables[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/counter_resets" type="array">
+      <obj_property name="ElementShortName">counter_resets[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_resets[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/circuito_tb/uut/instance_control/curr_state" type="other">
+      <obj_property name="ElementShortName">curr_state</obj_property>
+      <obj_property name="ObjectShortName">curr_state</obj_property>
+   </wvobject>
+</wave_config>

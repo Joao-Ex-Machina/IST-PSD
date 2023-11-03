@@ -1,0 +1,97 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Fri Nov  3 16:05:32 2023
+| Host         : DESKTOP-NOHGJAN running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file fpga_basicIO_mems_control_sets_placed.rpt
+| Design       : fpga_basicIO_mems
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    19 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     6 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              83 |           52 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              40 |           10 |
+| Yes          | No                    | No                     |              40 |           13 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             113 |           32 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                        Enable Signal                       |                      Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/accum_eval_lvl_aux         | inst_circuito/instance_datapath/rst_eval                  |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/imgCounter_aux[4]_i_2_n_0  | inst_circuito/instance_control/NeuronCounter_aux_reg[5]_0 |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/imgCounter_aux_reg[4]_1[0] | inst_circuito/instance_datapath/rstW2_gen                 |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/accum_out[13]_i_2_n_0      | inst_circuito/instance_datapath/rstW1_counter             |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/E[0]                       | inst_circuito/instance_control/SR[0]                      |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/w2Counter_enable           | inst_circuito/instance_datapath/w2Counter_aux             |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/imgCounter_aux_reg[4]_1[0] | inst_circuito/instance_control/rstNeuron_counter          |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/w2Addr2_aux[6]_i_1_n_0     |                                                           |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/w2Counter_aux_reg[5]_0     | inst_circuito/instance_datapath/rstW2_gen                 |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/memread_enable             | inst_circuito/instance_datapath/clear                     |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/accum_out[13]_i_2_n_0      | inst_circuito/instance_control/rstNeuron_counter          |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/w1Addr2_aux[9]_i_1_n_0     |                                                           |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/Neuron2Counter_enable      | inst_circuito/instance_control/rstNeuron_counter          |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/accum_out[13]_i_2_n_0      | inst_circuito/instance_datapath/RSTP                      |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG |                                                            | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0             |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG |                                                            | Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0             |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/imgAddr2_aux               |                                                           |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | inst_circuito/instance_datapath/accum_eval_out_0           | inst_circuito/instance_datapath/rst_eval                  |                6 |             27 |         4.50 |
+|  clk_IBUF_BUFG |                                                            |                                                           |               52 |             83 |         1.60 |
++----------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+
+

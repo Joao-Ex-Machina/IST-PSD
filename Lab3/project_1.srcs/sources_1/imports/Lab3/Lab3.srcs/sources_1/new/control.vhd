@@ -300,7 +300,7 @@ begin
                 muxpsel <= (others => '0');
                 muxw2sel <= (others => '0');
                 reg_rst <= '1';
-                rst_eval <= '0';
+                rst_eval <= '1';
                 evaluate_enable <= '0';
                 evaluate_enable_accum <= '0';
                 write_enable <= (others => '0');
