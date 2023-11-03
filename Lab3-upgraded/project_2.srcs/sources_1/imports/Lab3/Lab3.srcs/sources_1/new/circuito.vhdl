@@ -42,7 +42,17 @@ entity circuito is
 end circuito;
 
 architecture Behavioral of circuito is
-
+    
+component clk_wiz_0
+        Port (
+        -- Clock out ports
+        clk_out1 : out std_logic;
+        -- Status and control signals
+        locked : out std_logic;
+        -- Clock in ports
+        clk_in1 : in std_logic );
+    end component;
+    
     component mem_acesses
         Port(
         clk: in std_logic;
@@ -170,7 +180,8 @@ architecture Behavioral of circuito is
         cmem : in std_logic_vector(5 downto 0)
         );
     end component;
-    
+
+    signal clk_PLL, locked: std_logic_vector;
     signal starter_address : std_logic_vector(11 downto 0);
     signal write_enable: std_logic_vector (1 downto 0);
     signal address_enables, address_resets : std_logic_vector(4 downto 0);
@@ -198,9 +209,15 @@ architecture Behavioral of circuito is
     signal rst_eval, evaluate_enable, evaluate_enable_accum : std_logic;
     
 begin
+     inst_clk_gen : clk_wiz_0
+        port map (
+        clk_out1 => clk_PLL,
+        locked => locked,
+        clk_in1 => clk );
+         
     instance_mems: mem_acesses
     Port map(
-        clk => clk,
+        clk => clk_PLL,
         addr_p0 => addr_p0, addr_p1 =>addr_p1,
         addr_w10 => addr_w10, addr_w11 => addr_w11,
         addr_w20 => addr_w20, addr_w21 => addr_w21,
@@ -215,7 +232,7 @@ begin
     
     instance_datapath: datapath
     Port map (
-        clk => clk,
+        clk => clk_PLL,
         starterAddr => starter_address,
         imgAddr => addr_p0,
         imgAddr2 => addr_p1,
@@ -277,7 +294,7 @@ begin
     
     instance_control : control
     port map (
-        clk => clk,
+        clk => clk_PLL,
         rst => rst,
         init => init,
         img_number => img_number,
