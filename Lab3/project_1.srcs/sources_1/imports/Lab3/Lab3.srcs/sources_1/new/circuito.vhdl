@@ -287,6 +287,7 @@ begin
     instance_control : control
     port map (
         clk => clk_PLL,
+        locked => locked,
         rst => rst,
         init => init,
         img_number => img_number,
