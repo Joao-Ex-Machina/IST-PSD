@@ -150,7 +150,7 @@ architecture Behavioral of circuito is
     component control
         Port (
         clk, rst : in std_logic;
-        init : in std_logic;
+        init,locked : in std_logic;
         img_number : in std_logic_vector(6 downto 0);
         
         --TO DATAPATH
