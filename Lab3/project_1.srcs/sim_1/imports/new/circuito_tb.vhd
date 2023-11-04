@@ -37,7 +37,7 @@ ARCHITECTURE behavior OF circuito_tb IS
 -- Component Declaration for the Unit Under Test (UUT)
 COMPONENT circuito
     Port (
-        clk, rst, init : in std_logic;
+        clk, rst, init, locked : in std_logic;
         img_number : in std_logic_vector(6 downto 0);
         
         --done : out std_logic;
@@ -47,6 +47,7 @@ COMPONENT circuito
 END COMPONENT;
 -- Inputs
 signal clk : std_logic := '0';
+signal locked : std_logic := '0';
 signal rst : std_logic := '0';
 signal init : std_logic := '0';
 signal img_number : std_logic_vector(6 downto 0) := (others => '0');
@@ -61,6 +62,7 @@ constant clk_period : time := 15 ns;
 begin
     uut : circuito port map(
         clk => clk, rst => rst,
+        locked => locked,
         init => init, img_number => img_number, 
         --done => done, 
         data_out => data_out
@@ -77,7 +79,8 @@ begin
         rst <= '1' after 20 ns,
                 '0' after 40 ns;
         img_number <=  "0000000" after 40 ns;
-        
+
+        locked <= '1' after 30 ns;
         init <= '1' after 40 ns,
                 '0' after 80 ns;
         
