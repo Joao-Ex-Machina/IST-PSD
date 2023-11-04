@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity control is
     Port (
     clk, rst : in std_logic;
-    init : in std_logic;
+    init, locked : in std_logic;
     img_number : in std_logic_vector(6 downto 0);
     
     --TO DATAPATH
@@ -83,13 +83,13 @@ begin
     end process;
     
     
-    comb_reg : process (curr_state, init, cp, cw1, cw2, cmem, caux1, caux2)
+    comb_reg : process (curr_state, init,locked, cp, cw1, cw2, cmem, caux1, caux2)
     begin
         next_state <= curr_state; --base case
         
         case curr_state is 
         when s_init =>
-            if init='1' then 
+            if init='1' and locked='1' then 
                 next_state <= s_layer1;  
                 starter_address <= img_number & "00000";
                 address_enables <= "00010";
