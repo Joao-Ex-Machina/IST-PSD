@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity control is
     Port (
     clk, rst : in std_logic;
-    init : in std_logic;
+    init,locked : in std_logic;
     img_number : in std_logic_vector(6 downto 0);
     
     --TO DATAPATH
@@ -89,7 +89,7 @@ begin
         
         case curr_state is 
         when s_init =>
-            if init='1' then 
+            if init='1' and locked='1' then 
                 next_state <= s_layer1;  
                 starter_address <= img_number & "00000";
                 address_enables <= "00000";
@@ -137,7 +137,7 @@ begin
                         evaluate_enable_accum <= '0';
                         write_enable <= "01"; --JOAO ISTO TA CERTO? Sim parece-me bem
                         mem_we <= '0';
-                    else --cw1==1 -- está aqui so para as wlines e plines atualizarem
+                    else --cw1==1 -- estÃ¡ aqui so para as wlines e plines atualizarem
                         starter_address <= img_number & "00000";
                         address_enables <= "00000";
                         address_resets <=  "00000";
