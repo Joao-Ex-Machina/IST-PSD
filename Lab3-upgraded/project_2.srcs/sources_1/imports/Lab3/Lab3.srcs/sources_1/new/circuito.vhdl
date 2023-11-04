@@ -153,7 +153,7 @@ component clk_wiz_0
     component control
         Port (
         clk, rst : in std_logic;
-        init : in std_logic;
+        init, locked: in std_logic;
         img_number : in std_logic_vector(6 downto 0);
         
         --TO DATAPATH
@@ -297,6 +297,7 @@ begin
         clk => clk_PLL,
         rst => rst,
         init => init,
+        locked=>locked,
         img_number => img_number,
         starter_address => starter_address,
         address_enables => address_enables,
